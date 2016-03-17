@@ -94,6 +94,8 @@
 				        
 							<li><a href="/archives">所有文章</a></li>
 				        
+							<li><a href="/tags/note">随笔</a></li>
+				        
 						</ul>
 					</nav>
 					<nav class="header-nav">
@@ -114,7 +116,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Linux-command/" style="font-size: 10px;">Linux command</a> <a href="/tags/Linux-kernel/" style="font-size: 10px;">Linux kernel</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Translator/" style="font-size: 10px;">Translator</a>
+						<a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Linux-command/" style="font-size: 10px;">Linux command</a> <a href="/tags/Linux-kernel/" style="font-size: 10px;">Linux kernel</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Translator/" style="font-size: 10px;">Translator</a> <a href="/tags/ftp/" style="font-size: 10px;">ftp</a> <a href="/tags/note/" style="font-size: 10px;">note</a> <a href="/tags/optparser/" style="font-size: 10px;">optparser</a> <a href="/tags/patch/" style="font-size: 10px;">patch</a>
 					</div>
 				</section>
 				
@@ -168,6 +170,8 @@
 		        
 					<li><a href="/archives">所有文章</a></li>
 		        
+					<li><a href="/tags/note">随笔</a></li>
+		        
 		        <div class="clearfix"></div>
 				</ul>
 			</nav>
@@ -190,11 +194,11 @@
 
       <div class="body-wrap">
   
-    <article id="post-translator_androids_init" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-mark" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/03/17/translator_androids_init/" class="article-date">
-  	<time datetime="2016-03-17T02:46:52.516Z" itemprop="datePublished">2016-03-17</time>
+      <a href="/2016/03/17/mark/" class="article-date">
+  	<time datetime="2016-03-17T06:41:35.113Z" itemprop="datePublished">2016-03-17</time>
 </a>
     </div>
   
@@ -207,7 +211,64 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/17/translator_androids_init/">Android init.rc的readme.txt翻译</a>
+      <a class="article-title" href="/2016/03/17/mark/">Mark for first day</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="First-Day"><a href="#First-Day" class="headerlink" title="First Day"></a>First Day</h2><p>Just for mark.<br>Just for mark.<br>Just for mark.<br>Just for mark.<br>Just for mark.<br>Just for mark.<br>Just for mark.<br>Just for mark.<br>Just for mark.<br>Just for mark.</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/note/">note</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-translator_androids_init" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/07/25/translator_androids_init/" class="article-date">
+  	<time datetime="2015-07-25T08:03:00.000Z" itemprop="datePublished">2015-07-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/07/25/translator_androids_init/">Android init.rc的readme.txt翻译</a>
     </h1>
   
 
@@ -257,215 +318,11 @@
 
 
   
-    <article id="post-python_optparser" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/17/python_optparser/" class="article-date">
-  	<time datetime="2016-03-17T02:46:52.514Z" itemprop="datePublished">2016-03-17</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/17/python_optparser/">Python模块解析 - optparser模块</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>最近博主有用到optparser这个module,其对命令行的参数解析功能还是很强大的</p>
-<p>看原码的时候首先看到的是一个简单的例子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">from optparse import OptionParser</span><br><span class="line"></span><br><span class="line">parser = OptionParser()</span><br><span class="line">parser.add_option(&quot;-f&quot;, &quot;--file&quot;, dest=&quot;filename&quot;,</span><br><span class="line">                 help=&quot;write report to FILE&quot;, metavar=&quot;FILE&quot;)</span><br><span class="line">parser.add_option(&quot;-q&quot;, &quot;--quiet&quot;,</span><br><span class="line">                 action=&quot;store_false&quot;, dest=&quot;verbose&quot;, default=True,</span><br><span class="line">                 help=&quot;don&apos;t print status messages to stdout&quot;)</span><br><span class="line"></span><br><span class="line">(options, args) = parser.parse_args()</span><br></pre></td></tr></table></figure>
-<p>我们就按照这个例子来说好了：<br>首先创建一个OptionParser的class,在原码中可以发现这个类是继承OptionContainer,所以OptionContainer的非重名方法OptionParser都可以使用，下文用的add_option()就是用的父类OptionContainer中的方法.<br>创建好类的对象后，调用的是add_option()对命令行参数进行定义.<br>最后通过parse_args()解析命令汗参数.</p>
-<p>最后一步返回的是一个元组,元组的内容可以从原码中得到：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">def parse_args: return self.check_values(values, args)-&gt; def check_value: return (value,args)</span><br></pre></td></tr></table></figure>
-<p>value存的就是参数对应的值，不难发现，value是一个字典类型，由此我们也可以明白dest的作用就是作为字典的key值去索引对应的结果,举个例子：<br>假如命令行为：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xx.py <span class="_">-f</span> test.txt</span><br></pre></td></tr></table></figure></p>
-<p>那么-f 后面的值就能通过option.filename去索引得到<br>args在原码中默认为none,他的作用是可以通过程式写入的方式控制命令行参数.</p>
-<p>博主用的时候就是以原码中的这个例子开始的,当然其中很重要的一步就是方法add_option()中的参数理解：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&quot;-f&quot;,&quot;--file&quot;和&quot;-q&quot;&quot;-quiet&quot;的作用就是参数的名称,前者是后者的短参数名,运行的时候用xx.py -q或者xx.py --quiet的结果一样</span><br><span class="line">dest的作用上文已经说过，就是字典的key值.</span><br><span class="line">action的值从原码中看有&quot;store&quot;,&quot;store_const&quot;,&quot;store_true&quot;,&quot;store_false&quot;等:</span><br><span class="line"></span><br><span class="line">    store的作用就是将命令汗参数后面的值赋给option对应的value，此为默认的方式.</span><br><span class="line"></span><br><span class="line">    store_false和store_true主要的作用是当参数后面没有值的时候,比如博主要查看程式的版本号，不需要在-v后面加上任何的参数,</span><br><span class="line">		如果用store的话就会报错.store_false和store_true两个刚刚相反，当命令行参数中有当前参数时，那么store_false的方式</span><br><span class="line">		得到的option.verbose为false,store_true相反</span><br><span class="line"></span><br><span class="line">default的作用就是给没有出现在命令行的参数赋值,如果命令行有此参数的话就会覆盖掉default的值</span><br><span class="line">type的作用是给参数的value定义类型，默认为string</span><br></pre></td></tr></table></figure>
-<p>help的作用很帅,用xx.py –help 或者xx.py -h的话，他会自动生成help文档，如上面的提到的例子得到的help文档结果：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Usage: optparser_test.py [options]</span><br><span class="line"></span><br><span class="line">Options:</span><br><span class="line">  -h, --help            show this help message and exit</span><br><span class="line">  -f FILE, --file=FILE  write report to FILE</span><br><span class="line">  -q, --quiet           don&apos;t print status messages to stdout</span><br></pre></td></tr></table></figure>
-<p>还有一点要提到的就是optparser有专门对version的提供了方便的方法,只要在 parser = OptionParser()中加入version的值就好:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">parser = OptionParser(version = &quot;v1.0&quot;)</span><br></pre></td></tr></table></figure></p>
-<p>然后命令行:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xx.py --version</span><br></pre></td></tr></table></figure></p>
-<p>That’s all,Thank U<br>&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;原创！欢迎转载&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-linux_ftp_command" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/17/linux_ftp_command/" class="article-date">
-  	<time datetime="2016-03-17T02:46:52.511Z" itemprop="datePublished">2016-03-17</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/17/linux_ftp_command/">Linux命令讲解 - ftp命令简介</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="连接ftp服务器"><a href="#连接ftp服务器" class="headerlink" title="连接ftp服务器"></a>连接ftp服务器</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ftp [ip_addr | hostname]</span><br></pre></td></tr></table></figure>
-<p>举个栗子：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ftp 172.168.0.1</span><br></pre></td></tr></table></figure></p>
-<p>链接后会让你输入用户名和密码进行身份认证.</p>
-<h2 id="下载文件"><a href="#下载文件" class="headerlink" title="下载文件"></a>下载文件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">get [ftp服务器文件路径] [本地路径]</span><br><span class="line">mget [文件匹配规则]</span><br></pre></td></tr></table></figure>
-<p>get的命令是下载单个文件到指定本地路径.<br>mget则可以批量下载.</p>
-<p>再举个栗子：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ftp&gt; mget *.txt //将服务器当前文件夹下的txt文档下载到本地当前路径</span><br></pre></td></tr></table></figure></p>
-<h2 id="上传文件"><a href="#上传文件" class="headerlink" title="上传文件"></a>上传文件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">put [本地文件路径] [ftp服务器文件路径]</span><br><span class="line">mput [文件匹配规则]</span><br></pre></td></tr></table></figure>
-<p>很容易理解,和get一样.只是需要注意的是,mput上传到服务器的路径是当前服务器路径,所以要想将文件上传到服务器指定路径的时候要先在ftp下cd的命令</p>
-<h2 id="退出链接"><a href="#退出链接" class="headerlink" title="退出链接"></a>退出链接</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ftp&gt; <span class="built_in">bye</span></span><br></pre></td></tr></table></figure>
-<p>That’s all,Thank U</p>
-<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;原创！欢迎转载&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux-command/">Linux command</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-git_generate_patch" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/17/git_generate_patch/" class="article-date">
-  	<time datetime="2016-03-17T02:46:52.509Z" itemprop="datePublished">2016-03-17</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/17/git_generate_patch/">Git生成patch的方法(diff and format-patch)</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Git 生成patch的方法（patch就是补丁）<br>    注：因为博主用的是linux系统，所以运行的环境均在linux下。</p>
-<h3 id="1-在-home-jasper-下面建立一个文件夹作为git的本地仓库"><a href="#1-在-home-jasper-下面建立一个文件夹作为git的本地仓库" class="headerlink" title="1.在/home/jasper/下面建立一个文件夹作为git的本地仓库:"></a>1.在/home/jasper/下面建立一个文件夹作为git的本地仓库:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir /home/jasper/<span class="built_in">test</span>_<span class="keyword">for</span>_git</span><br><span class="line"><span class="built_in">cd</span> <span class="built_in">test</span>_<span class="keyword">for</span>_git</span><br><span class="line">git init(创建一个repository)</span><br></pre></td></tr></table></figure>
-<h3 id="2-给本地仓库创建一个资源-并写入”hello-world”"><a href="#2-给本地仓库创建一个资源-并写入”hello-world”" class="headerlink" title="2.给本地仓库创建一个资源,并写入”hello world”"></a>2.给本地仓库创建一个资源,并写入”hello world”</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">touch hello.txt</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"hello world"</span>&gt;&gt;hello.txt</span><br></pre></td></tr></table></figure>
-<h3 id="3-提交本地仓库"><a href="#3-提交本地仓库" class="headerlink" title="3.提交本地仓库:"></a>3.提交本地仓库:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit <span class="_">-a</span> -m <span class="string">"first commit"</span></span><br></pre></td></tr></table></figure>
-<h3 id="4-创建一个本地branch-并且签出到新建的branch"><a href="#4-创建一个本地branch-并且签出到新建的branch" class="headerlink" title="4.创建一个本地branch,并且签出到新建的branch"></a>4.创建一个本地branch,并且签出到新建的branch</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git branch jasper</span><br><span class="line">git checkout jasper</span><br></pre></td></tr></table></figure>
-<h3 id="5-在jasper的branch下面为master-brach做一个patch-补丁"><a href="#5-在jasper的branch下面为master-brach做一个patch-补丁" class="headerlink" title="5.在jasper的branch下面为master brach做一个patch(补丁)"></a>5.在jasper的branch下面为master brach做一个patch(补丁)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">方法一：用diff的方法生成的通用补丁，patch的文件以.diff结尾:</span><br><span class="line">1.在patch分支中更改hello.txt:</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"first diff patch"</span> &gt;&gt; hello.txt</span><br><span class="line">2.然后将更改提交:</span><br><span class="line">git commit <span class="_">-a</span> -m <span class="string">"first diff patch commit"</span></span><br><span class="line">3.生成对master branch的patch 并将生成的patch以想要的文件名放到/home/jasper路径下面：</span><br><span class="line">git diff master &gt; /home/jasper/first_diff_patch.diff</span><br><span class="line">4.可以ls一下路径下面是否有生成的patch,LZ在/home/jasper下面可以看到自己生成的名为first_diff_patch.diff的patch</span><br><span class="line">5.签回master branch:</span><br><span class="line">git checkout master</span><br><span class="line">6.应用建立的patch:</span><br><span class="line">git apply /home/jasper/first_diff_patch.diff</span><br><span class="line">7.提交patch做的更改:</span><br><span class="line">git commit <span class="_">-a</span> -m <span class="string">"master got the change from diff patch"</span></span><br><span class="line">然后你就会发现master已经更新到和jasper branch一样了</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">方法二：用format-patch 生成git专用的patch</span><br><span class="line">1.继续使用上面的例子，签出到jasper branch:</span><br><span class="line">git checkout jasper</span><br><span class="line">2.修改hello.txt:</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"first format-patch patch"</span> &gt;&gt; hello.txt</span><br><span class="line">3.将更改提交:</span><br><span class="line">git commit <span class="_">-a</span> -m <span class="string">"first format-patch commit"</span></span><br><span class="line">4.生成对master branch的patch，生成的路径是在当前文件夹下:</span><br><span class="line">git format-patch -M master //(-M指的是与那个分支比较)</span><br><span class="line">5.然后会在当前路径下发现一个名为0001-first-format-patch-patch-commit.patch的patch档案(档案名字前面是序号，后面是提交的内容)</span><br><span class="line">6.签回master branch,并且应用patch:</span><br><span class="line">git checkout master</span><br><span class="line">git am 0001-first-format-patch-patch-commit.patch</span><br><span class="line">7.没有问题的话你就会发现master已经更新到和jasper一样了,然后请删除建立的分支</span><br></pre></td></tr></table></figure>
-<p>OK,两种方法都可以建立patch,只不过format-patch建立的patch的内容要多于diff建立的(可以cat两个patch察看内容),但是diff使用的面要比format-patch要多.</p>
-<p>linux下使用gitk方便查看仓库信息!!!</p>
-<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;原创！欢迎转载&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
     <article id="post-Frame Buffer" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/03/17/Frame Buffer/" class="article-date">
-  	<time datetime="2016-03-17T02:46:52.497Z" itemprop="datePublished">2016-03-17</time>
+      <a href="/2015/07/20/Frame Buffer/" class="article-date">
+  	<time datetime="2015-07-20T12:03:00.000Z" itemprop="datePublished">2015-07-20</time>
 </a>
     </div>
   
@@ -478,7 +335,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/17/Frame Buffer/">Frame Buffer控制嵌入式设备显示屏</a>
+      <a class="article-title" href="/2015/07/20/Frame Buffer/">Frame Buffer控制嵌入式设备显示屏</a>
     </h1>
   
 
@@ -512,6 +369,210 @@
       
 	<div class="article-tag tagcloud">
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux-kernel/">Linux kernel</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-python_optparser" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/03/11/python_optparser/" class="article-date">
+  	<time datetime="2015-03-11T11:03:00.000Z" itemprop="datePublished">2015-03-11</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/03/11/python_optparser/">Python模块解析 - optparser模块</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近博主有用到optparser这个module,其对命令行的参数解析功能还是很强大的</p>
+<p>看原码的时候首先看到的是一个简单的例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">from optparse import OptionParser</span><br><span class="line"></span><br><span class="line">parser = OptionParser()</span><br><span class="line">parser.add_option(&quot;-f&quot;, &quot;--file&quot;, dest=&quot;filename&quot;,</span><br><span class="line">                 help=&quot;write report to FILE&quot;, metavar=&quot;FILE&quot;)</span><br><span class="line">parser.add_option(&quot;-q&quot;, &quot;--quiet&quot;,</span><br><span class="line">                 action=&quot;store_false&quot;, dest=&quot;verbose&quot;, default=True,</span><br><span class="line">                 help=&quot;don&apos;t print status messages to stdout&quot;)</span><br><span class="line"></span><br><span class="line">(options, args) = parser.parse_args()</span><br></pre></td></tr></table></figure>
+<p>我们就按照这个例子来说好了：<br>首先创建一个OptionParser的class,在原码中可以发现这个类是继承OptionContainer,所以OptionContainer的非重名方法OptionParser都可以使用，下文用的add_option()就是用的父类OptionContainer中的方法.<br>创建好类的对象后，调用的是add_option()对命令行参数进行定义.<br>最后通过parse_args()解析命令汗参数.</p>
+<p>最后一步返回的是一个元组,元组的内容可以从原码中得到：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">def parse_args: return self.check_values(values, args)-&gt; def check_value: return (value,args)</span><br></pre></td></tr></table></figure>
+<p>value存的就是参数对应的值，不难发现，value是一个字典类型，由此我们也可以明白dest的作用就是作为字典的key值去索引对应的结果,举个例子：<br>假如命令行为：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xx.py <span class="_">-f</span> test.txt</span><br></pre></td></tr></table></figure></p>
+<p>那么-f 后面的值就能通过option.filename去索引得到<br>args在原码中默认为none,他的作用是可以通过程式写入的方式控制命令行参数.</p>
+<p>博主用的时候就是以原码中的这个例子开始的,当然其中很重要的一步就是方法add_option()中的参数理解：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&quot;-f&quot;,&quot;--file&quot;和&quot;-q&quot;&quot;-quiet&quot;的作用就是参数的名称,前者是后者的短参数名,运行的时候用xx.py -q或者xx.py --quiet的结果一样</span><br><span class="line">dest的作用上文已经说过，就是字典的key值.</span><br><span class="line">action的值从原码中看有&quot;store&quot;,&quot;store_const&quot;,&quot;store_true&quot;,&quot;store_false&quot;等:</span><br><span class="line"></span><br><span class="line">    store的作用就是将命令汗参数后面的值赋给option对应的value，此为默认的方式.</span><br><span class="line"></span><br><span class="line">    store_false和store_true主要的作用是当参数后面没有值的时候,比如博主要查看程式的版本号，不需要在-v后面加上任何的参数,</span><br><span class="line">		如果用store的话就会报错.store_false和store_true两个刚刚相反，当命令行参数中有当前参数时，那么store_false的方式</span><br><span class="line">		得到的option.verbose为false,store_true相反</span><br><span class="line"></span><br><span class="line">default的作用就是给没有出现在命令行的参数赋值,如果命令行有此参数的话就会覆盖掉default的值</span><br><span class="line">type的作用是给参数的value定义类型，默认为string</span><br></pre></td></tr></table></figure>
+<p>help的作用很帅,用xx.py –help 或者xx.py -h的话，他会自动生成help文档，如上面的提到的例子得到的help文档结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Usage: optparser_test.py [options]</span><br><span class="line"></span><br><span class="line">Options:</span><br><span class="line">  -h, --help            show this help message and exit</span><br><span class="line">  -f FILE, --file=FILE  write report to FILE</span><br><span class="line">  -q, --quiet           don&apos;t print status messages to stdout</span><br></pre></td></tr></table></figure>
+<p>还有一点要提到的就是optparser有专门对version的提供了方便的方法,只要在 parser = OptionParser()中加入version的值就好:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">parser = OptionParser(version = &quot;v1.0&quot;)</span><br></pre></td></tr></table></figure></p>
+<p>然后命令行:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xx.py --version</span><br></pre></td></tr></table></figure></p>
+<p>That’s all,Thank U<br>&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;原创！欢迎转载&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/optparser/">optparser</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-git_generate_patch" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/02/20/git_generate_patch/" class="article-date">
+  	<time datetime="2015-02-20T08:03:00.000Z" itemprop="datePublished">2015-02-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/02/20/git_generate_patch/">Git生成patch的方法(diff and format-patch)</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Git 生成patch的方法（patch就是补丁）<br>    注：因为博主用的是linux系统，所以运行的环境均在linux下。</p>
+<h3 id="1-在-home-jasper-下面建立一个文件夹作为git的本地仓库"><a href="#1-在-home-jasper-下面建立一个文件夹作为git的本地仓库" class="headerlink" title="1.在/home/jasper/下面建立一个文件夹作为git的本地仓库:"></a>1.在/home/jasper/下面建立一个文件夹作为git的本地仓库:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir /home/jasper/<span class="built_in">test</span>_<span class="keyword">for</span>_git</span><br><span class="line"><span class="built_in">cd</span> <span class="built_in">test</span>_<span class="keyword">for</span>_git</span><br><span class="line">git init(创建一个repository)</span><br></pre></td></tr></table></figure>
+<h3 id="2-给本地仓库创建一个资源-并写入”hello-world”"><a href="#2-给本地仓库创建一个资源-并写入”hello-world”" class="headerlink" title="2.给本地仓库创建一个资源,并写入”hello world”"></a>2.给本地仓库创建一个资源,并写入”hello world”</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">touch hello.txt</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"hello world"</span>&gt;&gt;hello.txt</span><br></pre></td></tr></table></figure>
+<h3 id="3-提交本地仓库"><a href="#3-提交本地仓库" class="headerlink" title="3.提交本地仓库:"></a>3.提交本地仓库:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit <span class="_">-a</span> -m <span class="string">"first commit"</span></span><br></pre></td></tr></table></figure>
+<h3 id="4-创建一个本地branch-并且签出到新建的branch"><a href="#4-创建一个本地branch-并且签出到新建的branch" class="headerlink" title="4.创建一个本地branch,并且签出到新建的branch"></a>4.创建一个本地branch,并且签出到新建的branch</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git branch jasper</span><br><span class="line">git checkout jasper</span><br></pre></td></tr></table></figure>
+<h3 id="5-在jasper的branch下面为master-brach做一个patch-补丁"><a href="#5-在jasper的branch下面为master-brach做一个patch-补丁" class="headerlink" title="5.在jasper的branch下面为master brach做一个patch(补丁)"></a>5.在jasper的branch下面为master brach做一个patch(补丁)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">方法一：用diff的方法生成的通用补丁，patch的文件以.diff结尾:</span><br><span class="line">1.在patch分支中更改hello.txt:</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"first diff patch"</span> &gt;&gt; hello.txt</span><br><span class="line">2.然后将更改提交:</span><br><span class="line">git commit <span class="_">-a</span> -m <span class="string">"first diff patch commit"</span></span><br><span class="line">3.生成对master branch的patch 并将生成的patch以想要的文件名放到/home/jasper路径下面：</span><br><span class="line">git diff master &gt; /home/jasper/first_diff_patch.diff</span><br><span class="line">4.可以ls一下路径下面是否有生成的patch,LZ在/home/jasper下面可以看到自己生成的名为first_diff_patch.diff的patch</span><br><span class="line">5.签回master branch:</span><br><span class="line">git checkout master</span><br><span class="line">6.应用建立的patch:</span><br><span class="line">git apply /home/jasper/first_diff_patch.diff</span><br><span class="line">7.提交patch做的更改:</span><br><span class="line">git commit <span class="_">-a</span> -m <span class="string">"master got the change from diff patch"</span></span><br><span class="line">然后你就会发现master已经更新到和jasper branch一样了</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">方法二：用format-patch 生成git专用的patch</span><br><span class="line">1.继续使用上面的例子，签出到jasper branch:</span><br><span class="line">git checkout jasper</span><br><span class="line">2.修改hello.txt:</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"first format-patch patch"</span> &gt;&gt; hello.txt</span><br><span class="line">3.将更改提交:</span><br><span class="line">git commit <span class="_">-a</span> -m <span class="string">"first format-patch commit"</span></span><br><span class="line">4.生成对master branch的patch，生成的路径是在当前文件夹下:</span><br><span class="line">git format-patch -M master //(-M指的是与那个分支比较)</span><br><span class="line">5.然后会在当前路径下发现一个名为0001-first-format-patch-patch-commit.patch的patch档案(档案名字前面是序号，后面是提交的内容)</span><br><span class="line">6.签回master branch,并且应用patch:</span><br><span class="line">git checkout master</span><br><span class="line">git am 0001-first-format-patch-patch-commit.patch</span><br><span class="line">7.没有问题的话你就会发现master已经更新到和jasper一样了,然后请删除建立的分支</span><br></pre></td></tr></table></figure>
+<p>OK,两种方法都可以建立patch,只不过format-patch建立的patch的内容要多于diff建立的(可以cat两个patch察看内容),但是diff使用的面要比format-patch要多.</p>
+<p>linux下使用gitk方便查看仓库信息!!!</p>
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;原创！欢迎转载&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/patch/">patch</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-linux_ftp_command" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/02/02/linux_ftp_command/" class="article-date">
+  	<time datetime="2015-02-02T10:03:00.000Z" itemprop="datePublished">2015-02-02</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/02/02/linux_ftp_command/">Linux命令讲解 - ftp命令简介</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="连接ftp服务器"><a href="#连接ftp服务器" class="headerlink" title="连接ftp服务器"></a>连接ftp服务器</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ftp [ip_addr | hostname]</span><br></pre></td></tr></table></figure>
+<p>举个栗子：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ftp 172.168.0.1</span><br></pre></td></tr></table></figure></p>
+<p>链接后会让你输入用户名和密码进行身份认证.</p>
+<h2 id="下载文件"><a href="#下载文件" class="headerlink" title="下载文件"></a>下载文件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">get [ftp服务器文件路径] [本地路径]</span><br><span class="line">mget [文件匹配规则]</span><br></pre></td></tr></table></figure>
+<p>get的命令是下载单个文件到指定本地路径.<br>mget则可以批量下载.</p>
+<p>再举个栗子：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ftp&gt; mget *.txt //将服务器当前文件夹下的txt文档下载到本地当前路径</span><br></pre></td></tr></table></figure></p>
+<h2 id="上传文件"><a href="#上传文件" class="headerlink" title="上传文件"></a>上传文件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">put [本地文件路径] [ftp服务器文件路径]</span><br><span class="line">mput [文件匹配规则]</span><br></pre></td></tr></table></figure>
+<p>很容易理解,和get一样.只是需要注意的是,mput上传到服务器的路径是当前服务器路径,所以要想将文件上传到服务器指定路径的时候要先在ftp下cd的命令</p>
+<h2 id="退出链接"><a href="#退出链接" class="headerlink" title="退出链接"></a>退出链接</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ftp&gt; <span class="built_in">bye</span></span><br></pre></td></tr></table></figure>
+<p>That’s all,Thank U</p>
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;原创！欢迎转载&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux-command/">Linux command</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ftp/">ftp</a></li></ul>
 	</div>
 
       
