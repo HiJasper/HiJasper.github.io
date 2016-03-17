@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Python模块解析 - optparser模块 | Coding for yourself</title>
+  <title>Python模块解析 - optparser模块 | Coding 4 yourself</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="最近博主有用到optparser这个module,其对命令行的参数解析功能还是很强大的
 看原码的时候首先看到的是一个简单的例子：
@@ -12,18 +12,18 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python模块解析 - optparser模块">
 <meta property="og:url" content="http://yoursite.com/2015/03/11/python_optparser/index.html">
-<meta property="og:site_name" content="Coding for yourself">
+<meta property="og:site_name" content="Coding 4 yourself">
 <meta property="og:description" content="最近博主有用到optparser这个module,其对命令行的参数解析功能还是很强大的
 看原码的时候首先看到的是一个简单的例子：
 12345678910from optparse import OptionParserparser = OptionParser()parser.add_option(&amp;quot;-f&amp;quot;, &amp;quot;--file&amp;quot;, dest=&amp;quot;fil">
-<meta property="og:updated_time" content="2016-03-17T05:37:32.000Z">
+<meta property="og:updated_time" content="2016-03-17T08:14:30.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python模块解析 - optparser模块">
 <meta name="twitter:description" content="最近博主有用到optparser这个module,其对命令行的参数解析功能还是很强大的
 看原码的时候首先看到的是一个简单的例子：
 12345678910from optparse import OptionParserparser = OptionParser()parser.add_option(&amp;quot;-f&amp;quot;, &amp;quot;--file&amp;quot;, dest=&amp;quot;fil">
   
-    <link rel="alternative" href="/atom.xml" title="Coding for yourself" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="Coding 4 yourself" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -239,6 +239,7 @@
         <p>最近博主有用到optparser这个module,其对命令行的参数解析功能还是很强大的</p>
 <p>看原码的时候首先看到的是一个简单的例子：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">from optparse import OptionParser</span><br><span class="line"></span><br><span class="line">parser = OptionParser()</span><br><span class="line">parser.add_option(&quot;-f&quot;, &quot;--file&quot;, dest=&quot;filename&quot;,</span><br><span class="line">                 help=&quot;write report to FILE&quot;, metavar=&quot;FILE&quot;)</span><br><span class="line">parser.add_option(&quot;-q&quot;, &quot;--quiet&quot;,</span><br><span class="line">                 action=&quot;store_false&quot;, dest=&quot;verbose&quot;, default=True,</span><br><span class="line">                 help=&quot;don&apos;t print status messages to stdout&quot;)</span><br><span class="line"></span><br><span class="line">(options, args) = parser.parse_args()</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <p>我们就按照这个例子来说好了：<br>首先创建一个OptionParser的class,在原码中可以发现这个类是继承OptionContainer,所以OptionContainer的非重名方法OptionParser都可以使用，下文用的add_option()就是用的父类OptionContainer中的方法.<br>创建好类的对象后，调用的是add_option()对命令行参数进行定义.<br>最后通过parse_args()解析命令汗参数.</p>
 <p>最后一步返回的是一个元组,元组的内容可以从原码中得到：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">def parse_args: return self.check_values(values, args)-&gt; def check_value: return (value,args)</span><br></pre></td></tr></table></figure>

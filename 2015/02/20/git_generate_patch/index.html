@@ -4,26 +4,23 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Git生成patch的方法(diff and format-patch) | Coding for yourself</title>
+  <title>Git生成patch的方法(diff and format-patch) | Coding 4 yourself</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Git 生成patch的方法（patch就是补丁）    注：因为博主用的是linux系统，所以运行的环境均在linux下。
-1.在/home/jasper/下面建立一个文件夹作为git的本地仓库:123mkdir /home/jasper/test_for_gitcd test_for_gitgit init(创建一个repository)
-2.给本地仓库创建一个资源,并写入”hello wor">
+1.在/home/jasper/下面建立一个文件夹作为git的本地仓库:123mkdir /home/jasper/test_for_gitcd test_for_gitgit init(创建一个repository)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git生成patch的方法(diff and format-patch)">
 <meta property="og:url" content="http://yoursite.com/2015/02/20/git_generate_patch/index.html">
-<meta property="og:site_name" content="Coding for yourself">
+<meta property="og:site_name" content="Coding 4 yourself">
 <meta property="og:description" content="Git 生成patch的方法（patch就是补丁）    注：因为博主用的是linux系统，所以运行的环境均在linux下。
-1.在/home/jasper/下面建立一个文件夹作为git的本地仓库:123mkdir /home/jasper/test_for_gitcd test_for_gitgit init(创建一个repository)
-2.给本地仓库创建一个资源,并写入”hello wor">
-<meta property="og:updated_time" content="2016-03-17T05:36:52.000Z">
+1.在/home/jasper/下面建立一个文件夹作为git的本地仓库:123mkdir /home/jasper/test_for_gitcd test_for_gitgit init(创建一个repository)">
+<meta property="og:updated_time" content="2016-03-17T08:14:23.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git生成patch的方法(diff and format-patch)">
 <meta name="twitter:description" content="Git 生成patch的方法（patch就是补丁）    注：因为博主用的是linux系统，所以运行的环境均在linux下。
-1.在/home/jasper/下面建立一个文件夹作为git的本地仓库:123mkdir /home/jasper/test_for_gitcd test_for_gitgit init(创建一个repository)
-2.给本地仓库创建一个资源,并写入”hello wor">
+1.在/home/jasper/下面建立一个文件夹作为git的本地仓库:123mkdir /home/jasper/test_for_gitcd test_for_gitgit init(创建一个repository)">
   
-    <link rel="alternative" href="/atom.xml" title="Coding for yourself" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="Coding 4 yourself" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -238,6 +235,7 @@
       
         <p>Git 生成patch的方法（patch就是补丁）<br>    注：因为博主用的是linux系统，所以运行的环境均在linux下。</p>
 <h3 id="1-在-home-jasper-下面建立一个文件夹作为git的本地仓库"><a href="#1-在-home-jasper-下面建立一个文件夹作为git的本地仓库" class="headerlink" title="1.在/home/jasper/下面建立一个文件夹作为git的本地仓库:"></a>1.在/home/jasper/下面建立一个文件夹作为git的本地仓库:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir /home/jasper/<span class="built_in">test</span>_<span class="keyword">for</span>_git</span><br><span class="line"><span class="built_in">cd</span> <span class="built_in">test</span>_<span class="keyword">for</span>_git</span><br><span class="line">git init(创建一个repository)</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <h3 id="2-给本地仓库创建一个资源-并写入”hello-world”"><a href="#2-给本地仓库创建一个资源-并写入”hello-world”" class="headerlink" title="2.给本地仓库创建一个资源,并写入”hello world”"></a>2.给本地仓库创建一个资源,并写入”hello world”</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">touch hello.txt</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"hello world"</span>&gt;&gt;hello.txt</span><br></pre></td></tr></table></figure>
 <h3 id="3-提交本地仓库"><a href="#3-提交本地仓库" class="headerlink" title="3.提交本地仓库:"></a>3.提交本地仓库:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit <span class="_">-a</span> -m <span class="string">"first commit"</span></span><br></pre></td></tr></table></figure>
 <h3 id="4-创建一个本地branch-并且签出到新建的branch"><a href="#4-创建一个本地branch-并且签出到新建的branch" class="headerlink" title="4.创建一个本地branch,并且签出到新建的branch"></a>4.创建一个本地branch,并且签出到新建的branch</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git branch jasper</span><br><span class="line">git checkout jasper</span><br></pre></td></tr></table></figure>
