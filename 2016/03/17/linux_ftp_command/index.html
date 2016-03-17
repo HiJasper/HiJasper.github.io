@@ -4,23 +4,35 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Hello World | Hexo</title>
+  <title>Linux命令讲解 - ftp命令简介 | Coding for yourself</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+  <meta name="description" content="连接ftp服务器1ftp [ip_addr | hostname]
+举个栗子：1ftp 172.168.0.1
+链接后会让你输入用户名和密码进行身份认证.
+下载文件12get [ftp服务器文件路径] [本地路径]mget [文件匹配规则]
+get的命令是下载单个文件到指定本地路径.mget则可以批量下载.
+再举个栗子：1ftp&amp;gt; mget *.txt //将服务器当前文件夹下的txt文档下">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2016/03/16/hello-world/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
-<meta property="og:updated_time" content="2016-03-16T13:24:39.000Z">
+<meta property="og:title" content="Linux命令讲解 - ftp命令简介">
+<meta property="og:url" content="http://yoursite.com/2016/03/17/linux_ftp_command/index.html">
+<meta property="og:site_name" content="Coding for yourself">
+<meta property="og:description" content="连接ftp服务器1ftp [ip_addr | hostname]
+举个栗子：1ftp 172.168.0.1
+链接后会让你输入用户名和密码进行身份认证.
+下载文件12get [ftp服务器文件路径] [本地路径]mget [文件匹配规则]
+get的命令是下载单个文件到指定本地路径.mget则可以批量下载.
+再举个栗子：1ftp&amp;gt; mget *.txt //将服务器当前文件夹下的txt文档下">
+<meta property="og:updated_time" content="2016-03-17T02:30:59.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="twitter:title" content="Linux命令讲解 - ftp命令简介">
+<meta name="twitter:description" content="连接ftp服务器1ftp [ip_addr | hostname]
+举个栗子：1ftp 172.168.0.1
+链接后会让你输入用户名和密码进行身份认证.
+下载文件12get [ftp服务器文件路径] [本地路径]mget [文件匹配规则]
+get的命令是下载单个文件到指定本地路径.mget则可以批量下载.
+再举个栗子：1ftp&amp;gt; mget *.txt //将服务器当前文件夹下的txt文档下">
   
-    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="Coding for yourself" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -36,12 +48,12 @@ Quick">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
 			
-			<img lazy-src="null" class="js-avatar">
+			<img lazy-src="img/me.jpeg" class="js-avatar">
 			
 		</a>
 
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Jasper Xu</a></h1>
+		  <h1 class="header-author"><a href="/">老纸辣么可爱</a></h1>
 		</hgroup>
 
 		
@@ -118,7 +130,7 @@ Quick">
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						
+						<a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Linux-command/" style="font-size: 10px;">Linux command</a> <a href="/tags/Linux-kernel/" style="font-size: 10px;">Linux kernel</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Translator/" style="font-size: 10px;">Translator</a>
 					</div>
 				</section>
 				
@@ -127,17 +139,9 @@ Quick">
 				<section class="switch-part switch-part3">
 					<div id="js-friends">
 					
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">奥巴马的博客</a>
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://duanyajuzi.github.io/">Jarvis&#39;blog</a>
 			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">卡卡的美丽传说</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">本泽马的博客</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">吉格斯的博客</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">习大大大不同</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">托蒂的博客</a>
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://pyjasper.sinaapp.com/">博客迁移原站点</a>
 			        
 			        </div>
 				</section>
@@ -147,7 +151,7 @@ Quick">
 				
 				<section class="switch-part switch-part4">
 				
-					<div id="js-aboutme">我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…</div>
+					<div id="js-aboutme">09年大学，13年工作，目前单身.........</div>
 				</section>
 				
 			</div>
@@ -160,17 +164,17 @@ Quick">
       <nav id="mobile-nav">
   	<div class="overlay">
   		<div class="slider-trigger"></div>
-  		<h1 class="header-author js-mobile-header hide">Jasper Xu</h1>
+  		<h1 class="header-author js-mobile-header hide">老纸辣么可爱</h1>
   	</div>
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
 			
-				<img lazy-src="null" class="js-avatar">
+				<img lazy-src="img/me.jpeg" class="js-avatar">
 			
 			</div>
 			<hgroup>
-			  <h1 class="header-author">Jasper Xu</h1>
+			  <h1 class="header-author">老纸辣么可爱</h1>
 			</hgroup>
 			
 			<nav class="header-menu">
@@ -200,11 +204,11 @@ Quick">
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-linux_ftp_command" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/03/16/hello-world/" class="article-date">
-  	<time datetime="2016-03-16T15:12:53.610Z" itemprop="datePublished">2016-03-16</time>
+      <a href="/2016/03/17/linux_ftp_command/" class="article-date">
+  	<time datetime="2016-03-17T02:31:37.726Z" itemprop="datePublished">2016-03-17</time>
 </a>
     </div>
   
@@ -217,7 +221,7 @@ Quick">
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      Linux命令讲解 - ftp命令简介
     </h1>
   
 
@@ -225,6 +229,10 @@ Quick">
       
       <div class="article-info article-info-post">
         
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux-command/">Linux command</a></li></ul>
+	</div>
+
         
 
         <div class="clearfix"></div>
@@ -233,15 +241,17 @@ Quick">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <h2 id="连接ftp服务器"><a href="#连接ftp服务器" class="headerlink" title="连接ftp服务器"></a>连接ftp服务器</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ftp [ip_addr | hostname]</span><br></pre></td></tr></table></figure>
+<p>举个栗子：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ftp 172.168.0.1</span><br></pre></td></tr></table></figure></p>
+<p>链接后会让你输入用户名和密码进行身份认证.</p>
+<h2 id="下载文件"><a href="#下载文件" class="headerlink" title="下载文件"></a>下载文件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">get [ftp服务器文件路径] [本地路径]</span><br><span class="line">mget [文件匹配规则]</span><br></pre></td></tr></table></figure>
+<p>get的命令是下载单个文件到指定本地路径.<br>mget则可以批量下载.</p>
+<p>再举个栗子：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ftp&gt; mget *.txt //将服务器当前文件夹下的txt文档下载到本地当前路径</span><br></pre></td></tr></table></figure></p>
+<h2 id="上传文件"><a href="#上传文件" class="headerlink" title="上传文件"></a>上传文件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">put [本地文件路径] [ftp服务器文件路径]</span><br><span class="line">mput [文件匹配规则]</span><br></pre></td></tr></table></figure>
+<p>很容易理解,和get一样.只是需要注意的是,mput上传到服务器的路径是当前服务器路径,所以要想将文件上传到服务器指定路径的时候要先在ftp下cd的命令</p>
+<h2 id="退出链接"><a href="#退出链接" class="headerlink" title="退出链接"></a>退出链接</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ftp&gt; <span class="built_in">bye</span></span><br></pre></td></tr></table></figure>
+<p>That’s all,Thank U</p>
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;原创！欢迎转载&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</p>
 
       
     </div>
@@ -249,6 +259,25 @@ Quick">
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2016/03/17/translator_androids_init/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          Android init.rc的readme.txt翻译
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/03/17/git_generate_patch/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Git生成patch的方法(diff and format-patch)</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
   
 </article>
 
@@ -278,7 +307,7 @@ Quick">
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="hello-world" data-title="Hello World" data-url="http://yoursite.com/2016/03/16/hello-world/"></div>
+	<div class="ds-thread" data-thread-key="linux_ftp_command" data-title="Linux命令讲解 - ftp命令简介" data-url="http://yoursite.com/2016/03/17/linux_ftp_command/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -303,7 +332,7 @@ Quick">
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2016 Jasper Xu
+    		&copy; 2016 老纸辣么可爱
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten

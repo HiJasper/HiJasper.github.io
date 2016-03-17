@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>Frame Buffer控制嵌入式设备显示屏 | Coding for yourself</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="最近一段时间因为工作的原因,开始接触android和linux内核的一些东西.有时间的话会陆续写一些关于这方面的博客,今天这片blog讲的是frame buffer
+操作FrameBuffer的一般步骤如下:
+12345打开fb0设备文件(这个路径不一定,linux系统是放在/dev下面,嵌入式的系统可能放在/dev/graphics/下面);用ioctl函数获取显示屏的位深、分辨率等信息,两个重">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Frame Buffer控制嵌入式设备显示屏">
+<meta property="og:url" content="http://yoursite.com/2016/03/17/Frame Buffer/index.html">
+<meta property="og:site_name" content="Coding for yourself">
+<meta property="og:description" content="最近一段时间因为工作的原因,开始接触android和linux内核的一些东西.有时间的话会陆续写一些关于这方面的博客,今天这片blog讲的是frame buffer
+操作FrameBuffer的一般步骤如下:
+12345打开fb0设备文件(这个路径不一定,linux系统是放在/dev下面,嵌入式的系统可能放在/dev/graphics/下面);用ioctl函数获取显示屏的位深、分辨率等信息,两个重">
+<meta property="og:updated_time" content="2016-03-17T02:21:29.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Frame Buffer控制嵌入式设备显示屏">
+<meta name="twitter:description" content="最近一段时间因为工作的原因,开始接触android和linux内核的一些东西.有时间的话会陆续写一些关于这方面的博客,今天这片blog讲的是frame buffer
+操作FrameBuffer的一般步骤如下:
+12345打开fb0设备文件(这个路径不一定,linux系统是放在/dev下面,嵌入式的系统可能放在/dev/graphics/下面);用ioctl函数获取显示屏的位深、分辨率等信息,两个重">
+  
+    <link rel="alternative" href="/atom.xml" title="Coding for yourself" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="img/me.jpeg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">老纸辣么可爱</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>Menu</li>
+						<li>Tags</li>
+						
+						<li>Links</li>
+						
+						
+						<li>Über</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/HiJasper" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/u/2290478334" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="#" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Linux-command/" style="font-size: 10px;">Linux command</a> <a href="/tags/Linux-kernel/" style="font-size: 10px;">Linux kernel</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Translator/" style="font-size: 10px;">Translator</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://duanyajuzi.github.io/">Jarvis&#39;blog</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://pyjasper.sinaapp.com/">博客迁移原站点</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">09年大学，13年工作，目前单身.........</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">老纸辣么可爱</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="img/me.jpeg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">老纸辣么可爱</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/HiJasper" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/u/2290478334" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-Frame Buffer" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/17/Frame Buffer/" class="article-date">
+  	<time datetime="2016-03-17T02:28:00.555Z" itemprop="datePublished">2016-03-17</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Frame Buffer控制嵌入式设备显示屏
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux-kernel/">Linux kernel</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近一段时间因为工作的原因,开始接触android和linux内核的一些东西.<br>有时间的话会陆续写一些关于这方面的博客,今天这片blog讲的是frame buffer</p>
+<p>操作FrameBuffer的一般步骤如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">打开fb0设备文件(这个路径不一定,linux系统是放在/dev下面,嵌入式的系统可能放在/dev/graphics/下面);</span><br><span class="line">用ioctl函数获取显示屏的位深、分辨率等信息,两个重要的结构体类型是fb_fix_screeninfo和fb_var_screeninfo;</span><br><span class="line">mmap函数将FrameBuffer映射到用户空间;</span><br><span class="line">读写FrameBuffer,进行绘图和图片显示等;</span><br><span class="line">解除映射(munmap),关闭/dev/fb设备文件.</span><br></pre></td></tr></table></figure>
+<p>看程序说话:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;fcntl.h&gt;</span><br><span class="line">#include &lt;stdlib.h&gt;</span><br><span class="line">#include &lt;getopt.h&gt;</span><br><span class="line">#include &lt;sys/ioctl.h&gt;</span><br><span class="line">#include &lt;linux/fb.h&gt;</span><br><span class="line">#include &lt;sys/mman.h&gt;</span><br><span class="line"></span><br><span class="line">struct fb_var_screeninfo vinfo;</span><br><span class="line">struct fb_fix_screeninfo finfo;</span><br><span class="line"></span><br><span class="line">/*fb0 can be found under /dev/graphics, not /dev */</span><br><span class="line">const char *fb_path = &quot;/dev/graphics/fb0&quot;;</span><br><span class="line">static int *mapping = 0 ;</span><br><span class="line"></span><br><span class="line">static void render(int xres, int yres, int color, int * mapping)</span><br><span class="line">&#123;</span><br><span class="line">    int x=0;</span><br><span class="line">    const int stride = finfo.line_length / 4;</span><br><span class="line"></span><br><span class="line">    int *dest = (int *) (mapping) + vinfo.yoffset * stride + vinfo.xoffset;</span><br><span class="line">    for( x=0; x&lt; xres * yres; x++, dest++)</span><br><span class="line">    &#123;</span><br><span class="line">        *dest = color;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main(int argc, char **argv)</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">    static int Param, fp, screensize;</span><br><span class="line">    opterr = 0;</span><br><span class="line"></span><br><span class="line">    fp = open(fb_path, O_RDWR);</span><br><span class="line"></span><br><span class="line">    if (fp &lt; 0)</span><br><span class="line">    &#123;</span><br><span class="line">        printf(&quot;Can not open %s\n&quot;, fb_path);</span><br><span class="line">        return -1;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    if (ioctl(fp, FBIOGET_VSCREENINFO, &amp;vinfo) || ioctl(fp, FBIOGET_FSCREENINFO, &amp;finfo))</span><br><span class="line">    &#123;</span><br><span class="line">        printf(&quot;Can not read infomation\n&quot;);</span><br><span class="line">        return -1;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /*get the size of the whole screen in memory*/</span><br><span class="line">    screensize = finfo.smem_len;</span><br><span class="line">    /*map the framebuffer device to memory,and return void* */</span><br><span class="line">    mapping =(int *) mmap(0, screensize, PROT_READ | PROT_WRITE, MAP_SHARED, fp, 0); </span><br><span class="line"></span><br><span class="line">    if ((char *) mapping == MAP_FAILED)</span><br><span class="line">    &#123;</span><br><span class="line">        printf (&quot;Can not map framebuffer device to memory.\n&quot;);</span><br><span class="line">        return -1;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    if ((Param = getopt(argc, argv, &quot;rgb&quot;)) != -1)</span><br><span class="line">    &#123;</span><br><span class="line">        switch(Param) </span><br><span class="line">        &#123;</span><br><span class="line">            case &apos;r&apos;:</span><br><span class="line">                render(vinfo.xres, vinfo.yres, 0xffff0000, mapping);</span><br><span class="line">                break;</span><br><span class="line">            case &apos;g&apos;:</span><br><span class="line">                render(vinfo.xres, vinfo.yres, 0xff00ff00, mapping);</span><br><span class="line">                break;</span><br><span class="line">            case &apos;b&apos;:</span><br><span class="line">                render(vinfo.xres, vinfo.yres, 0xff0000ff, mapping);</span><br><span class="line">                break;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">        printf(&quot;Error: wrong parameter\n&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /*release the map*/</span><br><span class="line">    munmap(mapping, screensize);</span><br><span class="line">    close(fp);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="注释："><a href="#注释：" class="headerlink" title="注释："></a>注释：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fp = open(fb_path, O_RDWR)</span><br></pre></td></tr></table></figure>
+<p>frame buffer设备文件一般是 /dev/fb0、/dev/fb1…所以这一步就是打开这样的设备</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if (ioctl(fp, FBIOGET_VSCREENINFO, &amp;vinfo) || ioctl(fp, FBIOGET_FSCREENINFO, &amp;finfo))</span><br></pre></td></tr></table></figure>
+<p>frame buffer提供了很多ioctl的命令，通过这些命令我们可以获取显示设备的分辨率等信息.<br>程序最开始声明的两个struct，第一个struct：fb_var_screeninfo描述的是显示卡的特性，重要的xres,yres,bits_per_pixel,xoffset,yoffset,尤其是xres_virtual和yres_virtual,博主之前就是被这两个参数摆了一道，后面我们会讲到.<br>第二个staruct：fb_fix_screeninfo描述显示卡的属性，系统运行时不能被修改，里面有smem_len等要注意</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mapping =(int *) mmap(0, screensize, PROT_READ | PROT_WRITE, MAP_SHARED, fp, 0):</span><br></pre></td></tr></table></figure>
+<p>用mmap函数将FrameBuffer映射到用户空间,mmap这个函数可以自行google里面的参数意思</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int *dest = (int *) (mapping) + vinfo.yoffset * stride + vinfo.xoffset</span><br></pre></td></tr></table></figure>
+<p>这里很重要,之前我也不知道，直接对mapping操作，发现屏幕有时候不会变色,后来查资料看到一篇博文<a href="http://blog.csdn.net/yuanlulu/article/details/8621656" target="_blank" rel="external">FB的一些概念</a><br>原话就说的很好，这里借鉴一下，感谢博文作者yuanlulu<br>“其中重要的成员变量xres 和 yres定义在显示屏上真实显示的分辨率.而xres_virtual和yres_virtual是虚拟分辨率,它们定义的是显存分辨率,比如显示屏垂直分辨率是400,而虚拟分辨率是800.这就意味着在显存中存储着800行显示行,但是每次只能显示400行.但是显示哪400行呢?这就需要另外一个成员变量yoffset,当yoffset＝0时,从显存0行开始显示400行,如果yoffset＝30,就从显存31行开始显示400行.实际上这个技 术就是乒乓 buffer.”<br>具体什么是乒乓buffer,感兴趣的可以自己查阅资料,这里就不多讲了.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">munmap(mapping, screensize):</span><br></pre></td></tr></table></figure>
+<p>程序的最后，解除映射</p>
+<p>OK，That’s all.<br>&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;原创！欢迎转载&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/03/17/git_generate_patch/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          Git生成patch的方法(diff and format-patch)
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="Frame Buffer" data-title="Frame Buffer控制嵌入式设备显示屏" data-url="http://yoursite.com/2016/03/17/Frame Buffer/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 老纸辣么可爱
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
