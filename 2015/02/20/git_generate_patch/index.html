@@ -6,18 +6,18 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>Git生成patch的方法(diff and format-patch) | Coding 4 yourself</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Git 生成patch的方法（patch就是补丁）    注：因为博主用的是linux系统，所以运行的环境均在linux下。
+  <meta name="description" content="Git 生成patch的方法（patch就是补丁）    注:因为博主用的是linux系统,所以运行的环境均在linux下.
 1.在/home/jasper/下面建立一个文件夹作为git的本地仓库:123mkdir /home/jasper/test_for_gitcd test_for_gitgit init(创建一个repository)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git生成patch的方法(diff and format-patch)">
 <meta property="og:url" content="http://yoursite.com/2015/02/20/git_generate_patch/index.html">
 <meta property="og:site_name" content="Coding 4 yourself">
-<meta property="og:description" content="Git 生成patch的方法（patch就是补丁）    注：因为博主用的是linux系统，所以运行的环境均在linux下。
+<meta property="og:description" content="Git 生成patch的方法（patch就是补丁）    注:因为博主用的是linux系统,所以运行的环境均在linux下.
 1.在/home/jasper/下面建立一个文件夹作为git的本地仓库:123mkdir /home/jasper/test_for_gitcd test_for_gitgit init(创建一个repository)">
-<meta property="og:updated_time" content="2016-03-17T08:14:23.000Z">
+<meta property="og:updated_time" content="2016-03-18T01:41:46.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git生成patch的方法(diff and format-patch)">
-<meta name="twitter:description" content="Git 生成patch的方法（patch就是补丁）    注：因为博主用的是linux系统，所以运行的环境均在linux下。
+<meta name="twitter:description" content="Git 生成patch的方法（patch就是补丁）    注:因为博主用的是linux系统,所以运行的环境均在linux下.
 1.在/home/jasper/下面建立一个文件夹作为git的本地仓库:123mkdir /home/jasper/test_for_gitcd test_for_gitgit init(创建一个repository)">
   
     <link rel="alternative" href="/atom.xml" title="Coding 4 yourself" type="application/atom+xml">
@@ -44,6 +44,8 @@
 		  <h1 class="header-author"><a href="/">老纸辣么可爱</a></h1>
 		</hgroup>
 
+		
+		<p class="header-subtitle">Yes. That&#39;s right. As what you saw above.I am perty cute</p>
 		
 
 		
@@ -96,9 +98,9 @@
 						
 							<li><a href="/">主页</a></li>
 				        
-							<li><a href="/archives">所有文章</a></li>
+							<li><a href="/tags/tech">技术分享</a></li>
 				        
-							<li><a href="/tags/note">随笔</a></li>
+							<li><a href="/tags/life">柴米油盐</a></li>
 				        
 						</ul>
 					</nav>
@@ -111,8 +113,6 @@
 					        
 								<a class="rss" target="_blank" href="#" title="rss">rss</a>
 					        
-								<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
-					        
 						</div>
 					</nav>
 				</section>
@@ -120,7 +120,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Linux-command/" style="font-size: 10px;">Linux command</a> <a href="/tags/Linux-kernel/" style="font-size: 10px;">Linux kernel</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Translator/" style="font-size: 10px;">Translator</a> <a href="/tags/ftp/" style="font-size: 10px;">ftp</a> <a href="/tags/note/" style="font-size: 10px;">note</a> <a href="/tags/optparser/" style="font-size: 10px;">optparser</a> <a href="/tags/patch/" style="font-size: 10px;">patch</a>
+						<a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Linux-command/" style="font-size: 10px;">Linux command</a> <a href="/tags/Linux-kernel/" style="font-size: 10px;">Linux kernel</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Translator/" style="font-size: 10px;">Translator</a> <a href="/tags/ftp/" style="font-size: 10px;">ftp</a> <a href="/tags/life/" style="font-size: 10px;">life</a> <a href="/tags/optparser/" style="font-size: 10px;">optparser</a> <a href="/tags/patch/" style="font-size: 10px;">patch</a> <a href="/tags/tech/" style="font-size: 20px;">tech</a>
 					</div>
 				</section>
 				
@@ -167,14 +167,16 @@
 			  <h1 class="header-author">老纸辣么可爱</h1>
 			</hgroup>
 			
+			<p class="header-subtitle">Yes. That&#39;s right. As what you saw above.I am perty cute</p>
+			
 			<nav class="header-menu">
 				<ul>
 				
 					<li><a href="/">主页</a></li>
 		        
-					<li><a href="/archives">所有文章</a></li>
+					<li><a href="/tags/tech">技术分享</a></li>
 		        
-					<li><a href="/tags/note">随笔</a></li>
+					<li><a href="/tags/life">柴米油盐</a></li>
 		        
 		        <div class="clearfix"></div>
 				</ul>
@@ -187,8 +189,6 @@
 						<a class="weibo" target="_blank" href="http://weibo.com/u/2290478334" title="weibo">weibo</a>
 			        
 						<a class="rss" target="_blank" href="#" title="rss">rss</a>
-			        
-						<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
 			        
 				</div>
 			</nav>
@@ -222,7 +222,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/patch/">patch</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/patch/">patch</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tech/">tech</a></li></ul>
 	</div>
 
         
@@ -233,14 +233,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Git 生成patch的方法（patch就是补丁）<br>    注：因为博主用的是linux系统，所以运行的环境均在linux下。</p>
+        <p>Git 生成patch的方法（patch就是补丁）<br>    注:因为博主用的是linux系统,所以运行的环境均在linux下.</p>
 <h3 id="1-在-home-jasper-下面建立一个文件夹作为git的本地仓库"><a href="#1-在-home-jasper-下面建立一个文件夹作为git的本地仓库" class="headerlink" title="1.在/home/jasper/下面建立一个文件夹作为git的本地仓库:"></a>1.在/home/jasper/下面建立一个文件夹作为git的本地仓库:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir /home/jasper/<span class="built_in">test</span>_<span class="keyword">for</span>_git</span><br><span class="line"><span class="built_in">cd</span> <span class="built_in">test</span>_<span class="keyword">for</span>_git</span><br><span class="line">git init(创建一个repository)</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <h3 id="2-给本地仓库创建一个资源-并写入”hello-world”"><a href="#2-给本地仓库创建一个资源-并写入”hello-world”" class="headerlink" title="2.给本地仓库创建一个资源,并写入”hello world”"></a>2.给本地仓库创建一个资源,并写入”hello world”</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">touch hello.txt</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"hello world"</span>&gt;&gt;hello.txt</span><br></pre></td></tr></table></figure>
 <h3 id="3-提交本地仓库"><a href="#3-提交本地仓库" class="headerlink" title="3.提交本地仓库:"></a>3.提交本地仓库:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit <span class="_">-a</span> -m <span class="string">"first commit"</span></span><br></pre></td></tr></table></figure>
 <h3 id="4-创建一个本地branch-并且签出到新建的branch"><a href="#4-创建一个本地branch-并且签出到新建的branch" class="headerlink" title="4.创建一个本地branch,并且签出到新建的branch"></a>4.创建一个本地branch,并且签出到新建的branch</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git branch jasper</span><br><span class="line">git checkout jasper</span><br></pre></td></tr></table></figure>
-<h3 id="5-在jasper的branch下面为master-brach做一个patch-补丁"><a href="#5-在jasper的branch下面为master-brach做一个patch-补丁" class="headerlink" title="5.在jasper的branch下面为master brach做一个patch(补丁)"></a>5.在jasper的branch下面为master brach做一个patch(补丁)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">方法一：用diff的方法生成的通用补丁，patch的文件以.diff结尾:</span><br><span class="line">1.在patch分支中更改hello.txt:</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"first diff patch"</span> &gt;&gt; hello.txt</span><br><span class="line">2.然后将更改提交:</span><br><span class="line">git commit <span class="_">-a</span> -m <span class="string">"first diff patch commit"</span></span><br><span class="line">3.生成对master branch的patch 并将生成的patch以想要的文件名放到/home/jasper路径下面：</span><br><span class="line">git diff master &gt; /home/jasper/first_diff_patch.diff</span><br><span class="line">4.可以ls一下路径下面是否有生成的patch,LZ在/home/jasper下面可以看到自己生成的名为first_diff_patch.diff的patch</span><br><span class="line">5.签回master branch:</span><br><span class="line">git checkout master</span><br><span class="line">6.应用建立的patch:</span><br><span class="line">git apply /home/jasper/first_diff_patch.diff</span><br><span class="line">7.提交patch做的更改:</span><br><span class="line">git commit <span class="_">-a</span> -m <span class="string">"master got the change from diff patch"</span></span><br><span class="line">然后你就会发现master已经更新到和jasper branch一样了</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">方法二：用format-patch 生成git专用的patch</span><br><span class="line">1.继续使用上面的例子，签出到jasper branch:</span><br><span class="line">git checkout jasper</span><br><span class="line">2.修改hello.txt:</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"first format-patch patch"</span> &gt;&gt; hello.txt</span><br><span class="line">3.将更改提交:</span><br><span class="line">git commit <span class="_">-a</span> -m <span class="string">"first format-patch commit"</span></span><br><span class="line">4.生成对master branch的patch，生成的路径是在当前文件夹下:</span><br><span class="line">git format-patch -M master //(-M指的是与那个分支比较)</span><br><span class="line">5.然后会在当前路径下发现一个名为0001-first-format-patch-patch-commit.patch的patch档案(档案名字前面是序号，后面是提交的内容)</span><br><span class="line">6.签回master branch,并且应用patch:</span><br><span class="line">git checkout master</span><br><span class="line">git am 0001-first-format-patch-patch-commit.patch</span><br><span class="line">7.没有问题的话你就会发现master已经更新到和jasper一样了,然后请删除建立的分支</span><br></pre></td></tr></table></figure>
+<h3 id="5-在jasper的branch下面为master-brach做一个patch-补丁"><a href="#5-在jasper的branch下面为master-brach做一个patch-补丁" class="headerlink" title="5.在jasper的branch下面为master brach做一个patch(补丁)"></a>5.在jasper的branch下面为master brach做一个patch(补丁)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">方法一:用diff的方法生成的通用补丁，patch的文件以.diff结尾:</span><br><span class="line">1.在patch分支中更改hello.txt:</span><br><span class="line">echo &quot;first diff patch&quot; &gt;&gt; hello.txt</span><br><span class="line">2.然后将更改提交:</span><br><span class="line">git commit -a -m &quot;first diff patch commit&quot;</span><br><span class="line">3.生成对master branch的patch 并将生成的patch以想要的文件名放到/home/jasper路径下面:</span><br><span class="line">git diff master &gt; /home/jasper/first_diff_patch.diff</span><br><span class="line">4.可以ls一下路径下面是否有生成的patch,LZ在/home/jasper下面可以看到自己生成的名为first_diff_patch.diff的patch</span><br><span class="line">5.签回master branch:</span><br><span class="line">git checkout master</span><br><span class="line">6.应用建立的patch:</span><br><span class="line">git apply /home/jasper/first_diff_patch.diff</span><br><span class="line">7.提交patch做的更改:</span><br><span class="line">git commit -a -m &quot;master got the change from diff patch&quot;</span><br><span class="line">然后你就会发现master已经更新到和jasper branch一样了</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">方法二:用format-patch 生成git专用的patch</span><br><span class="line">1.继续使用上面的例子,签出到jasper branch:</span><br><span class="line">git checkout jasper</span><br><span class="line">2.修改hello.txt:</span><br><span class="line">echo &quot;first format-patch patch&quot; &gt;&gt; hello.txt</span><br><span class="line">3.将更改提交:</span><br><span class="line">git commit -a -m &quot;first format-patch commit&quot;</span><br><span class="line">4.生成对master branch的patch，生成的路径是在当前文件夹下:</span><br><span class="line">git format-patch -M master //(-M指的是与那个分支比较)</span><br><span class="line">5.然后会在当前路径下发现一个名为0001-first-format-patch-patch-commit.patch的patch档案(档案名字前面是序号，后面是提交的内容)</span><br><span class="line">6.签回master branch,并且应用patch:</span><br><span class="line">git checkout master</span><br><span class="line">git am 0001-first-format-patch-patch-commit.patch</span><br><span class="line">7.没有问题的话你就会发现master已经更新到和jasper一样了,然后请删除建立的分支</span><br></pre></td></tr></table></figure>
 <p>OK,两种方法都可以建立patch,只不过format-patch建立的patch的内容要多于diff建立的(可以cat两个patch察看内容),但是diff使用的面要比format-patch要多.</p>
 <p>linux下使用gitk方便查看仓库信息!!!</p>
 <p>&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;原创！欢迎转载&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</p>
