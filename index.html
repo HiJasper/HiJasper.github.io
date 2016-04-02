@@ -116,7 +116,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Linux-command/" style="font-size: 10px;">Linux command</a> <a href="/tags/Linux-kernel/" style="font-size: 10px;">Linux kernel</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Translator/" style="font-size: 10px;">Translator</a> <a href="/tags/ftp/" style="font-size: 10px;">ftp</a> <a href="/tags/life/" style="font-size: 10px;">life</a> <a href="/tags/optparser/" style="font-size: 10px;">optparser</a> <a href="/tags/patch/" style="font-size: 10px;">patch</a> <a href="/tags/tech/" style="font-size: 20px;">tech</a>
+						<a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Linux-command/" style="font-size: 10px;">Linux command</a> <a href="/tags/Linux-kernel/" style="font-size: 10px;">Linux kernel</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/SocketServer/" style="font-size: 10px;">SocketServer</a> <a href="/tags/Translator/" style="font-size: 10px;">Translator</a> <a href="/tags/ftp/" style="font-size: 10px;">ftp</a> <a href="/tags/life/" style="font-size: 10px;">life</a> <a href="/tags/optparser/" style="font-size: 10px;">optparser</a> <a href="/tags/patch/" style="font-size: 10px;">patch</a> <a href="/tags/tech/" style="font-size: 20px;">tech</a>
 					</div>
 				</section>
 				
@@ -196,11 +196,11 @@
 
       <div class="body-wrap">
   
-    <article id="post-mark" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-python_socketserver" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/03/24/mark/" class="article-date">
-  	<time datetime="2016-03-24T05:57:26.741Z" itemprop="datePublished">2016-03-24</time>
+      <a href="/2016/04/02/python_socketserver/" class="article-date">
+  	<time datetime="2016-04-02T11:03:00.000Z" itemprop="datePublished">2016-04-02</time>
 </a>
     </div>
   
@@ -213,7 +213,69 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/24/mark/">柴米油盐 - Mark for first day</a>
+      <a class="article-title" href="/2016/04/02/python_socketserver/">Python模块解析 - SocketServer模块</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>之前看python网络编程那一块的时候,有学习SocketServer的代码,上网有查过这个lib的用法,但是发觉不看source code的话很难真正厘清内部的运作.所以这篇博文主要从一个简单的例子从原码的角度做分析整个SocketServer类的解析.</p>
+<h2 id="类的继承关系："><a href="#类的继承关系：" class="headerlink" title="类的继承关系："></a>类的继承关系：</h2><p>我们首先先要厘清一下SocketServer里面基本的类的关系,我将大体的继承关系用下图表示：<br><img src="/images/socketserver_1.png" alt=""> <img src="/images/socketserver_2.png" alt=""><br>可以看到,SocketServer主要包含4个基本类:<code>BaseServer</code>(socket server建立的基类,主要的方法:serve_forever),<code>BaseRequestHandler</code>(request的处理类,主要的方法:handle方法的重写),还有两个使用分叉和线程来处理异步通信的类:<code>ForkingMixIn</code>和<code>ThreadingMixIn</code><br>其他的类都是在以上四个基类的基础上延伸出来的.我们用到的最多的是针对TCP流式套接字的类:<code>TCPServer</code>.后面的简单例子也是基于此</p>
+<p>另外看source code的时候有一个关于多个类同时继承的地方需要多注意,也就是关于新式类和经典类的继承区别.详情请参考</p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SocketServer/">SocketServer</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tech/">tech</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/04/02/python_socketserver/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-mark" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/11/mark/" class="article-date">
+  	<time datetime="2016-03-11T08:03:00.000Z" itemprop="datePublished">2016-03-11</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/11/mark/">柴米油盐 - Mark for first day</a>
     </h1>
   
 
@@ -238,7 +300,7 @@
 
       
         <p class="article-more-link">
-          <a  href="/2016/03/24/mark/#more">more >></a>
+          <a  href="/2016/03/11/mark/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -284,7 +346,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>这是一篇自己胡乱翻译的,翻译的可能会有错误,但是以自己目前对kernel的了解只能做到这样了,希望以后自己会有所成长,然后再次看到这篇翻译的时候莞尔一笑.</p>
-<h1 id="Android-Init-Language"><a href="#Android-Init-Language" class="headerlink" title="Android Init Language"></a>Android Init Language</h1><p>Android Init语言包含四种类型的关键字:Action,Commands,Services和Options<br>以#开头的行是注释<br>Action和Services声名一个新的section,所有的commands和options都属于靠的最近的section.在第一个section之前的commands和services都被忽略<br>每一个Actions和Services都有独立的名字,如果有相同名字的actions和services被声名,那这个section将被当成一个错误忽略掉.</p>
+<h1 id="Android-Init-Language"><a href="#Android-Init-Language" class="headerlink" title="Android Init Language"></a>Android Init Language</h1><p>Android Init语言包含四种类型的关键字:<code>Action</code>,<code>Commands</code>,<code>Services</code>和<code>Options</code><br>以#开头的行是注释<br><code>Action</code>和<code>Services</code>声名一个新的section,所有的<code>commands</code>和<code>options</code>都属于靠的最近的section.在第一个section之前的<code>commands</code>和<code>services</code>都被忽略<br>每一个<code>Actions</code>和<code>Services</code>都有独立的名字,如果有相同名字的<code>actions</code>和<code>services</code>被声名,那这个section将被当成一个错误忽略掉.</p>
       
     </div>
     
@@ -345,7 +407,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>最近一段时间因为工作的原因,开始接触android和linux内核的一些东西.<br>有时间的话会陆续写一些关于这方面的博客,今天这片blog讲的是frame buffer</p>
-<p>操作FrameBuffer的一般步骤如下:</p>
+<p>操作<code>FrameBuffer</code>的一般步骤如下:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">打开fb0设备文件(这个路径不一定,linux系统是放在/dev下面,嵌入式的系统可能放在/dev/graphics/下面);</span><br><span class="line">用ioctl函数获取显示屏的位深、分辨率等信息,两个重要的结构体类型是fb_fix_screeninfo和fb_var_screeninfo;</span><br><span class="line">mmap函数将FrameBuffer映射到用户空间;</span><br><span class="line">读写FrameBuffer,进行绘图和图片显示等;</span><br><span class="line">解除映射(munmap),关闭/dev/fb设备文件.</span><br></pre></td></tr></table></figure>
 <p>看程序说话:<br>
       
@@ -407,7 +469,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>最近博主有用到optparser这个module,其对命令行的参数解析功能还是很强大的</p>
+        <p>最近博主有用到<code>optparser</code>这个module,其对命令行的参数解析功能还是很强大的</p>
 <p>看原码的时候首先看到的是一个简单的例子:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> optparse <span class="keyword">import</span> OptionParser</span><br><span class="line"></span><br><span class="line">parser = OptionParser()</span><br><span class="line">parser.add_option(<span class="string">"-f"</span>, <span class="string">"--file"</span>, dest=<span class="string">"filename"</span>,</span><br><span class="line">                 help=<span class="string">"write report to FILE"</span>, metavar=<span class="string">"FILE"</span>)</span><br><span class="line">parser.add_option(<span class="string">"-q"</span>, <span class="string">"--quiet"</span>,</span><br><span class="line">                 action=<span class="string">"store_false"</span>, dest=<span class="string">"verbose"</span>, default=<span class="keyword">True</span>,</span><br><span class="line">                 help=<span class="string">"don't print status messages to stdout"</span>)</span><br><span class="line"></span><br><span class="line">(options, args) = parser.parse_args()</span><br></pre></td></tr></table></figure>
       
