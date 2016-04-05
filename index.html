@@ -79,7 +79,7 @@
 						<li>Links</li>
 						
 						
-						<li>About</li>
+						<li>Über</li>
 						
 					</ul>
 				</div>
@@ -116,7 +116,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Linux-command/" style="font-size: 10px;">Linux command</a> <a href="/tags/Linux-kernel/" style="font-size: 10px;">Linux kernel</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/SocketServer/" style="font-size: 10px;">SocketServer</a> <a href="/tags/Translator/" style="font-size: 10px;">Translator</a> <a href="/tags/ftp/" style="font-size: 10px;">ftp</a> <a href="/tags/life/" style="font-size: 10px;">life</a> <a href="/tags/optparser/" style="font-size: 10px;">optparser</a> <a href="/tags/patch/" style="font-size: 10px;">patch</a> <a href="/tags/tech/" style="font-size: 20px;">tech</a>
+						<a href="/tags/BaseHTTPServer/" style="font-size: 10px;">BaseHTTPServer</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Linux-command/" style="font-size: 10px;">Linux command</a> <a href="/tags/Linux-kernel/" style="font-size: 10px;">Linux kernel</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/SimpleHTTPServer/" style="font-size: 10px;">SimpleHTTPServer</a> <a href="/tags/SocketServer/" style="font-size: 10px;">SocketServer</a> <a href="/tags/Translator/" style="font-size: 10px;">Translator</a> <a href="/tags/ftp/" style="font-size: 10px;">ftp</a> <a href="/tags/life/" style="font-size: 10px;">life</a> <a href="/tags/optparser/" style="font-size: 10px;">optparser</a> <a href="/tags/patch/" style="font-size: 10px;">patch</a> <a href="/tags/tech/" style="font-size: 20px;">tech</a>
 					</div>
 				</section>
 				
@@ -196,6 +196,68 @@
 
       <div class="body-wrap">
   
+    <article id="post-python_simplehttpserver" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/05/python_simplehttpserver/" class="article-date">
+  	<time datetime="2016-04-05T11:03:00.000Z" itemprop="datePublished">2016-04-05</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/05/python_simplehttpserver/">Python模块解析 - SimpleHTTPServer和BaseHTTPServer模块</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>前面有学习了<a href="/2016/04/02/python_socketserver/">SocketServer模块</a>,之前说过<code>SocketServer</code>算是最基本的python服务器框架,那本文讲的<code>BaseHTTPServer</code>模块就是基于<code>SocketServer</code>,而<code>SimpleHTTPServer</code>模块则是基于<code>BaseHTTPServer</code>模块,所以他们的继承关系就很明了了.本文还是会以一个小栗子开始,结合类继承图和程式执行过程图来学习原码</p>
+<p>注:本文基于python2.7,不同的版本可能会导致差异</p>
+<h2 id="类的继承关系和执行流程："><a href="#类的继承关系和执行流程：" class="headerlink" title="类的继承关系和执行流程："></a>类的继承关系和执行流程：</h2><p>图中用不同颜色来划分不同类的方法,有方法重写的部分则是将该方法归于重写方法的类.<br><img src="/images/simplehttpserver_1.png" alt=""> <img src="/images/simplehttpserver_2.png" alt=""></p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/BaseHTTPServer/">BaseHTTPServer</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SimpleHTTPServer/">SimpleHTTPServer</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tech/">tech</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/04/05/python_simplehttpserver/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-python_socketserver" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -222,7 +284,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>之前看python网络编程那一块的时候,有学习SocketServer的代码,上网有查过这个lib的用法,但是发觉不看source code的话很难真正厘清内部的运作.所以这篇博文主要从一个简单的例子从原码的角度做分析整个SocketServer类的解析.</p>
+        <p>之前看python网络编程那一块的时候,有学习SocketServer的代码,上网有查过这个lib的用法,但是发觉不看source code的话很难真正厘清内部的运作.所以这篇博文主要从一个简单的例子从原码的角度做分析整个SocketServer类的解析.<br>注:本文基于python2.7,SocketServer的版本为0.4.不同的版本可能会导致差异</p>
 <h2 id="类的继承关系："><a href="#类的继承关系：" class="headerlink" title="类的继承关系："></a>类的继承关系：</h2><p>我们首先先要厘清一下SocketServer里面基本的类的关系,我将大体的继承关系用下图表示：<br><img src="/images/socketserver_1.png" alt=""> <img src="/images/socketserver_2.png" alt=""><br>可以看到,SocketServer主要包含4个基本类:<code>BaseServer</code>(socket server建立的基类,主要的方法:serve_forever),<code>BaseRequestHandler</code>(request的处理类,主要的方法:handle方法的重写),还有两个使用分叉和线程来处理异步通信的类:<code>ForkingMixIn</code>和<code>ThreadingMixIn</code><br>其他的类都是在以上四个基类的基础上延伸出来的.我们用到的最多的是针对TCP流式套接字的类:<code>TCPServer</code>.后面的简单例子也是基于此</p>
 <p>另外看source code的时候有一个关于多个类同时继承的地方需要多注意,也就是关于新式类和经典类的继承区别.详情请参考<a href="/2015/12/12/python_new_and_old_class/">Python新式类和经典类的继承区别</a></p>
       
