@@ -81,120 +81,6 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/07/20/Frame Buffer/" title="Frame Buffer控制嵌入式设备显示屏" itemprop="url">Frame Buffer控制嵌入式设备显示屏</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Jasper Xu" target="_blank" itemprop="author">Jasper Xu</a>
-		
-  <p class="article-time">
-    <time datetime="2015-07-20T12:03:00.000Z" itemprop="datePublished"> 发表于 2015-07-20</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>最近一段时间因为工作的原因,开始接触android和linux内核的一些东西.<br>有时间的话会陆续写一些关于这方面的博客,今天这片blog讲的是frame buffer</p>
-<h2 id="操作FrameBuffer的一般步骤"><a href="#操作FrameBuffer的一般步骤" class="headerlink" title="操作FrameBuffer的一般步骤"></a>操作FrameBuffer的一般步骤</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">打开fb0设备文件(这个路径不一定,linux系统是放在/dev下面,嵌入式的系统可能放在/dev/graphics/下面);</span><br><span class="line">用ioctl函数获取显示屏的位深、分辨率等信息,两个重要的结构体类型是fb_fix_screeninfo和fb_var_screeninfo;</span><br><span class="line">mmap函数将FrameBuffer映射到用户空间;</span><br><span class="line">读写FrameBuffer,进行绘图和图片显示等;</span><br><span class="line">解除映射(munmap),关闭/dev/fb设备文件.</span><br></pre></td></tr></table></figure>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2015/07/20/Frame Buffer/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/Linux-kernel/">Linux kernel</a><a href="/tags/tech/">tech</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/02/20/git_generate_patch/" title="Git生成patch的方法(diff and format-patch)" itemprop="url">Git生成patch的方法(diff and format-patch)</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Jasper Xu" target="_blank" itemprop="author">Jasper Xu</a>
-		
-  <p class="article-time">
-    <time datetime="2015-02-20T08:03:00.000Z" itemprop="datePublished"> 发表于 2015-02-20</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>Git 生成patch的方法（patch就是补丁）<br>    注:因为博主用的是linux系统,所以运行的环境均在linux下.</p>
-<h3 id="建立一个文件夹作为git的本地仓库"><a href="#建立一个文件夹作为git的本地仓库" class="headerlink" title="建立一个文件夹作为git的本地仓库:"></a>建立一个文件夹作为git的本地仓库:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir /home/jasper/<span class="built_in">test</span>_<span class="keyword">for</span>_git</span><br><span class="line"><span class="built_in">cd</span> <span class="built_in">test</span>_<span class="keyword">for</span>_git</span><br><span class="line">git init(创建一个repository)</span><br></pre></td></tr></table></figure>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2015/02/20/git_generate_patch/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/tech/">tech</a><a href="/tags/Git/">Git</a><a href="/tags/patch/">patch</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
       <a href="/2015/02/02/linux_ftp_command/" title="Linux命令讲解 - ftp命令简介" itemprop="url">Linux命令讲解 - ftp命令简介</a>
   </h1>
   <p class="article-author">By
@@ -225,7 +111,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/tech/">tech</a><a href="/tags/Linux-command/">Linux command</a><a href="/tags/ftp/">ftp</a>
+  <span></span> <a href="/tags/Linux-command/">Linux command</a><a href="/tags/ftp/">ftp</a>
   </div>
 
 </div>
@@ -267,15 +153,11 @@
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/tech/" title="tech">tech<sup>9</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/Python/" title="Python">Python<sup>5</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/Git/" title="Git">Git<sup>1</sup></a></li>
+				<li><a href="/tags/optparser/" title="optparser">optparser<sup>1</sup></a></li>
 			
 		
 			
@@ -299,7 +181,7 @@
 			
 		
 			
-				<li><a href="/tags/optparser/" title="optparser">optparser<sup>1</sup></a></li>
+				<li><a href="/tags/Git/" title="Git">Git<sup>1</sup></a></li>
 			
 		
 			
@@ -374,8 +256,8 @@
 	
 	
 	<section class="info">
-		<p> Life is short,you need Python <br/>
-			Life is short,you need Python</p>
+		<p> jasper@ShangHai:~$ python <br/>
+			&gt;&gt;&gt; import this</p>
 	</section>
 	 
 	<div class="social-font" class="clearfix">
