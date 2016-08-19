@@ -81,6 +81,69 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2016/07/13/Python_zip_map_filter_reduce/" title="Python函数式编程 - zip| map| filter| reduce" itemprop="url">Python函数式编程 - zip| map| filter| reduce</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Jasper Xu" target="_blank" itemprop="author">Jasper Xu</a>
+		
+  <p class="article-time">
+    <time datetime="2016-07-13T11:21:00.000Z" itemprop="datePublished"> 发表于 2016-07-13</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <p>Python中有很多函数式编程的方法,本文介绍的是最常见的几个函数<br>注:本文基于python2.7.不同的版本可能会导致差异</p>
+<h2 id="Zip-集资"><a href="#Zip-集资" class="headerlink" title="Zip - 集资"></a>Zip - 集资</h2><p>标准格式<code>zip(seq[, seq[, seq]])</code><br>举个栗子:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = (i <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">3</span>))</span><br><span class="line">b = [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</span><br><span class="line">c = (<span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>)</span><br><span class="line">abc = zip(a, b, c)</span><br></pre></td></tr></table></figure></p>
+<p>abc的结果为<code>[(0, 4, 7), (1, 5, 8), (2, 6, 9)]</code><br>所以zip函数的作用已经很明显了,它就好比abc三家集资,一家出一个.<br>那当c家很富,a家没那么富怎么办呢?<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = (i <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>))</span><br><span class="line">b = [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</span><br><span class="line">c = (<span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>)</span><br><span class="line">abc = zip(a,b,c)</span><br></pre></td></tr></table></figure></p>
+<p>abc三家集资的结果为<code>[(0, 4, 7), (1, 5, 8)]</code>,说好的一家出一个,你家没有了,那我也就不出了(你看,代码也这么现实…)</p>
+<p>之所以举的栗子不全是list,就是想说明一个小的注意点,zip接受的都是具有迭代的属性的参数(<code>__iter__</code>),这个后面会讲</p>
+        
+        
+        <p class="article-more-link">
+          
+            <a href="/2016/07/13/Python_zip_map_filter_reduce/#more">Read More</a>
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Python/">Python</a><a href="/tags/函数式编程/">函数式编程</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2016/07/13/Python_zip_map_filter_reduce/#comments" class="ds-thread-count comments-count-link" data-thread-key="2016/07/13/Python_zip_map_filter_reduce/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2016/06/10/python_yield/" title="Python中关键字yield有什么作用" itemprop="url">Python中关键字yield有什么作用</a>
   </h1>
   <p class="article-author">By
@@ -559,66 +622,6 @@
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/02/20/git_generate_patch/" title="Git生成patch的方法(diff and format-patch)" itemprop="url">Git生成patch的方法(diff and format-patch)</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Jasper Xu" target="_blank" itemprop="author">Jasper Xu</a>
-		
-  <p class="article-time">
-    <time datetime="2015-02-20T08:03:00.000Z" itemprop="datePublished"> 发表于 2015-02-20</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>Git 生成patch的方法（patch就是补丁）<br>    注:因为博主用的是linux系统,所以运行的环境均在linux下.</p>
-<h3 id="建立一个文件夹作为git的本地仓库"><a href="#建立一个文件夹作为git的本地仓库" class="headerlink" title="建立一个文件夹作为git的本地仓库:"></a>建立一个文件夹作为git的本地仓库:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir /home/jasper/<span class="built_in">test</span>_<span class="keyword">for</span>_git</span><br><span class="line"><span class="built_in">cd</span> <span class="built_in">test</span>_<span class="keyword">for</span>_git</span><br><span class="line">git init(创建一个repository)</span><br></pre></td></tr></table></figure>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2015/02/20/git_generate_patch/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/Git/">Git</a><a href="/tags/patch/">patch</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/02/20/git_generate_patch/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/02/20/git_generate_patch/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
     <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next<span></span></a>
@@ -639,11 +642,19 @@
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/Python/" title="Python">Python<sup>5</sup></a></li>
+				<li><a href="/tags/Python/" title="Python">Python<sup>6</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/optparser/" title="optparser">optparser<sup>1</sup></a></li>
+				<li><a href="/tags/life/" title="life">life<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/函数式编程/" title="函数式编程">函数式编程<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Git/" title="Git">Git<sup>1</sup></a></li>
 			
 		
 			
@@ -663,14 +674,6 @@
 			
 		
 			
-				<li><a href="/tags/life/" title="life">life<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/Git/" title="Git">Git<sup>1</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/SimpleHTTPServer/" title="SimpleHTTPServer">SimpleHTTPServer<sup>1</sup></a></li>
 			
 		
@@ -679,15 +682,19 @@
 			
 		
 			
+				<li><a href="/tags/optparser/" title="optparser">optparser<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/SocketServer/" title="SocketServer">SocketServer<sup>1</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/别人说/" title="别人说">别人说<sup>1</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/yield/" title="yield">yield<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/SocketServer/" title="SocketServer">SocketServer<sup>1</sup></a></li>
 			
 		
 			
