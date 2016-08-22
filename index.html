@@ -157,7 +157,9 @@
 </header>
     <div class="article-content">
         
-        <p>例如下面这段代码:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">node</span>.<span class="title">_get_child_candidates</span><span class="params">(self, distance, min_dist, max_dist)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> self._leftchild <span class="keyword">and</span> distance - max_dist &lt; self._median:</span><br><span class="line">        <span class="keyword">yield</span> self._leftchild</span><br><span class="line">    <span class="keyword">if</span> self._rightchild <span class="keyword">and</span> distance + max_dist &gt;= self._median:</span><br><span class="line">        <span class="keyword">yield</span> self._rightchild</span><br></pre></td></tr></table></figure></p>
+        <p>本文转自<a href="https://taizilongxu.gitbooks.io/stackoverflow-about-python/content/1/README.html">Python中关键字yield有什么作用?</a></p>
+<hr>
+<p>例如下面这段代码:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">node</span>.<span class="title">_get_child_candidates</span><span class="params">(self, distance, min_dist, max_dist)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> self._leftchild <span class="keyword">and</span> distance - max_dist &lt; self._median:</span><br><span class="line">        <span class="keyword">yield</span> self._leftchild</span><br><span class="line">    <span class="keyword">if</span> self._rightchild <span class="keyword">and</span> distance + max_dist &gt;= self._median:</span><br><span class="line">        <span class="keyword">yield</span> self._rightchild</span><br></pre></td></tr></table></figure></p>
 <p>下面是调用它:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">result, candidates = list(), [self]</span><br><span class="line"><span class="keyword">while</span> candidates:</span><br><span class="line">    node = candidates.pop()</span><br><span class="line">    distance = node._get_dist(obj)</span><br><span class="line">    <span class="keyword">if</span> distance &lt;= max_dist <span class="keyword">and</span> distance &gt;= min_dist:</span><br><span class="line">        result.extend(node._values)</span><br><span class="line">    candidates.extend(node._get_child_candidates(distance, min_dist, max_dist))</span><br><span class="line"><span class="keyword">return</span> result</span><br></pre></td></tr></table></figure></p>
         
         
@@ -674,15 +676,15 @@
 			
 		
 			
+				<li><a href="/tags/optparser/" title="optparser">optparser<sup>1</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/SimpleHTTPServer/" title="SimpleHTTPServer">SimpleHTTPServer<sup>1</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/BaseHTTPServer/" title="BaseHTTPServer">BaseHTTPServer<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/optparser/" title="optparser">optparser<sup>1</sup></a></li>
 			
 		
 			
