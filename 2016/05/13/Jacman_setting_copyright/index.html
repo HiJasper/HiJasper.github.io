@@ -4,22 +4,26 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Coding 4 yourself</title>
+    <title>Jacman-master主题设置 - 自动添加版权声明 | Coding 4 yourself</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Jasper Xu">
     
 
     
-    <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Coding 4 yourself">
-<meta property="og:url" content="http://4coding.cn/index.html">
+    <meta name="description" content="虽然这里不会有太多人来看，文章大多数也是自己的个人看法，鉴于自己的阅历和技术水平，难免会有纰漏。但是每一篇原创文章自己都有花心思在上面，所以我会在每篇原创的文章最后添加&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;原创 装载请注明出处&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;的信息(虽然到现在也没发现被别人转载过什么T_T)
+鉴于每次POST文章都要手动添加那一行，这个操作感觉有点反人类，所以决定添加自动">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Jacman-master主题设置 - 自动添加版权声明">
+<meta property="og:url" content="http://4coding.cn/2016/05/13/Jacman_setting_copyright/index.html">
 <meta property="og:site_name" content="Coding 4 yourself">
-<meta property="og:description">
+<meta property="og:description" content="虽然这里不会有太多人来看，文章大多数也是自己的个人看法，鉴于自己的阅历和技术水平，难免会有纰漏。但是每一篇原创文章自己都有花心思在上面，所以我会在每篇原创的文章最后添加&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;原创 装载请注明出处&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;的信息(虽然到现在也没发现被别人转载过什么T_T)
+鉴于每次POST文章都要手动添加那一行，这个操作感觉有点反人类，所以决定添加自动">
+<meta property="og:updated_time" content="2016-08-25T07:35:16.767Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Coding 4 yourself">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Jacman-master主题设置 - 自动添加版权声明">
+<meta name="twitter:description" content="虽然这里不会有太多人来看，文章大多数也是自己的个人看法，鉴于自己的阅历和技术水平，难免会有纰漏。但是每一篇原创文章自己都有花心思在上面，所以我会在每篇原创的文章最后添加&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;原创 装载请注明出处&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;的信息(虽然到现在也没发现被别人转载过什么T_T)
+鉴于每次POST文章都要手动添加那一行，这个操作感觉有点反人类，所以决定添加自动">
 
     
     <link rel="alternative" href="/atom.xml" title="Coding 4 yourself" type="application/atom+xml">
@@ -73,133 +77,11 @@
 </div>
     </header>
     <div id="container">
-      <div id="main">
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2016/07/13/Python_zip_map_filter_reduce/" title="Python函数式编程 - zip| map| filter| reduce" itemprop="url">Python函数式编程 - zip| map| filter| reduce</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Jasper Xu" target="_blank" itemprop="author">Jasper Xu</a>
-		
-  <p class="article-time">
-    <time datetime="2016-07-13T11:21:00.000Z" itemprop="datePublished"> 发表于 2016-07-13</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>Python中有很多函数式编程的方法,本文介绍的是最常见的几个函数<br>注:本文基于python2.7.不同的版本可能会导致差异</p>
-<h2 id="Zip-集资"><a href="#Zip-集资" class="headerlink" title="Zip - 集资"></a>Zip - 集资</h2><p>标准格式<code>zip(seq[, seq[, seq]])</code><br>举个栗子:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = (i <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">3</span>))</span><br><span class="line">b = [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</span><br><span class="line">c = (<span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>)</span><br><span class="line">abc = zip(a, b, c)</span><br></pre></td></tr></table></figure></p>
-<p>abc的结果为<code>[(0, 4, 7), (1, 5, 8), (2, 6, 9)]</code><br>所以zip函数的作用已经很明显了,它就好比abc三家集资,一家出一个.<br>那当c家很富,a家没那么富怎么办呢?<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = (i <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>))</span><br><span class="line">b = [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</span><br><span class="line">c = (<span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>)</span><br><span class="line">abc = zip(a,b,c)</span><br></pre></td></tr></table></figure></p>
-<p>abc三家集资的结果为<code>[(0, 4, 7), (1, 5, 8)]</code>,说好的一家出一个,你家没有了,那我也就不出了(你看,代码也这么现实…)</p>
-<p>之所以举的栗子不全是list,就是想说明一个小的注意点,zip接受的都是具有迭代的属性的参数(<code>__iter__</code>),这个后面会讲</p>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2016/07/13/Python_zip_map_filter_reduce/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
+      <div id="main" class="post" itemscope itemprop="blogPost">
   
-  <span></span> <a href="/tags/Python/">Python</a><a href="/tags/函数式编程/">函数式编程</a>
-  </div>
 
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2016/07/13/Python_zip_map_filter_reduce/#comments" class="ds-thread-count comments-count-link" data-thread-key="2016/07/13/Python_zip_map_filter_reduce/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2016/06/10/python_yield/" title="Python中关键字yield有什么作用" itemprop="url">Python中关键字yield有什么作用</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Jasper Xu" target="_blank" itemprop="author">Jasper Xu</a>
-		
-  <p class="article-time">
-    <time datetime="2016-06-10T09:03:00.000Z" itemprop="datePublished"> 发表于 2016-06-10</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>本文转自<a href="https://taizilongxu.gitbooks.io/stackoverflow-about-python/content/1/README.html">Python中关键字yield有什么作用?</a></p>
-<hr>
-<p>例如下面这段代码:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">node</span>.<span class="title">_get_child_candidates</span><span class="params">(self, distance, min_dist, max_dist)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> self._leftchild <span class="keyword">and</span> distance - max_dist &lt; self._median:</span><br><span class="line">        <span class="keyword">yield</span> self._leftchild</span><br><span class="line">    <span class="keyword">if</span> self._rightchild <span class="keyword">and</span> distance + max_dist &gt;= self._median:</span><br><span class="line">        <span class="keyword">yield</span> self._rightchild</span><br></pre></td></tr></table></figure></p>
-<p>下面是调用它:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">result, candidates = list(), [self]</span><br><span class="line"><span class="keyword">while</span> candidates:</span><br><span class="line">    node = candidates.pop()</span><br><span class="line">    distance = node._get_dist(obj)</span><br><span class="line">    <span class="keyword">if</span> distance &lt;= max_dist <span class="keyword">and</span> distance &gt;= min_dist:</span><br><span class="line">        result.extend(node._values)</span><br><span class="line">    candidates.extend(node._get_child_candidates(distance, min_dist, max_dist))</span><br><span class="line"><span class="keyword">return</span> result</span><br></pre></td></tr></table></figure></p>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2016/06/10/python_yield/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/Python/">Python</a><a href="/tags/别人说/">别人说</a><a href="/tags/yield/">yield</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2016/06/10/python_yield/#comments" class="ds-thread-count comments-count-link" data-thread-key="2016/06/10/python_yield/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
   <h1 itemprop="name">
     
       <a href="/2016/05/13/Jacman_setting_copyright/" title="Jacman-master主题设置 - 自动添加版权声明" itemprop="url">Jacman-master主题设置 - 自动添加版权声明</a>
@@ -213,9 +95,16 @@
     
   </p>
 </header>
-    <div class="article-content">
-        
-        <p>虽然这里不会有太多人来看，文章大多数也是自己的个人看法，鉴于自己的阅历和技术水平，难免会有纰漏。<br>但是每一篇原创文章自己都有花心思在上面，所以我会在每篇原创的文章最后添加<code>&lt;&lt;&lt;&lt;&lt;原创 装载请注明出处&gt;&gt;&gt;&gt;&gt;</code>的信息(虽然到现在也没发现被别人转载过什么T_T)</p>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#创建版权信息的内容"><span class="toc-number">1.</span> <span class="toc-text">创建版权信息的内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建版权信息对应的样式表"><span class="toc-number">2.</span> <span class="toc-text">创建版权信息对应的样式表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#布局页面版权信息"><span class="toc-number">3.</span> <span class="toc-text">布局页面版权信息</span></a></li></ol>
+		
+		</div>
+		
+		<p>虽然这里不会有太多人来看，文章大多数也是自己的个人看法，鉴于自己的阅历和技术水平，难免会有纰漏。<br>但是每一篇原创文章自己都有花心思在上面，所以我会在每篇原创的文章最后添加<code>&lt;&lt;&lt;&lt;&lt;原创 装载请注明出处&gt;&gt;&gt;&gt;&gt;</code>的信息(虽然到现在也没发现被别人转载过什么T_T)</p>
 <p>鉴于每次POST文章都要手动添加那一行，这个操作感觉有点反人类，所以决定添加自动在文章底部添加版权信息的功能。<br>这里要感谢培豪的文章 - <a href="http://www.cnblogs.com/peihao/p/5365733.html" target="_blank" rel="external">Hexo - 文章版权追加</a>，里面为我提供了漂亮的css模板和处理的方法。<br>但是可能是因为使用的主题有差(我用的是Jacman-master主题)，所以还要做部分的修改。</p>
 <h2 id="创建版权信息的内容"><a href="#创建版权信息的内容" class="headerlink" title="创建版权信息的内容"></a>创建版权信息的内容</h2><p>在<code>/Jacman-master/layout/_partial/post/</code>下添加要show出来的版权信息，这里我们创建<code>auto_copyright.ejs</code>，内容如下<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"article-footer-copyright"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">center</span>&gt;</span>本文由<span class="tag">&lt;<span class="name">b</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&lt;%= config.root %&gt;about/"</span> <span class="attr">target</span>=<span class="string">"_blank"</span> <span class="attr">title</span>=<span class="string">"&lt;%= config.author %&gt;"</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span> <span class="attr">config.author</span> %&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">b</span>&gt;</span>原创,采用<span class="tag">&lt;<span class="name">b</span>&gt;</span>BY<span class="tag">&lt;/<span class="name">b</span>&gt;</span>-<span class="tag">&lt;<span class="name">b</span>&gt;</span>NC<span class="tag">&lt;/<span class="name">b</span>&gt;</span>-<span class="tag">&lt;<span class="name">b</span>&gt;</span>SA<span class="tag">&lt;/<span class="name">b</span>&gt;</span>国际许可协议进行许可<span class="tag">&lt;/<span class="name">center</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">center</span>&gt;</span>转载请注明作者及出处,本文作者为<span class="tag">&lt;<span class="name">b</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&lt;%= config.root %&gt;about/"</span> <span class="attr">target</span>=<span class="string">"_blank"</span> <span class="attr">title</span>=<span class="string">"&lt;%= config.author %&gt;"</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span> <span class="attr">config.author</span> %&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">b</span>&gt;</span><span class="tag">&lt;/<span class="name">center</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">center</span>&gt;</span>本文链接为<span class="tag">&lt;<span class="name">b</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&lt;%- config.root %&gt;&lt;%- item.path %&gt;"</span> <span class="attr">target</span>=<span class="string">"_blank"</span> <span class="attr">title</span>=<span class="string">"&lt;%= item.title %&gt;"</span>&gt;</span><span class="tag">&lt;<span class="name">%-</span> <span class="attr">config.url</span> %&gt;</span>/<span class="tag">&lt;<span class="name">%-</span> <span class="attr">item.path</span> %&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">b</span>&gt;</span>.<span class="tag">&lt;/<span class="name">center</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p>鉴于主题的不同，里面的参数部分会有差异。<br>显示的内容可根据自己需求自行更改。</p>
@@ -226,14 +115,19 @@
 <p>在 article.ejs 中我们对这个 flag 和是否是主页做判断，flag 为 true 且不是主页的情况下再显示 <code>copyright</code>信息。完整代码如下：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"main"</span> <span class="attr">class</span>=<span class="string">"&lt;%= item.layout %&gt;"</span> <span class="attr">itemscope</span> <span class="attr">itemprop</span>=<span class="string">"blogPost"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span> (<span class="attr">page.layout</span>=<span class="string">='photo'</span> &amp;&amp; <span class="attr">item.photos</span> &amp;&amp; <span class="attr">item.photos.length</span>)&#123; %&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">%-</span> <span class="attr">partial</span>('<span class="attr">gallery</span>') %&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="tag">&lt;<span class="name">article</span> <span class="attr">itemprop</span>=<span class="string">"articleBody"</span>&gt;</span> </span><br><span class="line">		<span class="tag">&lt;<span class="name">%-</span> <span class="attr">partial</span>('<span class="attr">header</span>') %&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"article-content"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span>( <span class="attr">table</span>&amp;&amp;(<span class="attr">item.toc</span> !=<span class="string">=</span> <span class="attr">false</span>) &amp;&amp; <span class="attr">theme.toc.article</span>)&#123; %&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"toc"</span> <span class="attr">class</span>=<span class="string">"toc-article"</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">strong</span> <span class="attr">class</span>=<span class="string">"toc-title"</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span> <span class="attr">__</span>('<span class="attr">contents</span>') %&gt;</span><span class="tag">&lt;/<span class="name">strong</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span>(<span class="attr">item.list_number</span> =<span class="string">=</span> <span class="attr">false</span>) &#123;%&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">%-</span> <span class="attr">toc</span>(<span class="attr">item.content</span>,&#123;<span class="attr">list_number:false</span>&#125;) %&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">%</span> &#125;<span class="attr">else</span>&#123; %&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">%-</span> <span class="attr">toc</span>(<span class="attr">item.content</span>) %&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">%-</span> <span class="attr">item.content</span> %&gt;</span>  </span><br><span class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span> (!<span class="attr">index</span> &amp;&amp; <span class="attr">item.show_copyright</span> =<span class="string">=</span> <span class="attr">true</span>) &#123; %&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">%-</span> <span class="attr">partial</span>('<span class="attr">auto_copyright</span>') %&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">%-</span> <span class="attr">partial</span>('<span class="attr">footer</span>') %&gt;</span>   	       </span><br><span class="line">	<span class="tag">&lt;/<span class="name">article</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">%-</span> <span class="attr">partial</span>('<span class="attr">pagination</span>') %&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">%-</span> <span class="attr">partial</span>('<span class="attr">comment</span>') %&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p>这样在我们原创的文章前面设置 <code>show_copyright</code> 为 <code>true</code> 时就可以显示 <code>copyright</code> 信息啦！！具体效果往下翻翻你就看到啦！</p>
 <p>That’s all, Thank you.</p>
+  
+	</div>
+		
+			<div class="article-footer-copyright">
+  <center>本文由<b><a href="/about/" target="_blank" title="Jasper Xu">Jasper Xu</a></b>创作和发表,采用<b>BY</b>-<b>NC</b>-<b>SA</b>国际许可协议进行许可</center>
 
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
+  <center>转载请注明作者及出处,本文作者为<b><a href="/about/" target="_blank" title="Jasper Xu">Jasper Xu</a></b></center>
+
+  <center>本文链接为<b><a href="/2016/05/13/Jacman_setting_copyright/" target="_blank" title="Jacman-master主题设置 - 自动添加版权声明">http://4coding.cn/2016/05/13/Jacman_setting_copyright/</a></b>.</center>
+</div>
+
+		
+		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
 
@@ -246,381 +140,57 @@
 
 
 
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://4coding.cn/2016/05/13/Jacman_setting_copyright/" data-title="Jacman-master主题设置 - 自动添加版权声明 | Coding 4 yourself" data-tsina="2290478334" class="share clearfix">
+	  </div>
+	
+	</div>
 
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2016/05/13/Jacman_setting_copyright/#comments" class="ds-thread-count comments-count-link" data-thread-key="2016/05/13/Jacman_setting_copyright/" data-count-type="comments">&nbsp;</a>
-	
-</div>
 
 </footer>
 
-
-    </article>
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2016/04/05/python_simplehttpserver/" title="Python模块解析 - SimpleHTTPServer和BaseHTTPServer模块" itemprop="url">Python模块解析 - SimpleHTTPServer和BaseHTTPServer模块</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Jasper Xu" target="_blank" itemprop="author">Jasper Xu</a>
-		
-  <p class="article-time">
-    <time datetime="2016-04-05T11:03:00.000Z" itemprop="datePublished"> 发表于 2016-04-05</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>前面有学习了<a href="/2016/04/02/python_socketserver/">SocketServer模块</a>,之前说过<code>SocketServer</code>算是最基本的python服务器框架,那本文讲的<code>BaseHTTPServer</code>模块就是基于<code>SocketServer</code>,而<code>SimpleHTTPServer</code>模块则是基于<code>BaseHTTPServer</code>模块,所以他们的继承关系就很明了了.本文还是会以一个小栗子开始,结合类继承图和程式执行过程图来学习原码</p>
-<p>注:本文基于python2.7,不同的版本可能会导致差异</p>
-<h2 id="类的继承关系和执行流程"><a href="#类的继承关系和执行流程" class="headerlink" title="类的继承关系和执行流程"></a>类的继承关系和执行流程</h2><p>图中用不同颜色来划分不同类的方法,有方法重写的部分则是将该方法归于重写方法的类.</p>
-<p><img src="/images/simplehttpserver_1.png" alt=""> <img src="/images/simplehttpserver_2.png" alt=""></p>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2016/04/05/python_simplehttpserver/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/Python/">Python</a><a href="/tags/SimpleHTTPServer/">SimpleHTTPServer</a><a href="/tags/BaseHTTPServer/">BaseHTTPServer</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
+   	       
+	</article>
 	
-	  	<span></span>
-		<a href="/2016/04/05/python_simplehttpserver/#comments" class="ds-thread-count comments-count-link" data-thread-key="2016/04/05/python_simplehttpserver/" data-count-type="comments">&nbsp;</a>
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2016/06/10/python_yield/" title="Python中关键字yield有什么作用">
+  <strong>上一篇：</strong><br/>
+  <span>
+  Python中关键字yield有什么作用</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2016/04/05/python_simplehttpserver/"  title="Python模块解析 - SimpleHTTPServer和BaseHTTPServer模块">
+ <strong>下一篇：</strong><br/> 
+ <span>Python模块解析 - SimpleHTTPServer和BaseHTTPServer模块
+</span>
+</a>
+</div>
+
+</nav>
+
 	
-</div>
+<section id="comments" class="comment">
+	<div class="ds-thread" data-thread-key="2016/05/13/Jacman_setting_copyright/" data-title="Jacman-master主题设置 - 自动添加版权声明" data-url="http://4coding.cn/2016/05/13/Jacman_setting_copyright/"></div>
+</section>
 
-</footer>
 
+</div>  
 
-    </article>
 
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2016/04/02/python_socketserver/" title="Python模块解析 - SocketServer模块" itemprop="url">Python模块解析 - SocketServer模块</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Jasper Xu" target="_blank" itemprop="author">Jasper Xu</a>
-		
-  <p class="article-time">
-    <time datetime="2016-04-02T11:03:00.000Z" itemprop="datePublished"> 发表于 2016-04-02</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>之前看python网络编程那一块的时候,有学习SocketServer的代码,上网有查过这个lib的用法,但是发觉不看source code的话很难真正厘清内部的运作.所以这篇博文主要从一个简单的例子从原码的角度做分析整个SocketServer类的解析.<br>注:本文基于python2.7,SocketServer的版本为0.4.不同的版本可能会导致差异</p>
-<h2 id="类的继承关系"><a href="#类的继承关系" class="headerlink" title="类的继承关系"></a>类的继承关系</h2><p>我们首先先要厘清一下SocketServer里面基本的类的关系,我将大体的继承关系用下图表示：<br><img src="/images/socketserver_1.png" alt=""> <img src="/images/socketserver_2.png" alt=""><br>可以看到,SocketServer主要包含4个基本类:<code>BaseServer</code>(socket server建立的基类,主要的方法:serve_forever),<code>BaseRequestHandler</code>(request的处理类,主要的方法:handle方法的重写),还有两个使用分叉和线程来处理异步通信的类:<code>ForkingMixIn</code>和<code>ThreadingMixIn</code><br>其他的类都是在以上四个基类的基础上延伸出来的.我们用到的最多的是针对TCP流式套接字的类:<code>TCPServer</code>.后面的简单例子也是基于此</p>
-<p>另外看source code的时候有一个关于多个类同时继承的地方需要多注意,也就是关于新式类和经典类的继承区别.详情请参考<a href="/2015/12/12/python_new_and_old_class/">Python新式类和经典类的继承区别</a></p>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2016/04/02/python_socketserver/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/Python/">Python</a><a href="/tags/SocketServer/">SocketServer</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2016/04/02/python_socketserver/#comments" class="ds-thread-count comments-count-link" data-thread-key="2016/04/02/python_socketserver/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2016/03/11/mark/" title="柴米油盐 - Mark for first day" itemprop="url">柴米油盐 - Mark for first day</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Jasper Xu" target="_blank" itemprop="author">Jasper Xu</a>
-		
-  <p class="article-time">
-    <time datetime="2016-03-11T08:03:00.000Z" itemprop="datePublished"> 发表于 2016-03-11</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h2 id="First-Day"><a href="#First-Day" class="headerlink" title="First Day"></a>First Day</h2><p><img src="/images/web.jpg" alt=""></p>
-<p>现实图片的方式:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![](/images/web.jpg)</span><br></pre></td></tr></table></figure></p>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2016/03/11/mark/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/life/">life</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2016/03/11/mark/#comments" class="ds-thread-count comments-count-link" data-thread-key="2016/03/11/mark/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2016/02/11/python_optparser/" title="Python模块解析 - optparser模块" itemprop="url">Python模块解析 - optparser模块</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Jasper Xu" target="_blank" itemprop="author">Jasper Xu</a>
-		
-  <p class="article-time">
-    <time datetime="2016-02-11T11:03:00.000Z" itemprop="datePublished"> 发表于 2016-02-11</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>最近博主有用到<code>optparser</code>这个module,其对命令行的参数解析功能还是很强大的</p>
-<h2 id="举个栗子"><a href="#举个栗子" class="headerlink" title="举个栗子"></a>举个栗子</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> optparse <span class="keyword">import</span> OptionParser</span><br><span class="line"></span><br><span class="line">parser = OptionParser()</span><br><span class="line">parser.add_option(<span class="string">"-f"</span>, <span class="string">"--file"</span>, dest=<span class="string">"filename"</span>,</span><br><span class="line">                 help=<span class="string">"write report to FILE"</span>, metavar=<span class="string">"FILE"</span>)</span><br><span class="line">parser.add_option(<span class="string">"-q"</span>, <span class="string">"--quiet"</span>,</span><br><span class="line">                 action=<span class="string">"store_false"</span>, dest=<span class="string">"verbose"</span>, default=<span class="keyword">True</span>,</span><br><span class="line">                 help=<span class="string">"don't print status messages to stdout"</span>)</span><br><span class="line"></span><br><span class="line">(options, args) = parser.parse_args()</span><br></pre></td></tr></table></figure>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2016/02/11/python_optparser/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/Python/">Python</a><a href="/tags/optparser/">optparser</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2016/02/11/python_optparser/#comments" class="ds-thread-count comments-count-link" data-thread-key="2016/02/11/python_optparser/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/12/12/python_new_and_old_class/" title="Python新式类和经典类的继承区别" itemprop="url">Python新式类和经典类的继承区别</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Jasper Xu" target="_blank" itemprop="author">Jasper Xu</a>
-		
-  <p class="article-time">
-    <time datetime="2015-12-12T11:03:00.000Z" itemprop="datePublished"> 发表于 2015-12-12</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h2 id="写法区别"><a href="#写法区别" class="headerlink" title="写法区别"></a>写法区别</h2><p>经典类写法:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">classA</span><span class="params">()</span>:</span></span><br><span class="line">	<span class="keyword">pass</span></span><br></pre></td></tr></table></figure></p>
-<p>新式类写法:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">classB</span><span class="params">(object)</span>:</span></span><br><span class="line">	<span class="keyword">pass</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="继承区别"><a href="#继承区别" class="headerlink" title="继承区别"></a>继承区别</h2><p>经典类就好比是在好几个单元楼里面找一户人家,所以你的查找方法是从第一栋单元楼开始从最高一层一直往最低一层找,没找到的话再去下一栋找.这里每一栋就表示一个父类,所以经典类是深度优先<br>新式类就好比好几个单元合在一起,每一个垂直方向的所有的房间构成一个父类,所以这时候当你要找一户人家的时候,你就会一层一层的找,没一层都有一个父类的一个房间,你只有先确定同一级的每个父类的每个房间都没有找到你,你才能去下一层找<br>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2015/12/12/python_new_and_old_class/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/Python/">Python</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/12/12/python_new_and_old_class/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/12/12/python_new_and_old_class/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/07/25/translator_androids_init/" title="Android init.rc的readme.txt翻译" itemprop="url">Android init.rc的readme.txt翻译</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Jasper Xu" target="_blank" itemprop="author">Jasper Xu</a>
-		
-  <p class="article-time">
-    <time datetime="2015-07-25T08:03:00.000Z" itemprop="datePublished"> 发表于 2015-07-25</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>这是一篇自己胡乱翻译的,翻译的可能会有错误,但是以自己目前对kernel的了解只能做到这样了,希望以后自己会有所成长,然后再次看到这篇翻译的时候莞尔一笑.</p>
-<h2 id="Android-Init-Language"><a href="#Android-Init-Language" class="headerlink" title="Android Init Language"></a>Android Init Language</h2><p>Android Init语言包含四种类型的关键字:<code>Action</code>,<code>Commands</code>,<code>Services</code>和<code>Options</code><br>以#开头的行是注释<br><code>Action</code>和<code>Services</code>声名一个新的section,所有的<code>commands</code>和<code>options</code>都属于靠的最近的section.在第一个section之前的<code>commands</code>和<code>services</code>都被忽略<br>每一个<code>Actions</code>和<code>Services</code>都有独立的名字,如果有相同名字的<code>actions</code>和<code>services</code>被声名,那这个section将被当成一个错误忽略掉.</p>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2015/07/25/translator_androids_init/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/Translator/">Translator</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/07/25/translator_androids_init/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/07/25/translator_androids_init/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-  <nav id="page-nav" class="clearfix">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next<span></span></a>
-  </nav>
-
-</div>
       <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#创建版权信息的内容"><span class="toc-number">1.</span> <span class="toc-text">创建版权信息的内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建版权信息对应的样式表"><span class="toc-number">2.</span> <span class="toc-text">创建版权信息对应的样式表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#布局页面版权信息"><span class="toc-number">3.</span> <span class="toc-text">布局页面版权信息</span></a></li></ol>
+ 
+  </div>
 
 <div id="asidepart">
 <div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
@@ -827,14 +397,103 @@ $(document).ready(function(){
       m.removeClass('moveMain');
       a.css('display', 'block').removeClass('fadeOut');
       o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
         
     }
   });
 });
 </script>
 
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
 
 
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"4coding"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
 
 
 
@@ -903,4 +562,4 @@ var _hmt = _hmt || [];
 <!-- Tiny_search End -->
 
   </body>
- </html>
+</html>

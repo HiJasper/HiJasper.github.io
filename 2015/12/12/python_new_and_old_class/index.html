@@ -21,7 +21,7 @@
 <meta property="og:description" content="写法区别经典类写法:12class classA():	pass
 新式类写法:12class classB(object):	pass
 继承区别经典类就好比是在好几个单元楼里面找一户人家,所以你的查找方法是从第一栋单元楼开始从最高一层一直往最低一层找,没找到的话再去下一栋找.这里每一栋就表示一个父类,所以经典类是深度优先新式类就好比好几个单元合在一起,每一个垂直方向的所有的房间构成一个父类,所以这">
-<meta property="og:updated_time" content="2016-06-15T04:33:22.577Z">
+<meta property="og:updated_time" content="2016-08-25T03:08:59.099Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python新式类和经典类的继承区别">
 <meta name="twitter:description" content="写法区别经典类写法:12class classA():	pass
@@ -82,6 +82,7 @@
     <div id="container">
       <div id="main" class="post" itemscope itemprop="blogPost">
   
+
 	<article itemprop="articleBody"> 
 		<header class="article-info clearfix">
   <h1 itemprop="name">
@@ -113,9 +114,19 @@
 <p>还是那个栗子,只不过将它改成新式类的写法:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">classA</span><span class="params">(object)</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">sayhello</span><span class="params">(self)</span>:</span></span><br><span class="line">		<span class="keyword">print</span> <span class="string">"hello from class classA"</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">classB</span><span class="params">(object)</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">sayhello</span><span class="params">(self)</span>:</span></span><br><span class="line">		<span class="keyword">print</span> <span class="string">"hello from class classB"</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span><span class="params">(classA, classB)</span>:</span></span><br><span class="line">	<span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span><span class="params">(classA, classB)</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">sayhello</span><span class="params">(self)</span>:</span></span><br><span class="line">		<span class="keyword">print</span> <span class="string">"hello from class B"</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">C</span><span class="params">(A, B)</span>:</span></span><br><span class="line">	<span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">tt = C()</span><br><span class="line"></span><br><span class="line">tt.sayhello()</span><br></pre></td></tr></table></figure></p>
 <p>得到的结果是”hello from class B”,所以继承的顺序为:C-&gt;A-&gt;B,是先在广度上延伸,然后是深度上的延伸</p>
 <h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>因为新旧类的区别,所以在多类继承的时候同名方法的处理要注意了</p>
-<p>That’s all,Thank U<br>&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;原创！欢迎转载&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</p>
+<p>That’s all,Thank you</p>
   
 	</div>
+		
+			<div class="article-footer-copyright">
+  <center>本文由<b><a href="/about/" target="_blank" title="Jasper Xu">Jasper Xu</a></b>创作和发表,采用<b>BY</b>-<b>NC</b>-<b>SA</b>国际许可协议进行许可</center>
+
+  <center>转载请注明作者及出处,本文作者为<b><a href="/about/" target="_blank" title="Jasper Xu">Jasper Xu</a></b></center>
+
+  <center>本文链接为<b><a href="/2015/12/12/python_new_and_old_class/" target="_blank" title="Python新式类和经典类的继承区别">http://4coding.cn/2015/12/12/python_new_and_old_class/</a></b>.</center>
+</div>
+
+		
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
@@ -170,6 +181,8 @@
 
 
 </div>  
+
+
       <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
 
   <div id="toc" class="toc-aside">
@@ -195,7 +208,15 @@
 			
 		
 			
-				<li><a href="/tags/life/" title="life">life<sup>1</sup></a></li>
+				<li><a href="/tags/ftp/" title="ftp">ftp<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Jacman/" title="Jacman">Jacman<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Linux-kernel/" title="Linux kernel">Linux kernel<sup>1</sup></a></li>
 			
 		
 			
@@ -215,11 +236,11 @@
 			
 		
 			
-				<li><a href="/tags/ftp/" title="ftp">ftp<sup>1</sup></a></li>
+				<li><a href="/tags/Hexo/" title="Hexo">Hexo<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/Linux-kernel/" title="Linux kernel">Linux kernel<sup>1</sup></a></li>
+				<li><a href="/tags/life/" title="life">life<sup>1</sup></a></li>
 			
 		
 			

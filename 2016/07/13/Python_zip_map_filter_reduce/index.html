@@ -22,7 +22,7 @@ abc的结果为[(0, 4, 7), (1, 5,">
 Zip - 集资标准格式zip(seq[, seq[, seq]])举个栗子:1234a = (i for i in range(3))b = [4, 5, 6]c = (7, 8, 9)abc = zip(a, b, c)
 abc的结果为[(0, 4, 7), (1, 5,">
 <meta property="og:image" content="http://4coding.cn/images/reduce.png">
-<meta property="og:updated_time" content="2016-08-19T01:36:54.205Z">
+<meta property="og:updated_time" content="2016-08-25T03:09:35.715Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python函数式编程 - zip| map| filter| reduce">
 <meta name="twitter:description" content="Python中有很多函数式编程的方法,本文介绍的是最常见的几个函数注:本文基于python2.7.不同的版本可能会导致差异
@@ -84,6 +84,7 @@ abc的结果为[(0, 4, 7), (1, 5,">
     <div id="container">
       <div id="main" class="post" itemscope itemprop="blogPost">
   
+
 	<article itemprop="articleBody"> 
 		<header class="article-info clearfix">
   <h1 itemprop="name">
@@ -124,9 +125,19 @@ abc的结果为[(0, 4, 7), (1, 5,">
 <p>result为3<br>reduce的工作流程为:<br>    1.<code>func(seq[0], seq[1])</code>                          -&gt;seq的第一和第二元素应用到func<br>    2.<code>func(func(seq[0], seq[1]), seq[2])</code>            -&gt;上一步func的结果作为func的第一个参数,seq第三个参数作为func的第二个元素<br>    ……<br>    n.<code>func(...func(func(seq[0], seq[1]))...,seq[n])</code> -&gt;上一步func的结果作为func的第一个参数,seq第n个参数作为func的第二个元素<br>下图可以很好的说明这个过程:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="/images/reduce.png" alt=""></p>
 <p>以上是init不存在的时候,当init存在的时候,第一步的func的第一个参数为init,seq的第一个元素为func的第二参数,后面流程就一样了<br>这就好比把第一阶段的盈利当作二次投资的资本在进行投资</p>
 <h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>在python中函数式编程能很大程度上节约我们的开发时间,利用好了就会是自己的一大利器<br>文中提到的<code>好比</code>在可能会有不当,毕竟我不是经济专业的….海涵</p>
-<p>That’s all,Thank you<br>&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; 原创 转载请注明出处 &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</p>
+<p>That’s all,Thank you</p>
   
 	</div>
+		
+			<div class="article-footer-copyright">
+  <center>本文由<b><a href="/about/" target="_blank" title="Jasper Xu">Jasper Xu</a></b>创作和发表,采用<b>BY</b>-<b>NC</b>-<b>SA</b>国际许可协议进行许可</center>
+
+  <center>转载请注明作者及出处,本文作者为<b><a href="/about/" target="_blank" title="Jasper Xu">Jasper Xu</a></b></center>
+
+  <center>本文链接为<b><a href="/2016/07/13/Python_zip_map_filter_reduce/" target="_blank" title="Python函数式编程 - zip| map| filter| reduce">http://4coding.cn/2016/07/13/Python_zip_map_filter_reduce/</a></b>.</center>
+</div>
+
+		
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
@@ -173,6 +184,8 @@ abc的结果为[(0, 4, 7), (1, 5,">
 
 
 </div>  
+
+
       <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
 
   <div id="toc" class="toc-aside">
@@ -198,7 +211,15 @@ abc的结果为[(0, 4, 7), (1, 5,">
 			
 		
 			
-				<li><a href="/tags/life/" title="life">life<sup>1</sup></a></li>
+				<li><a href="/tags/ftp/" title="ftp">ftp<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Jacman/" title="Jacman">Jacman<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Linux-kernel/" title="Linux kernel">Linux kernel<sup>1</sup></a></li>
 			
 		
 			
@@ -218,11 +239,11 @@ abc的结果为[(0, 4, 7), (1, 5,">
 			
 		
 			
-				<li><a href="/tags/ftp/" title="ftp">ftp<sup>1</sup></a></li>
+				<li><a href="/tags/Hexo/" title="Hexo">Hexo<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/Linux-kernel/" title="Linux kernel">Linux kernel<sup>1</sup></a></li>
+				<li><a href="/tags/life/" title="life">life<sup>1</sup></a></li>
 			
 		
 			

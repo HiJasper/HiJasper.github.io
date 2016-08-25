@@ -21,7 +21,7 @@
 注:本文基于python2.7,不同">
 <meta property="og:image" content="http://4coding.cn/images/simplehttpserver_1.png">
 <meta property="og:image" content="http://4coding.cn/images/simplehttpserver_2.png">
-<meta property="og:updated_time" content="2016-06-15T04:33:42.825Z">
+<meta property="og:updated_time" content="2016-08-25T03:09:16.819Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python模块解析 - SimpleHTTPServer和BaseHTTPServer模块">
 <meta name="twitter:description" content="前面有学习了SocketServer模块,之前说过SocketServer算是最基本的python服务器框架,那本文讲的BaseHTTPServer模块就是基于SocketServer,而SimpleHTTPServer模块则是基于BaseHTTPServer模块,所以他们的继承关系就很明了了.本文还是会以一个小栗子开始,结合类继承图和程式执行过程图来学习原码
@@ -82,6 +82,7 @@
     <div id="container">
       <div id="main" class="post" itemscope itemprop="blogPost">
   
+
 	<article itemprop="articleBody"> 
 		<header class="article-info clearfix">
   <h1 itemprop="name">
@@ -130,9 +131,19 @@
 <h4 id="注释8"><a href="#注释8" class="headerlink" title="注释8:"></a>注释8:</h4><p>这部分就很简单了,用<code>self.wfile.writ</code>的方法完善状态行,头信息.有一点在<code>end_headers</code>中,因为HTTP/0.9和HTTP/1.1的差异,所以在HTTP/1.1的版本中需要在头信息和正文之间加一个空行<br>剩下的还有一个GET专有的方法<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">copyfile</span><span class="params">(self, source, outputfile)</span>:</span></span><br><span class="line">    shutil.copyfileobj(source, outputfile)</span><br></pre></td></tr></table></figure></p>
 <p>这其实就是在<code>send_head</code>之后,返回给客户端的头信息和状态行都已经ok了,唯独缺少的是正文的信息了.所以这里做的也就是通过<code>send_head</code>返回的文件修饰符,将正文内容copy到self.wfile中</p>
 <h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>至于后面的close和finish方都是法最后的收尾工作<br>可以看到,其实SimpleHTTPServer能帮助我们做很多事情,而且他将内容和服务器逻辑分开,所以每次更新的时候就不用停掉服务器了.</p>
-<p>That’s all,Thank U<br>&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;原创！欢迎转载&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</p>
+<p>That’s all,Thank you</p>
   
 	</div>
+		
+			<div class="article-footer-copyright">
+  <center>本文由<b><a href="/about/" target="_blank" title="Jasper Xu">Jasper Xu</a></b>创作和发表,采用<b>BY</b>-<b>NC</b>-<b>SA</b>国际许可协议进行许可</center>
+
+  <center>转载请注明作者及出处,本文作者为<b><a href="/about/" target="_blank" title="Jasper Xu">Jasper Xu</a></b></center>
+
+  <center>本文链接为<b><a href="/2016/04/05/python_simplehttpserver/" target="_blank" title="Python模块解析 - SimpleHTTPServer和BaseHTTPServer模块">http://4coding.cn/2016/04/05/python_simplehttpserver/</a></b>.</center>
+</div>
+
+		
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
@@ -162,10 +173,10 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2016/06/10/python_yield/" title="Python中关键字yield有什么作用">
+ <a href="/2016/05/13/Jacman_setting_copyright/" title="Jacman-master主题设置 - 自动添加版权声明">
   <strong>上一篇：</strong><br/>
   <span>
-  Python中关键字yield有什么作用</span>
+  Jacman-master主题设置 - 自动添加版权声明</span>
 </a>
 </div>
 
@@ -187,6 +198,8 @@
 
 
 </div>  
+
+
       <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
 
   <div id="toc" class="toc-aside">
@@ -212,7 +225,15 @@
 			
 		
 			
-				<li><a href="/tags/life/" title="life">life<sup>1</sup></a></li>
+				<li><a href="/tags/ftp/" title="ftp">ftp<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Jacman/" title="Jacman">Jacman<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Linux-kernel/" title="Linux kernel">Linux kernel<sup>1</sup></a></li>
 			
 		
 			
@@ -232,11 +253,11 @@
 			
 		
 			
-				<li><a href="/tags/ftp/" title="ftp">ftp<sup>1</sup></a></li>
+				<li><a href="/tags/Hexo/" title="Hexo">Hexo<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/Linux-kernel/" title="Linux kernel">Linux kernel<sup>1</sup></a></li>
+				<li><a href="/tags/life/" title="life">life<sup>1</sup></a></li>
 			
 		
 			

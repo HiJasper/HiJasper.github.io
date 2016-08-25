@@ -21,7 +21,7 @@
 类的继承关系我们首先先要厘清一下SocketS">
 <meta property="og:image" content="http://4coding.cn/images/socketserver_1.png">
 <meta property="og:image" content="http://4coding.cn/images/socketserver_2.png">
-<meta property="og:updated_time" content="2016-06-15T04:33:50.313Z">
+<meta property="og:updated_time" content="2016-08-25T03:09:26.207Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python模块解析 - SocketServer模块">
 <meta name="twitter:description" content="之前看python网络编程那一块的时候,有学习SocketServer的代码,上网有查过这个lib的用法,但是发觉不看source code的话很难真正厘清内部的运作.所以这篇博文主要从一个简单的例子从原码的角度做分析整个SocketServer类的解析.注:本文基于python2.7,SocketServer的版本为0.4.不同的版本可能会导致差异
@@ -82,6 +82,7 @@
     <div id="container">
       <div id="main" class="post" itemscope itemprop="blogPost">
   
+
 	<article itemprop="articleBody"> 
 		<header class="article-info clearfix">
   <h1 itemprop="name">
@@ -122,9 +123,19 @@
 <p>所以就三步:<code>setup()</code>-&gt;<code>handle()</code>-&gt;<code>finish()</code>,三个方法除了handle其他都是在<code>StreamRequestHandler</code>中有定义,而handle就是预留出来给用户自己定义要处理request的内容.<br>可以看我们定义的类<code>Handler</code>中的handle方法,其实就是简单的对setup()建立的connection做类文件的读写,其实这就是最简单的客户端和服务端的通信.finish的方法就是做一些关闭的收尾工作.</p>
 <h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>至此,TCPServer的大体工作流程就结束了.<code>UDPServer</code>其实就是重写了一下部分的<code>TCPServer</code>的方法,大体上也一样.<br>所以<code>SocketServer</code>的用法还是主要对handle的方法重写,这个类算是很多服务器框架的基础了.</p>
 <p>至于剩下的关于分叉和线程处理异步通信的部分就后面在写吧</p>
-<p>That’s all,Thank U<br>&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;原创！欢迎转载&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</p>
+<p>That’s all,Thank you</p>
   
 	</div>
+		
+			<div class="article-footer-copyright">
+  <center>本文由<b><a href="/about/" target="_blank" title="Jasper Xu">Jasper Xu</a></b>创作和发表,采用<b>BY</b>-<b>NC</b>-<b>SA</b>国际许可协议进行许可</center>
+
+  <center>转载请注明作者及出处,本文作者为<b><a href="/about/" target="_blank" title="Jasper Xu">Jasper Xu</a></b></center>
+
+  <center>本文链接为<b><a href="/2016/04/02/python_socketserver/" target="_blank" title="Python模块解析 - SocketServer模块">http://4coding.cn/2016/04/02/python_socketserver/</a></b>.</center>
+</div>
+
+		
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
@@ -179,6 +190,8 @@
 
 
 </div>  
+
+
       <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
 
   <div id="toc" class="toc-aside">
@@ -204,7 +217,15 @@
 			
 		
 			
-				<li><a href="/tags/life/" title="life">life<sup>1</sup></a></li>
+				<li><a href="/tags/ftp/" title="ftp">ftp<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Jacman/" title="Jacman">Jacman<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Linux-kernel/" title="Linux kernel">Linux kernel<sup>1</sup></a></li>
 			
 		
 			
@@ -224,11 +245,11 @@
 			
 		
 			
-				<li><a href="/tags/ftp/" title="ftp">ftp<sup>1</sup></a></li>
+				<li><a href="/tags/Hexo/" title="Hexo">Hexo<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/Linux-kernel/" title="Linux kernel">Linux kernel<sup>1</sup></a></li>
+				<li><a href="/tags/life/" title="life">life<sup>1</sup></a></li>
 			
 		
 			
