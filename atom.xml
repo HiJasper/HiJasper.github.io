@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://4coding.cn/"/>
-  <updated>2016-08-25T03:09:35.715Z</updated>
+  <updated>2016-08-26T08:38:51.030Z</updated>
   <id>http://4coding.cn/</id>
   
   <author>
@@ -17,10 +17,10 @@
   
   <entry>
     <title>Python函数式编程 - zip| map| filter| reduce</title>
-    <link href="http://4coding.cn/2016/07/13/Python_zip_map_filter_reduce/"/>
-    <id>http://4coding.cn/2016/07/13/Python_zip_map_filter_reduce/</id>
+    <link href="http://4coding.cn/2016/07/13/tech/Python_zip_map_filter_reduce/"/>
+    <id>http://4coding.cn/2016/07/13/tech/Python_zip_map_filter_reduce/</id>
     <published>2016-07-13T11:21:00.000Z</published>
-    <updated>2016-08-25T03:09:35.715Z</updated>
+    <updated>2016-08-26T08:38:51.030Z</updated>
     
     <content type="html">&lt;p&gt;Python中有很多函数式编程的方法,本文介绍的是最常见的几个函数&lt;br&gt;注:本文基于python2.7.不同的版本可能会导致差异&lt;/p&gt;
 &lt;h2 id=&quot;Zip-集资&quot;&gt;&lt;a href=&quot;#Zip-集资&quot; class=&quot;headerlink&quot; title=&quot;Zip - 集资&quot;&gt;&lt;/a&gt;Zip - 集资&lt;/h2&gt;&lt;p&gt;标准格式&lt;code&gt;zip(seq[, seq[, seq]])&lt;/code&gt;&lt;br&gt;举个栗子:&lt;br&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;a = (i &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; i &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; range(&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;b = [&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;6&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;c = (&lt;span class=&quot;number&quot;&gt;7&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;8&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;9&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;abc = zip(a, b, c)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
@@ -56,14 +56,38 @@
     
       <category term="函数式编程" scheme="http://4coding.cn/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
     
+      <category term="TECH" scheme="http://4coding.cn/tags/TECH/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>苏州出差 [2015-2016]</title>
+    <link href="http://4coding.cn/2016/06/10/life/suzhou/"/>
+    <id>http://4coding.cn/2016/06/10/life/suzhou/</id>
+    <published>2016-06-10T12:03:00.000Z</published>
+    <updated>2016-08-26T08:36:45.426Z</updated>
+    
+    <content type="html">&lt;p&gt;前前后后在苏州出差好多次了，即使不爱拍照的我也留了不少图片。人生的一个阶段吧！&lt;br&gt;EIK的这个动作我是理解成在警告我，一定要把他放到封面啊！！！&lt;br&gt;&lt;img src=&quot;/images/suzhou/suzhou9.JPG&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/suzhou/suzhou1.JPG&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;/images/suzhou/suzhou2.JPG&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;/images/suzhou/suzhou5.JPG&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;/images/suzhou/suzhou6.JPG&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;/images/suzhou/AJ2.JPG&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;/images/suzhou/hungwen2.JPG&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;/images/suzhou/AJ.JPG&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;/images/suzhou/snow.JPG&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;/images/suzhou/suzhou4.JPG&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;/images/suzhou/hungwen.JPG&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;/images/suzhou/huqiu.JPG&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;/images/suzhou/shangfang.JPG&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;/images/suzhou/right.JPG&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;/images/suzhou/lift.JPG&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;/images/suzhou/suzhou7.JPG&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;/images/suzhou/suzhou8.JPG&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;前前后后在苏州出差好多次了，即使不爱拍照的我也留了不少图片。人生的一个阶段吧！&lt;br&gt;EIK的这个动作我是理解成在警告我，一定要把他放到封面啊！！！&lt;br&gt;&lt;img src=&quot;/images/suzhou/suzhou9.JPG&quot; alt=&quot;&quot;&gt;&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="LIFE" scheme="http://4coding.cn/tags/LIFE/"/>
+    
   </entry>
   
   <entry>
     <title>Python中关键字yield有什么作用</title>
-    <link href="http://4coding.cn/2016/06/10/python_yield/"/>
-    <id>http://4coding.cn/2016/06/10/python_yield/</id>
+    <link href="http://4coding.cn/2016/06/10/tech/python_yield/"/>
+    <id>http://4coding.cn/2016/06/10/tech/python_yield/</id>
     <published>2016-06-10T09:03:00.000Z</published>
-    <updated>2016-08-22T08:38:36.799Z</updated>
+    <updated>2016-08-26T08:38:41.818Z</updated>
     
     <content type="html">&lt;p&gt;本文转自&lt;a href=&quot;https://taizilongxu.gitbooks.io/stackoverflow-about-python/content/1/README.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Python中关键字yield有什么作用?&lt;/a&gt;&lt;/p&gt;
 &lt;hr&gt;
@@ -116,18 +140,18 @@
     
       <category term="Python" scheme="http://4coding.cn/tags/Python/"/>
     
-      <category term="别人说" scheme="http://4coding.cn/tags/%E5%88%AB%E4%BA%BA%E8%AF%B4/"/>
+      <category term="拿来主义" scheme="http://4coding.cn/tags/%E6%8B%BF%E6%9D%A5%E4%B8%BB%E4%B9%89/"/>
     
-      <category term="yield" scheme="http://4coding.cn/tags/yield/"/>
+      <category term="TECH" scheme="http://4coding.cn/tags/TECH/"/>
     
   </entry>
   
   <entry>
     <title>Jacman-master主题设置 - 自动添加版权声明</title>
-    <link href="http://4coding.cn/2016/05/13/Jacman_setting_copyright/"/>
-    <id>http://4coding.cn/2016/05/13/Jacman_setting_copyright/</id>
+    <link href="http://4coding.cn/2016/05/13/tech/Jacman_setting_copyright/"/>
+    <id>http://4coding.cn/2016/05/13/tech/Jacman_setting_copyright/</id>
     <published>2016-05-13T11:21:00.000Z</published>
-    <updated>2016-08-25T08:45:19.886Z</updated>
+    <updated>2016-08-26T08:37:34.614Z</updated>
     
     <content type="html">&lt;p&gt;虽然这里不会有太多人来看，文章大多数也是自己的个人看法，鉴于自己的阅历和技术水平，难免会有纰漏。&lt;br&gt;但是每一篇原创文章自己都有花心思在上面，所以我会在每篇原创的文章最后添加&lt;code&gt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;原创 装载请注明出处&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&lt;/code&gt;的信息(虽然到现在也没发现被别人转载过什么T_T)&lt;/p&gt;
 &lt;p&gt;鉴于每次POST文章都要手动添加那一行，这个操作感觉有点反人类，所以决定添加自动在文章底部添加版权信息的功能。&lt;br&gt;这里要感谢培豪的文章 - &lt;a href=&quot;http://www.cnblogs.com/peihao/p/5365733.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo - 文章版权追加&lt;/a&gt;，里面为我提供了漂亮的css模板和处理的方法。&lt;br&gt;但是可能是因为使用的主题有差(我用的是Jacman-master主题)，所以还要做部分的修改。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
@@ -152,16 +176,16 @@
     
       <category term="Hexo" scheme="http://4coding.cn/tags/Hexo/"/>
     
-      <category term="Jacman" scheme="http://4coding.cn/tags/Jacman/"/>
+      <category term="TECH" scheme="http://4coding.cn/tags/TECH/"/>
     
   </entry>
   
   <entry>
     <title>Python模块解析 - SimpleHTTPServer和BaseHTTPServer模块</title>
-    <link href="http://4coding.cn/2016/04/05/python_simplehttpserver/"/>
-    <id>http://4coding.cn/2016/04/05/python_simplehttpserver/</id>
+    <link href="http://4coding.cn/2016/04/05/tech/python_simplehttpserver/"/>
+    <id>http://4coding.cn/2016/04/05/tech/python_simplehttpserver/</id>
     <published>2016-04-05T11:03:00.000Z</published>
-    <updated>2016-08-25T03:09:16.819Z</updated>
+    <updated>2016-08-26T08:38:17.906Z</updated>
     
     <content type="html">&lt;p&gt;前面有学习了&lt;a href=&quot;/2016/04/02/python_socketserver/&quot;&gt;SocketServer模块&lt;/a&gt;,之前说过&lt;code&gt;SocketServer&lt;/code&gt;算是最基本的python服务器框架,那本文讲的&lt;code&gt;BaseHTTPServer&lt;/code&gt;模块就是基于&lt;code&gt;SocketServer&lt;/code&gt;,而&lt;code&gt;SimpleHTTPServer&lt;/code&gt;模块则是基于&lt;code&gt;BaseHTTPServer&lt;/code&gt;模块,所以他们的继承关系就很明了了.本文还是会以一个小栗子开始,结合类继承图和程式执行过程图来学习原码&lt;/p&gt;
 &lt;p&gt;注:本文基于python2.7,不同的版本可能会导致差异&lt;/p&gt;
@@ -202,18 +226,18 @@
     
       <category term="Python" scheme="http://4coding.cn/tags/Python/"/>
     
-      <category term="SimpleHTTPServer" scheme="http://4coding.cn/tags/SimpleHTTPServer/"/>
+      <category term="Web" scheme="http://4coding.cn/tags/Web/"/>
     
-      <category term="BaseHTTPServer" scheme="http://4coding.cn/tags/BaseHTTPServer/"/>
+      <category term="TECH" scheme="http://4coding.cn/tags/TECH/"/>
     
   </entry>
   
   <entry>
     <title>Python模块解析 - SocketServer模块</title>
-    <link href="http://4coding.cn/2016/04/02/python_socketserver/"/>
-    <id>http://4coding.cn/2016/04/02/python_socketserver/</id>
+    <link href="http://4coding.cn/2016/04/02/tech/python_socketserver/"/>
+    <id>http://4coding.cn/2016/04/02/tech/python_socketserver/</id>
     <published>2016-04-02T11:03:00.000Z</published>
-    <updated>2016-08-25T03:09:26.207Z</updated>
+    <updated>2016-08-26T08:38:29.626Z</updated>
     
     <content type="html">&lt;p&gt;之前看python网络编程那一块的时候,有学习SocketServer的代码,上网有查过这个lib的用法,但是发觉不看source code的话很难真正厘清内部的运作.所以这篇博文主要从一个简单的例子从原码的角度做分析整个SocketServer类的解析.&lt;br&gt;注:本文基于python2.7,SocketServer的版本为0.4.不同的版本可能会导致差异&lt;/p&gt;
 &lt;h2 id=&quot;类的继承关系&quot;&gt;&lt;a href=&quot;#类的继承关系&quot; class=&quot;headerlink&quot; title=&quot;类的继承关系&quot;&gt;&lt;/a&gt;类的继承关系&lt;/h2&gt;&lt;p&gt;我们首先先要厘清一下SocketServer里面基本的类的关系,我将大体的继承关系用下图表示：&lt;br&gt;&lt;img src=&quot;/images/socketserver_1.png&quot; alt=&quot;&quot;&gt; &lt;img src=&quot;/images/socketserver_2.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;可以看到,SocketServer主要包含4个基本类:&lt;code&gt;BaseServer&lt;/code&gt;(socket server建立的基类,主要的方法:serve_forever),&lt;code&gt;BaseRequestHandler&lt;/code&gt;(request的处理类,主要的方法:handle方法的重写),还有两个使用分叉和线程来处理异步通信的类:&lt;code&gt;ForkingMixIn&lt;/code&gt;和&lt;code&gt;ThreadingMixIn&lt;/code&gt;&lt;br&gt;其他的类都是在以上四个基类的基础上延伸出来的.我们用到的最多的是针对TCP流式套接字的类:&lt;code&gt;TCPServer&lt;/code&gt;.后面的简单例子也是基于此&lt;/p&gt;
@@ -245,40 +269,18 @@
     
       <category term="Python" scheme="http://4coding.cn/tags/Python/"/>
     
-      <category term="SocketServer" scheme="http://4coding.cn/tags/SocketServer/"/>
+      <category term="Web" scheme="http://4coding.cn/tags/Web/"/>
     
-  </entry>
-  
-  <entry>
-    <title>柴米油盐 - Mark for first day</title>
-    <link href="http://4coding.cn/2016/03/11/mark/"/>
-    <id>http://4coding.cn/2016/03/11/mark/</id>
-    <published>2016-03-11T08:03:00.000Z</published>
-    <updated>2016-08-25T03:16:22.867Z</updated>
-    
-    <content type="html">&lt;h2 id=&quot;First-Day&quot;&gt;&lt;a href=&quot;#First-Day&quot; class=&quot;headerlink&quot; title=&quot;First Day&quot;&gt;&lt;/a&gt;First Day&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;/images/web.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;现实图片的方式:&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;![](/images/web.jpg)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;First-Day&quot;&gt;&lt;a href=&quot;#First-Day&quot; class=&quot;headerlink&quot; title=&quot;First Day&quot;&gt;&lt;/a&gt;First Day&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;/images/web.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;现实图片的方式:&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;![](/images/web.jpg)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="life" scheme="http://4coding.cn/tags/life/"/>
+      <category term="TECH" scheme="http://4coding.cn/tags/TECH/"/>
     
   </entry>
   
   <entry>
     <title>Python模块解析 - optparser模块</title>
-    <link href="http://4coding.cn/2016/02/11/python_optparser/"/>
-    <id>http://4coding.cn/2016/02/11/python_optparser/</id>
+    <link href="http://4coding.cn/2016/02/11/tech/python_optparser/"/>
+    <id>http://4coding.cn/2016/02/11/tech/python_optparser/</id>
     <published>2016-02-11T11:03:00.000Z</published>
-    <updated>2016-08-25T03:09:07.943Z</updated>
+    <updated>2016-08-26T08:38:06.702Z</updated>
     
     <content type="html">&lt;p&gt;最近博主有用到&lt;code&gt;optparser&lt;/code&gt;这个module,其对命令行的参数解析功能还是很强大的&lt;/p&gt;
 &lt;h2 id=&quot;举个栗子&quot;&gt;&lt;a href=&quot;#举个栗子&quot; class=&quot;headerlink&quot; title=&quot;举个栗子&quot;&gt;&lt;/a&gt;举个栗子&lt;/h2&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; optparse &lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; OptionParser&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;parser = OptionParser()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;parser.add_option(&lt;span class=&quot;string&quot;&gt;&quot;-f&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;--file&quot;&lt;/span&gt;, dest=&lt;span class=&quot;string&quot;&gt;&quot;filename&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                 help=&lt;span class=&quot;string&quot;&gt;&quot;write report to FILE&quot;&lt;/span&gt;, metavar=&lt;span class=&quot;string&quot;&gt;&quot;FILE&quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;parser.add_option(&lt;span class=&quot;string&quot;&gt;&quot;-q&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;--quiet&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                 action=&lt;span class=&quot;string&quot;&gt;&quot;store_false&quot;&lt;/span&gt;, dest=&lt;span class=&quot;string&quot;&gt;&quot;verbose&quot;&lt;/span&gt;, default=&lt;span class=&quot;keyword&quot;&gt;True&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                 help=&lt;span class=&quot;string&quot;&gt;&quot;don&#39;t print status messages to stdout&quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;(options, args) = parser.parse_args()&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -318,16 +320,16 @@ type的作用是给参数的value定义类型,默认为string
     
       <category term="Python" scheme="http://4coding.cn/tags/Python/"/>
     
-      <category term="optparser" scheme="http://4coding.cn/tags/optparser/"/>
+      <category term="TECH" scheme="http://4coding.cn/tags/TECH/"/>
     
   </entry>
   
   <entry>
     <title>Python新式类和经典类的继承区别</title>
-    <link href="http://4coding.cn/2015/12/12/python_new_and_old_class/"/>
-    <id>http://4coding.cn/2015/12/12/python_new_and_old_class/</id>
+    <link href="http://4coding.cn/2015/12/12/tech/python_new_and_old_class/"/>
+    <id>http://4coding.cn/2015/12/12/tech/python_new_and_old_class/</id>
     <published>2015-12-12T11:03:00.000Z</published>
-    <updated>2016-08-25T03:08:59.099Z</updated>
+    <updated>2016-08-26T08:37:55.398Z</updated>
     
     <content type="html">&lt;h2 id=&quot;写法区别&quot;&gt;&lt;a href=&quot;#写法区别&quot; class=&quot;headerlink&quot; title=&quot;写法区别&quot;&gt;&lt;/a&gt;写法区别&lt;/h2&gt;&lt;p&gt;经典类写法:&lt;br&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;classA&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;pass&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;新式类写法:&lt;br&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;classB&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(object)&lt;/span&gt;:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;pass&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
@@ -350,14 +352,16 @@ type的作用是给参数的value定义类型,默认为string
     
       <category term="Python" scheme="http://4coding.cn/tags/Python/"/>
     
+      <category term="TECH" scheme="http://4coding.cn/tags/TECH/"/>
+    
   </entry>
   
   <entry>
     <title>Android init.rc的readme.txt翻译</title>
-    <link href="http://4coding.cn/2015/07/25/translator_androids_init/"/>
-    <id>http://4coding.cn/2015/07/25/translator_androids_init/</id>
+    <link href="http://4coding.cn/2015/07/25/tech/translator_androids_init/"/>
+    <id>http://4coding.cn/2015/07/25/tech/translator_androids_init/</id>
     <published>2015-07-25T08:03:00.000Z</published>
-    <updated>2016-08-25T03:09:55.379Z</updated>
+    <updated>2016-08-26T08:39:03.686Z</updated>
     
     <content type="html">&lt;p&gt;这是一篇自己胡乱翻译的,翻译的可能会有错误,但是以自己目前对kernel的了解只能做到这样了,希望以后自己会有所成长,然后再次看到这篇翻译的时候莞尔一笑.&lt;/p&gt;
 &lt;h2 id=&quot;Android-Init-Language&quot;&gt;&lt;a href=&quot;#Android-Init-Language&quot; class=&quot;headerlink&quot; title=&quot;Android Init Language&quot;&gt;&lt;/a&gt;Android Init Language&lt;/h2&gt;&lt;p&gt;Android Init语言包含四种类型的关键字:&lt;code&gt;Action&lt;/code&gt;,&lt;code&gt;Commands&lt;/code&gt;,&lt;code&gt;Services&lt;/code&gt;和&lt;code&gt;Options&lt;/code&gt;&lt;br&gt;以#开头的行是注释&lt;br&gt;&lt;code&gt;Action&lt;/code&gt;和&lt;code&gt;Services&lt;/code&gt;声名一个新的section,所有的&lt;code&gt;commands&lt;/code&gt;和&lt;code&gt;options&lt;/code&gt;都属于靠的最近的section.在第一个section之前的&lt;code&gt;commands&lt;/code&gt;和&lt;code&gt;services&lt;/code&gt;都被忽略&lt;br&gt;每一个&lt;code&gt;Actions&lt;/code&gt;和&lt;code&gt;Services&lt;/code&gt;都有独立的名字,如果有相同名字的&lt;code&gt;actions&lt;/code&gt;和&lt;code&gt;services&lt;/code&gt;被声名,那这个section将被当成一个错误忽略掉.&lt;/p&gt;
@@ -382,14 +386,16 @@ type的作用是给参数的value定义类型,默认为string
     
       <category term="Translator" scheme="http://4coding.cn/tags/Translator/"/>
     
+      <category term="TECH" scheme="http://4coding.cn/tags/TECH/"/>
+    
   </entry>
   
   <entry>
     <title>Frame Buffer控制嵌入式设备显示屏</title>
-    <link href="http://4coding.cn/2015/07/20/Frame%20Buffer/"/>
-    <id>http://4coding.cn/2015/07/20/Frame Buffer/</id>
+    <link href="http://4coding.cn/2015/07/20/tech/Frame%20Buffer/"/>
+    <id>http://4coding.cn/2015/07/20/tech/Frame Buffer/</id>
     <published>2015-07-20T12:03:00.000Z</published>
-    <updated>2016-08-25T03:08:17.819Z</updated>
+    <updated>2016-08-26T08:37:13.998Z</updated>
     
     <content type="html">&lt;p&gt;最近一段时间因为工作的原因,开始接触android和linux内核的一些东西.&lt;br&gt;有时间的话会陆续写一些关于这方面的博客,今天这片blog讲的是frame buffer&lt;/p&gt;
 &lt;h2 id=&quot;操作FrameBuffer的一般步骤&quot;&gt;&lt;a href=&quot;#操作FrameBuffer的一般步骤&quot; class=&quot;headerlink&quot; title=&quot;操作FrameBuffer的一般步骤&quot;&gt;&lt;/a&gt;操作FrameBuffer的一般步骤&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;打开fb0设备文件(这个路径不一定,linux系统是放在/dev下面,嵌入式的系统可能放在/dev/graphics/下面);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;用ioctl函数获取显示屏的位深、分辨率等信息,两个重要的结构体类型是fb_fix_screeninfo和fb_var_screeninfo;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;mmap函数将FrameBuffer映射到用户空间;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;读写FrameBuffer,进行绘图和图片显示等;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;解除映射(munmap),关闭/dev/fb设备文件.&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -418,14 +424,16 @@ type的作用是给参数的value定义类型,默认为string
     
       <category term="Linux kernel" scheme="http://4coding.cn/tags/Linux-kernel/"/>
     
+      <category term="TECH" scheme="http://4coding.cn/tags/TECH/"/>
+    
   </entry>
   
   <entry>
     <title>Git生成patch的方法(diff and format-patch)</title>
-    <link href="http://4coding.cn/2015/02/20/git_generate_patch/"/>
-    <id>http://4coding.cn/2015/02/20/git_generate_patch/</id>
+    <link href="http://4coding.cn/2015/02/20/tech/git_generate_patch/"/>
+    <id>http://4coding.cn/2015/02/20/tech/git_generate_patch/</id>
     <published>2015-02-20T08:03:00.000Z</published>
-    <updated>2016-08-25T03:08:28.299Z</updated>
+    <updated>2016-08-26T08:37:01.422Z</updated>
     
     <content type="html">&lt;p&gt;Git 生成patch的方法（patch就是补丁）&lt;br&gt;    注:因为博主用的是linux系统,所以运行的环境均在linux下.&lt;/p&gt;
 &lt;h3 id=&quot;建立一个文件夹作为git的本地仓库&quot;&gt;&lt;a href=&quot;#建立一个文件夹作为git的本地仓库&quot; class=&quot;headerlink&quot; title=&quot;建立一个文件夹作为git的本地仓库:&quot;&gt;&lt;/a&gt;建立一个文件夹作为git的本地仓库:&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;mkdir /home/jasper/&lt;span class=&quot;built_in&quot;&gt;test&lt;/span&gt;_&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;_git&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;test&lt;/span&gt;_&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;_git&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git init(创建一个repository)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -477,16 +485,16 @@ git am 0001-first-format-patch-patch-commit.patch
     
       <category term="Git" scheme="http://4coding.cn/tags/Git/"/>
     
-      <category term="patch" scheme="http://4coding.cn/tags/patch/"/>
+      <category term="TECH" scheme="http://4coding.cn/tags/TECH/"/>
     
   </entry>
   
   <entry>
     <title>Linux命令讲解 - ftp命令简介</title>
-    <link href="http://4coding.cn/2015/02/02/linux_ftp_command/"/>
-    <id>http://4coding.cn/2015/02/02/linux_ftp_command/</id>
+    <link href="http://4coding.cn/2015/02/02/tech/linux_ftp_command/"/>
+    <id>http://4coding.cn/2015/02/02/tech/linux_ftp_command/</id>
     <published>2015-02-02T10:03:00.000Z</published>
-    <updated>2016-08-25T03:08:50.163Z</updated>
+    <updated>2016-08-26T08:37:45.730Z</updated>
     
     <content type="html">&lt;h2 id=&quot;连接ftp服务器&quot;&gt;&lt;a href=&quot;#连接ftp服务器&quot; class=&quot;headerlink&quot; title=&quot;连接ftp服务器&quot;&gt;&lt;/a&gt;连接ftp服务器&lt;/h2&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;ftp [ip_addr | hostname]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;举个栗子：&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;ftp 172.168.0.1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
@@ -511,7 +519,7 @@ git am 0001-first-format-patch-patch-commit.patch
     
       <category term="Linux command" scheme="http://4coding.cn/tags/Linux-command/"/>
     
-      <category term="ftp" scheme="http://4coding.cn/tags/ftp/"/>
+      <category term="TECH" scheme="http://4coding.cn/tags/TECH/"/>
     
   </entry>
   

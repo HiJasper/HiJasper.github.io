@@ -1,0 +1,564 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>Python函数式编程 - zip| map| filter| reduce | Coding 4 yourself</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Jasper Xu">
+    
+
+    
+    <meta name="description" content="Python中有很多函数式编程的方法,本文介绍的是最常见的几个函数注:本文基于python2.7.不同的版本可能会导致差异
+Zip - 集资标准格式zip(seq[, seq[, seq]])举个栗子:1234a = (i for i in range(3))b = [4, 5, 6]c = (7, 8, 9)abc = zip(a, b, c)
+abc的结果为[(0, 4, 7), (1, 5,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python函数式编程 - zip| map| filter| reduce">
+<meta property="og:url" content="http://4coding.cn/2016/07/13/tech/Python_zip_map_filter_reduce/index.html">
+<meta property="og:site_name" content="Coding 4 yourself">
+<meta property="og:description" content="Python中有很多函数式编程的方法,本文介绍的是最常见的几个函数注:本文基于python2.7.不同的版本可能会导致差异
+Zip - 集资标准格式zip(seq[, seq[, seq]])举个栗子:1234a = (i for i in range(3))b = [4, 5, 6]c = (7, 8, 9)abc = zip(a, b, c)
+abc的结果为[(0, 4, 7), (1, 5,">
+<meta property="og:image" content="http://4coding.cn/images/reduce.png">
+<meta property="og:updated_time" content="2016-08-26T08:38:51.030Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python函数式编程 - zip| map| filter| reduce">
+<meta name="twitter:description" content="Python中有很多函数式编程的方法,本文介绍的是最常见的几个函数注:本文基于python2.7.不同的版本可能会导致差异
+Zip - 集资标准格式zip(seq[, seq[, seq]])举个栗子:1234a = (i for i in range(3))b = [4, 5, 6]c = (7, 8, 9)abc = zip(a, b, c)
+abc的结果为[(0, 4, 7), (1, 5,">
+<meta name="twitter:image" content="http://4coding.cn/images/reduce.png">
+
+    
+    <link rel="alternative" href="/atom.xml" title="Coding 4 yourself" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="Coding 4 yourself" title="Coding 4 yourself"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Coding 4 yourself">Coding 4 yourself</a></h1>
+				<h2 class="blog-motto">Life is short, you need Python</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/tags/TECH">Tech</a></li>
+					
+						<li><a href="/tags/LIFE">Life</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:4coding.cn">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/07/13/tech/Python_zip_map_filter_reduce/" title="Python函数式编程 - zip| map| filter| reduce" itemprop="url">Python函数式编程 - zip| map| filter| reduce</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Jasper Xu" target="_blank" itemprop="author">Jasper Xu</a>
+		
+  <p class="article-time">
+    <time datetime="2016-07-13T11:21:00.000Z" itemprop="datePublished"> 发表于 2016-07-13</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Zip-集资"><span class="toc-number">1.</span> <span class="toc-text">Zip - 集资</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Filter-审查"><span class="toc-number">2.</span> <span class="toc-text">Filter - 审查</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Map-招标"><span class="toc-number">3.</span> <span class="toc-text">Map - 招标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Reduce-二次投入"><span class="toc-number">4.</span> <span class="toc-text">Reduce - 二次投入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#结语"><span class="toc-number">5.</span> <span class="toc-text">结语</span></a></li></ol>
+		
+		</div>
+		
+		<p>Python中有很多函数式编程的方法,本文介绍的是最常见的几个函数<br>注:本文基于python2.7.不同的版本可能会导致差异</p>
+<h2 id="Zip-集资"><a href="#Zip-集资" class="headerlink" title="Zip - 集资"></a>Zip - 集资</h2><p>标准格式<code>zip(seq[, seq[, seq]])</code><br>举个栗子:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = (i <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">3</span>))</span><br><span class="line">b = [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</span><br><span class="line">c = (<span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>)</span><br><span class="line">abc = zip(a, b, c)</span><br></pre></td></tr></table></figure></p>
+<p>abc的结果为<code>[(0, 4, 7), (1, 5, 8), (2, 6, 9)]</code><br>所以zip函数的作用已经很明显了,它就好比abc三家集资,一家出一个.<br>那当c家很富,a家没那么富怎么办呢?<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = (i <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>))</span><br><span class="line">b = [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</span><br><span class="line">c = (<span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>)</span><br><span class="line">abc = zip(a,b,c)</span><br></pre></td></tr></table></figure></p>
+<p>abc三家集资的结果为<code>[(0, 4, 7), (1, 5, 8)]</code>,说好的一家出一个,你家没有了,那我也就不出了(你看,代码也这么现实…)</p>
+<p>之所以举的栗子不全是list,就是想说明一个小的注意点,zip接受的都是具有迭代的属性的参数(<code>__iter__</code>),这个后面会讲</p>
+<a id="more"></a>
+<h2 id="Filter-审查"><a href="#Filter-审查" class="headerlink" title="Filter - 审查"></a>Filter - 审查</h2><p>标准格式<code>filter(func, seq)</code><br>举个栗子:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">b = [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</span><br><span class="line">c = [<span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br><span class="line">result = filter(<span class="keyword">lambda</span> x:sum(x)&gt;<span class="number">14</span>, [a, b, c])</span><br></pre></td></tr></table></figure></p>
+<p>result为<code>[[4, 5, 6], [7, 8, 9]]</code><br>现在有一个项目,但是这个项目要有个资产审查,要求资产满足lambda标准的企业才有资格参加招标(func是一个bool类型的函数)</p>
+<h2 id="Map-招标"><a href="#Map-招标" class="headerlink" title="Map - 招标"></a>Map - 招标</h2><p>标准格式<code>map(func, seq[, seq[, seq]])</code><br>举个栗子:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = (i <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">3</span>))</span><br><span class="line">b = [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</span><br><span class="line">c = (<span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>)</span><br><span class="line">abc = map(<span class="keyword">lambda</span> x,y,z: x+y+z, a, b, c)</span><br></pre></td></tr></table></figure></p>
+<p>abc的结果为<code>[11, 14, 17]</code><br>还是这个招标的项目<code>lambda函数</code>需要招三家(函数的参数个数)来参与这个项目,这个项目分前中后三期的投入.<br>假如abc三家幸运的入选,并且三家都已经准备好了三个阶段的投入.所以前期a出0,b出4,c出7投入到lambda项目,项目前期返回收入11<br>依次类推,直到三家的投入全部结束,所以返还的收入就是<code>[11, 14, 17]</code></p>
+<p>假如c有钱(<code>c = [7,8,9,10,11]</code>),c说:老子有钱,我要追加投入. 那ab没钱怎么办?简单!!ab就诚实的说:老子没钱 就好了(<code>a = [0,1,2,None,None], b = [4,5,6,None,None]</code>)<br>所以lambda项目就收到到这样的投入<code>[None,None,10], [None,None,11]</code>,这里要注意处理这些None,因为不小心他就会报NoneType的问题<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = (i <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">3</span>))</span><br><span class="line">b = [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</span><br><span class="line">c = (<span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">11</span>)</span><br><span class="line">abc = map(<span class="keyword">lambda</span> x,y,z: str(x)+str(y)+str(z), a, b, c)</span><br></pre></td></tr></table></figure></p>
+<p>所以abc的结果为<code>[&#39;047&#39;, &#39;158&#39;, &#39;269&#39;, &#39;NoneNone10&#39;, &#39;NoneNone11&#39;]</code><br>map接受的也都是具有迭代的属性的参数<br>注意,当func为None的时候,map的功能就类似与zip了.说到底map也就是先集资(zip)在干事(func),func不存在的时候就剩集资(zip)了</p>
+<h2 id="Reduce-二次投入"><a href="#Reduce-二次投入" class="headerlink" title="Reduce - 二次投入"></a>Reduce - 二次投入</h2><p>标准格式<code>reduce(func, seq[, init])</code><br>举个栗子:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = (i <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">3</span>))</span><br><span class="line">result = reduce(<span class="keyword">lambda</span> x,y: x+y, a)</span><br></pre></td></tr></table></figure></p>
+<p>result为3<br>reduce的工作流程为:<br>    1.<code>func(seq[0], seq[1])</code>                          -&gt;seq的第一和第二元素应用到func<br>    2.<code>func(func(seq[0], seq[1]), seq[2])</code>            -&gt;上一步func的结果作为func的第一个参数,seq第三个参数作为func的第二个元素<br>    ……<br>    n.<code>func(...func(func(seq[0], seq[1]))...,seq[n])</code> -&gt;上一步func的结果作为func的第一个参数,seq第n个参数作为func的第二个元素<br>下图可以很好的说明这个过程:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="/images/reduce.png" alt=""></p>
+<p>以上是init不存在的时候,当init存在的时候,第一步的func的第一个参数为init,seq的第一个元素为func的第二参数,后面流程就一样了<br>这就好比把第一阶段的盈利当作二次投资的资本在进行投资</p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>在python中函数式编程能很大程度上节约我们的开发时间,利用好了就会是自己的一大利器<br>文中提到的<code>好比</code>在可能会有不当,毕竟我不是经济专业的….海涵</p>
+<p>That’s all,Thank you</p>
+  
+	</div>
+		
+			<div class="article-footer-copyright">
+  <center>本文由<b><a href="/about/" target="_blank" title="Jasper Xu">Jasper Xu</a></b>创作和发表,采用<b>BY</b>-<b>NC</b>-<b>SA</b>国际许可协议进行许可</center>
+
+  <center>转载请注明作者及出处,本文作者为<b><a href="/about/" target="_blank" title="Jasper Xu">Jasper Xu</a></b></center>
+
+  <center>本文链接为<b><a href="/2016/07/13/tech/Python_zip_map_filter_reduce/" target="_blank" title="Python函数式编程 - zip| map| filter| reduce">http://4coding.cn/2016/07/13/tech/Python_zip_map_filter_reduce/</a></b>.</center>
+</div>
+
+		
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Python/">Python</a><a href="/tags/函数式编程/">函数式编程</a><a href="/tags/TECH/">TECH</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://4coding.cn/2016/07/13/tech/Python_zip_map_filter_reduce/" data-title="Python函数式编程 - zip| map| filter| reduce | Coding 4 yourself" data-tsina="2290478334" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2016/06/10/life/suzhou/"  title="苏州出差 [2015-2016]">
+ <strong>下一篇：</strong><br/> 
+ <span>苏州出差 [2015-2016]
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section id="comments" class="comment">
+	<div class="ds-thread" data-thread-key="2016/07/13/tech/Python_zip_map_filter_reduce/" data-title="Python函数式编程 - zip| map| filter| reduce" data-url="http://4coding.cn/2016/07/13/tech/Python_zip_map_filter_reduce/"></div>
+</section>
+
+
+</div>  
+
+
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Zip-集资"><span class="toc-number">1.</span> <span class="toc-text">Zip - 集资</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Filter-审查"><span class="toc-number">2.</span> <span class="toc-text">Filter - 审查</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Map-招标"><span class="toc-number">3.</span> <span class="toc-text">Map - 招标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Reduce-二次投入"><span class="toc-number">4.</span> <span class="toc-text">Reduce - 二次投入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#结语"><span class="toc-number">5.</span> <span class="toc-text">结语</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/TECH/" title="TECH">TECH<sup>11</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Python/" title="Python">Python<sup>6</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Web/" title="Web">Web<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Linux-kernel/" title="Linux kernel">Linux kernel<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/函数式编程/" title="函数式编程">函数式编程<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Git/" title="Git">Git<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/拿来主义/" title="拿来主义">拿来主义<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Linux-command/" title="Linux command">Linux command<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/LIFE/" title="LIFE">LIFE<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Translator/" title="Translator">Translator<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Hexo/" title="Hexo">Hexo<sup>1</sup></a></li>
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="http://duanyajuzi.com/" target="_blank" title="一个神奇的网站">Jarvis&#39;s Blog</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://remyhan.com/" target="_blank" title="一个神奇的网站">remyhan&#39;s Blog</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+  <div class="weiboshow">
+  <p class="asidetitle">新浪微博</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=2290478334&verifier=d4c3622e&dpc=1"></iframe>
+</div>
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> jasper@ShangHai:~$ python <br/>
+			&gt;&gt;&gt; import this</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/u/2290478334" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		<a href="https://github.com/https://github.com/HiJasper" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<a href="mailto:345437797@qq.com" target="_blank" class="icon-email" title="Email Me"></a>
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		
+		<a href="/about" target="_blank" title="Jasper Xu">Jasper Xu</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"4coding"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?266097f3072f901978d8dadcfd07e2a6";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
