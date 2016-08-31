@@ -83,6 +83,65 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2016/08/30/tech/phidget/" title="Python编写Phidget Relay控制" itemprop="url">Python编写Phidget Relay控制</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Jasper Xu" target="_blank" itemprop="author">Jasper Xu</a>
+		
+  <p class="article-time">
+    <time datetime="2016-08-30T11:21:00.000Z" itemprop="datePublished"> 发表于 2016-08-30</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <p>这几天收拾的时候发现了Phidget，这还是上一个案子客户给的。型号是1014_2，记得是当时拿来做压力测试用的。<br>过太久都忘了怎么用了，所以再拾遗一下。<br>因为重装<code>Ubuntu 16.04</code>的系统，所以就从头装一遍phidget在Linux平台上的运行环境。<br>可参考<a href="http://www.phidgets.com/docs/Language_-_Python#Follow_the_Examples">Phidget官网</a>，这里只是大体说一下。</p>
+<h1 id="Linux环境的搭建"><a href="#Linux环境的搭建" class="headerlink" title="Linux环境的搭建"></a>Linux环境的搭建</h1><h4 id="安装libusb的开发库"><a href="#安装libusb的开发库" class="headerlink" title="安装libusb的开发库"></a>安装libusb的开发库</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install libusb-1.0-0-dev</span><br></pre></td></tr></table></figure>
+<h4 id="安装Phidget库"><a href="#安装Phidget库" class="headerlink" title="安装Phidget库"></a>安装Phidget库</h4><p>点击<a href="http://www.phidgets.com/downloads/libraries/libphidget.tar.gz">下载路径</a>下载Phidget库。<br>解压后，依次执行:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">./configure </span><br><span class="line">make </span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure></p>
+        
+        
+        <p class="article-more-link">
+          
+            <a href="/2016/08/30/tech/phidget/#more">Read More</a>
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Python/">Python</a><a href="/tags/TECH/">TECH</a><a href="/tags/Phidget/">Phidget</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2016/08/30/tech/phidget/#comments" class="ds-thread-count comments-count-link" data-thread-key="2016/08/30/tech/phidget/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2016/07/13/tech/Python_zip_map_filter_reduce/" title="Python函数式编程 - zip| map| filter| reduce" itemprop="url">Python函数式编程 - zip| map| filter| reduce</a>
   </h1>
   <p class="article-author">By
@@ -332,8 +391,8 @@
 </header>
     <div class="article-content">
         
-        <p>前面有学习了<a href="/2016/04/02/python_socketserver/">SocketServer模块</a>,之前说过<code>SocketServer</code>算是最基本的python服务器框架,那本文讲的<code>BaseHTTPServer</code>模块就是基于<code>SocketServer</code>,而<code>SimpleHTTPServer</code>模块则是基于<code>BaseHTTPServer</code>模块,所以他们的继承关系就很明了了.本文还是会以一个小栗子开始,结合类继承图和程式执行过程图来学习原码</p>
-<p>注:本文基于python2.7,不同的版本可能会导致差异</p>
+        <p>前面有学习了<a href="/2016/04/02/tech/python_socketserver/">SocketServer模块</a>,之前说过<code>SocketServer</code>算是最基本的python服务器框架,那本文讲的<code>BaseHTTPServer</code>模块就是基于<code>SocketServer</code>,而<code>SimpleHTTPServer</code>模块则是基于<code>BaseHTTPServer</code>模块,所以他们的继承关系就很明了了.本文还是会以一个小栗子开始,结合类继承图和程式执行过程图来学习原码.</p>
+<p>注:本文基于python2.7,不同的版本可能会导致差异.</p>
 <h2 id="类的继承关系和执行流程"><a href="#类的继承关系和执行流程" class="headerlink" title="类的继承关系和执行流程"></a>类的继承关系和执行流程</h2><p>图中用不同颜色来划分不同类的方法,有方法重写的部分则是将该方法归于重写方法的类.</p>
 <p><img src="/images/simplehttpserver_1.png" alt=""> <img src="/images/simplehttpserver_2.png" alt=""></p>
         
@@ -549,64 +608,6 @@
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/07/25/tech/translator_androids_init/" title="Android init.rc的readme.txt翻译" itemprop="url">Android init.rc的readme.txt翻译</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Jasper Xu" target="_blank" itemprop="author">Jasper Xu</a>
-		
-  <p class="article-time">
-    <time datetime="2015-07-25T08:03:00.000Z" itemprop="datePublished"> 发表于 2015-07-25</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>这是一篇自己胡乱翻译的,翻译的可能会有错误,但是以自己目前对kernel的了解只能做到这样了,希望以后自己会有所成长,然后再次看到这篇翻译的时候莞尔一笑.</p>
-<h2 id="Android-Init-Language"><a href="#Android-Init-Language" class="headerlink" title="Android Init Language"></a>Android Init Language</h2><p>Android Init语言包含四种类型的关键字:<code>Action</code>,<code>Commands</code>,<code>Services</code>和<code>Options</code><br>以#开头的行是注释<br><code>Action</code>和<code>Services</code>声名一个新的section,所有的<code>commands</code>和<code>options</code>都属于靠的最近的section.在第一个section之前的<code>commands</code>和<code>services</code>都被忽略<br>每一个<code>Actions</code>和<code>Services</code>都有独立的名字,如果有相同名字的<code>actions</code>和<code>services</code>被声名,那这个section将被当成一个错误忽略掉.</p>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2015/07/25/tech/translator_androids_init/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/Translator/">Translator</a><a href="/tags/TECH/">TECH</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/07/25/tech/translator_androids_init/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/07/25/tech/translator_androids_init/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
     <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next<span></span></a>
@@ -627,11 +628,11 @@
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/TECH/" title="TECH">TECH<sup>11</sup></a></li>
+				<li><a href="/tags/TECH/" title="TECH">TECH<sup>12</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/Python/" title="Python">Python<sup>6</sup></a></li>
+				<li><a href="/tags/Python/" title="Python">Python<sup>7</sup></a></li>
 			
 		
 			
@@ -651,7 +652,7 @@
 			
 		
 			
-				<li><a href="/tags/拿来主义/" title="拿来主义">拿来主义<sup>1</sup></a></li>
+				<li><a href="/tags/LIFE/" title="LIFE">LIFE<sup>1</sup></a></li>
 			
 		
 			
@@ -659,7 +660,11 @@
 			
 		
 			
-				<li><a href="/tags/LIFE/" title="LIFE">LIFE<sup>1</sup></a></li>
+				<li><a href="/tags/拿来主义/" title="拿来主义">拿来主义<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Phidget/" title="Phidget">Phidget<sup>1</sup></a></li>
 			
 		
 			
@@ -668,8 +673,6 @@
 		
 			
 				<li><a href="/tags/Hexo/" title="Hexo">Hexo<sup>1</sup></a></li>
-			
-		
 			
 		
 			
