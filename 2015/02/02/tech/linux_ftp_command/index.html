@@ -13,20 +13,29 @@
     
     <meta name="description" content="连接ftp服务器1ftp [ip_addr | hostname]
 举个栗子：1ftp 172.168.0.1
-链接后会让你输入用户名和密码进行身份认证.">
+链接后会让你输入用户名和密码进行身份认证.
+下载文件12get [ftp服务器文件路径] [本地路径]mget [文件匹配规则]
+get的命令是下载单个文件到指定本地路径.mget则可以批量下载.
+再举个栗子：1ftp&amp;gt; mget *.txt //将服务器当前文件夹下的txt文档下">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux命令讲解 - ftp命令简介">
 <meta property="og:url" content="http://4coding.cn/2015/02/02/tech/linux_ftp_command/index.html">
 <meta property="og:site_name" content="Coding 4 yourself">
 <meta property="og:description" content="连接ftp服务器1ftp [ip_addr | hostname]
 举个栗子：1ftp 172.168.0.1
-链接后会让你输入用户名和密码进行身份认证.">
-<meta property="og:updated_time" content="2016-08-26T08:37:45.730Z">
+链接后会让你输入用户名和密码进行身份认证.
+下载文件12get [ftp服务器文件路径] [本地路径]mget [文件匹配规则]
+get的命令是下载单个文件到指定本地路径.mget则可以批量下载.
+再举个栗子：1ftp&amp;gt; mget *.txt //将服务器当前文件夹下的txt文档下">
+<meta property="og:updated_time" content="2017-02-14T14:07:31.818Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux命令讲解 - ftp命令简介">
 <meta name="twitter:description" content="连接ftp服务器1ftp [ip_addr | hostname]
 举个栗子：1ftp 172.168.0.1
-链接后会让你输入用户名和密码进行身份认证.">
+链接后会让你输入用户名和密码进行身份认证.
+下载文件12get [ftp服务器文件路径] [本地路径]mget [文件匹配规则]
+get的命令是下载单个文件到指定本地路径.mget则可以批量下载.
+再举个栗子：1ftp&amp;gt; mget *.txt //将服务器当前文件夹下的txt文档下">
 
     
     <link rel="alternative" href="/atom.xml" title="Coding 4 yourself" type="application/atom+xml">
@@ -117,10 +126,11 @@
 		
 		<h2 id="连接ftp服务器"><a href="#连接ftp服务器" class="headerlink" title="连接ftp服务器"></a>连接ftp服务器</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ftp [ip_addr | hostname]</span><br></pre></td></tr></table></figure>
 <p>举个栗子：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ftp 172.168.0.1</span><br></pre></td></tr></table></figure></p>
-<p>链接后会让你输入用户名和密码进行身份认证.<br><a id="more"></a></p>
+<p>链接后会让你输入用户名和密码进行身份认证.</p>
 <h2 id="下载文件"><a href="#下载文件" class="headerlink" title="下载文件"></a>下载文件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">get [ftp服务器文件路径] [本地路径]</span><br><span class="line">mget [文件匹配规则]</span><br></pre></td></tr></table></figure>
 <p>get的命令是下载单个文件到指定本地路径.<br>mget则可以批量下载.</p>
 <p>再举个栗子：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ftp&gt; mget *.txt //将服务器当前文件夹下的txt文档下载到本地当前路径</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <h2 id="上传文件"><a href="#上传文件" class="headerlink" title="上传文件"></a>上传文件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">put [本地文件路径] [ftp服务器文件路径]</span><br><span class="line">mput [文件匹配规则]</span><br></pre></td></tr></table></figure>
 <p>很容易理解,和get一样.只是需要注意的是,mput上传到服务器的路径是当前服务器路径,所以要想将文件上传到服务器指定路径的时候要先在ftp下cd的命令</p>
 <h2 id="退出链接"><a href="#退出链接" class="headerlink" title="退出链接"></a>退出链接</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ftp&gt; <span class="built_in">bye</span></span><br></pre></td></tr></table></figure>
@@ -206,7 +216,7 @@
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/TECH/" title="TECH">TECH<sup>12</sup></a></li>
+				<li><a href="/tags/TECH/" title="TECH">TECH<sup>14</sup></a></li>
 			
 		
 			
@@ -214,15 +224,15 @@
 			
 		
 			
-				<li><a href="/tags/Web/" title="Web">Web<sup>2</sup></a></li>
+				<li><a href="/tags/Web/" title="Web">Web<sup>4</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/Git/" title="Git">Git<sup>1</sup></a></li>
+				<li><a href="/tags/Django/" title="Django">Django<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/LIFE/" title="LIFE">LIFE<sup>1</sup></a></li>
+				<li><a href="/tags/Linux-command/" title="Linux command">Linux command<sup>1</sup></a></li>
 			
 		
 			
@@ -230,11 +240,11 @@
 			
 		
 			
-				<li><a href="/tags/Linux-kernel/" title="Linux kernel">Linux kernel<sup>1</sup></a></li>
+				<li><a href="/tags/Git/" title="Git">Git<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/Linux-command/" title="Linux command">Linux command<sup>1</sup></a></li>
+				<li><a href="/tags/Linux-kernel/" title="Linux kernel">Linux kernel<sup>1</sup></a></li>
 			
 		
 			
@@ -253,6 +263,12 @@
 				<li><a href="/tags/Translator/" title="Translator">Translator<sup>1</sup></a></li>
 			
 		
+			
+				<li><a href="/tags/LIFE/" title="LIFE">LIFE<sup>1</sup></a></li>
+			
+		
+			
+		
 		</ul>
 </div>
 
@@ -261,7 +277,7 @@
   <div class="tagcloudlist">
     <p class="asidetitle">标签云</p>
     <div class="tagcloudlist clearfix">
-       <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/LIFE/" style="font-size: 10px;">LIFE</a> <a href="/tags/Linux-command/" style="font-size: 10px;">Linux command</a> <a href="/tags/Linux-kernel/" style="font-size: 10px;">Linux kernel</a> <a href="/tags/Phidget/" style="font-size: 10px;">Phidget</a> <a href="/tags/Python/" style="font-size: 16.67px;">Python</a> <a href="/tags/TECH/" style="font-size: 20px;">TECH</a> <a href="/tags/Translator/" style="font-size: 10px;">Translator</a> <a href="/tags/Web/" style="font-size: 13.33px;">Web</a> <a href="/tags/函数式编程/" style="font-size: 10px;">函数式编程</a> <a href="/tags/拿来主义/" style="font-size: 10px;">拿来主义</a>
+       <a href="/tags/Django/" style="font-size: 12.5px;">Django</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/LIFE/" style="font-size: 10px;">LIFE</a> <a href="/tags/Linux-command/" style="font-size: 10px;">Linux command</a> <a href="/tags/Linux-kernel/" style="font-size: 10px;">Linux kernel</a> <a href="/tags/Phidget/" style="font-size: 10px;">Phidget</a> <a href="/tags/Python/" style="font-size: 17.5px;">Python</a> <a href="/tags/TECH/" style="font-size: 20px;">TECH</a> <a href="/tags/Translator/" style="font-size: 10px;">Translator</a> <a href="/tags/Web/" style="font-size: 15px;">Web</a> <a href="/tags/函数式编程/" style="font-size: 10px;">函数式编程</a> <a href="/tags/拿来主义/" style="font-size: 10px;">拿来主义</a>
     </div>
   </div>
 
@@ -333,7 +349,7 @@
 		
 
 		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2017 
 		
 		<a href="/about" target="_blank" title="Jasper Xu">Jasper Xu</a>
 		

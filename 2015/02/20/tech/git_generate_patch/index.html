@@ -12,18 +12,21 @@
 
     
     <meta name="description" content="Git 生成patch的方法（patch就是补丁）    注:因为博主用的是linux系统,所以运行的环境均在linux下.
-建立一个文件夹作为git的本地仓库:123mkdir /home/jasper/test_for_gitcd test_for_gitgit init(创建一个repository)">
+建立一个文件夹作为git的本地仓库:123mkdir /home/jasper/test_for_gitcd test_for_gitgit init(创建一个repository)
+给本地仓库创建一个资源,并写入”hello world”12touch hello.txt">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git生成patch的方法(diff and format-patch)">
 <meta property="og:url" content="http://4coding.cn/2015/02/20/tech/git_generate_patch/index.html">
 <meta property="og:site_name" content="Coding 4 yourself">
 <meta property="og:description" content="Git 生成patch的方法（patch就是补丁）    注:因为博主用的是linux系统,所以运行的环境均在linux下.
-建立一个文件夹作为git的本地仓库:123mkdir /home/jasper/test_for_gitcd test_for_gitgit init(创建一个repository)">
-<meta property="og:updated_time" content="2016-08-26T08:37:01.422Z">
+建立一个文件夹作为git的本地仓库:123mkdir /home/jasper/test_for_gitcd test_for_gitgit init(创建一个repository)
+给本地仓库创建一个资源,并写入”hello world”12touch hello.txt">
+<meta property="og:updated_time" content="2017-02-14T14:10:43.177Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git生成patch的方法(diff and format-patch)">
 <meta name="twitter:description" content="Git 生成patch的方法（patch就是补丁）    注:因为博主用的是linux系统,所以运行的环境均在linux下.
-建立一个文件夹作为git的本地仓库:123mkdir /home/jasper/test_for_gitcd test_for_gitgit init(创建一个repository)">
+建立一个文件夹作为git的本地仓库:123mkdir /home/jasper/test_for_gitcd test_for_gitgit init(创建一个repository)
+给本地仓库创建一个资源,并写入”hello world”12touch hello.txt">
 
     
     <link rel="alternative" href="/atom.xml" title="Coding 4 yourself" type="application/atom+xml">
@@ -114,10 +117,10 @@
 		
 		<p>Git 生成patch的方法（patch就是补丁）<br>    注:因为博主用的是linux系统,所以运行的环境均在linux下.</p>
 <h3 id="建立一个文件夹作为git的本地仓库"><a href="#建立一个文件夹作为git的本地仓库" class="headerlink" title="建立一个文件夹作为git的本地仓库:"></a>建立一个文件夹作为git的本地仓库:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir /home/jasper/<span class="built_in">test</span>_<span class="keyword">for</span>_git</span><br><span class="line"><span class="built_in">cd</span> <span class="built_in">test</span>_<span class="keyword">for</span>_git</span><br><span class="line">git init(创建一个repository)</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
 <h3 id="给本地仓库创建一个资源-并写入”hello-world”"><a href="#给本地仓库创建一个资源-并写入”hello-world”" class="headerlink" title="给本地仓库创建一个资源,并写入”hello world”"></a>给本地仓库创建一个资源,并写入”hello world”</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">touch hello.txt</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"hello world"</span>&gt;&gt;hello.txt</span><br></pre></td></tr></table></figure>
 <h3 id="提交本地仓库"><a href="#提交本地仓库" class="headerlink" title="提交本地仓库:"></a>提交本地仓库:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit <span class="_">-a</span> -m <span class="string">"first commit"</span></span><br></pre></td></tr></table></figure>
 <h3 id="创建一个本地branch-并且签出到新建的branch"><a href="#创建一个本地branch-并且签出到新建的branch" class="headerlink" title="创建一个本地branch,并且签出到新建的branch"></a>创建一个本地branch,并且签出到新建的branch</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git branch jasper</span><br><span class="line">git checkout jasper</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <h3 id="在jasper的branch下面为master-brach做一个patch-补丁"><a href="#在jasper的branch下面为master-brach做一个patch-补丁" class="headerlink" title="在jasper的branch下面为master brach做一个patch(补丁)"></a>在jasper的branch下面为master brach做一个patch(补丁)</h3><h4 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h4><pre><code>用diff的方法生成的通用补丁,patch的文件以.diff结尾:
 1.在patch分支中更改hello.txt:
 echo &quot;first diff patch&quot; &gt;&gt; hello.txt
@@ -239,7 +242,7 @@ git am 0001-first-format-patch-patch-commit.patch
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/TECH/" title="TECH">TECH<sup>12</sup></a></li>
+				<li><a href="/tags/TECH/" title="TECH">TECH<sup>14</sup></a></li>
 			
 		
 			
@@ -247,15 +250,15 @@ git am 0001-first-format-patch-patch-commit.patch
 			
 		
 			
-				<li><a href="/tags/Web/" title="Web">Web<sup>2</sup></a></li>
+				<li><a href="/tags/Web/" title="Web">Web<sup>4</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/Git/" title="Git">Git<sup>1</sup></a></li>
+				<li><a href="/tags/Django/" title="Django">Django<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/LIFE/" title="LIFE">LIFE<sup>1</sup></a></li>
+				<li><a href="/tags/Linux-command/" title="Linux command">Linux command<sup>1</sup></a></li>
 			
 		
 			
@@ -263,11 +266,11 @@ git am 0001-first-format-patch-patch-commit.patch
 			
 		
 			
-				<li><a href="/tags/Linux-kernel/" title="Linux kernel">Linux kernel<sup>1</sup></a></li>
+				<li><a href="/tags/Git/" title="Git">Git<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/Linux-command/" title="Linux command">Linux command<sup>1</sup></a></li>
+				<li><a href="/tags/Linux-kernel/" title="Linux kernel">Linux kernel<sup>1</sup></a></li>
 			
 		
 			
@@ -286,6 +289,12 @@ git am 0001-first-format-patch-patch-commit.patch
 				<li><a href="/tags/Translator/" title="Translator">Translator<sup>1</sup></a></li>
 			
 		
+			
+				<li><a href="/tags/LIFE/" title="LIFE">LIFE<sup>1</sup></a></li>
+			
+		
+			
+		
 		</ul>
 </div>
 
@@ -294,7 +303,7 @@ git am 0001-first-format-patch-patch-commit.patch
   <div class="tagcloudlist">
     <p class="asidetitle">标签云</p>
     <div class="tagcloudlist clearfix">
-       <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/LIFE/" style="font-size: 10px;">LIFE</a> <a href="/tags/Linux-command/" style="font-size: 10px;">Linux command</a> <a href="/tags/Linux-kernel/" style="font-size: 10px;">Linux kernel</a> <a href="/tags/Phidget/" style="font-size: 10px;">Phidget</a> <a href="/tags/Python/" style="font-size: 16.67px;">Python</a> <a href="/tags/TECH/" style="font-size: 20px;">TECH</a> <a href="/tags/Translator/" style="font-size: 10px;">Translator</a> <a href="/tags/Web/" style="font-size: 13.33px;">Web</a> <a href="/tags/函数式编程/" style="font-size: 10px;">函数式编程</a> <a href="/tags/拿来主义/" style="font-size: 10px;">拿来主义</a>
+       <a href="/tags/Django/" style="font-size: 12.5px;">Django</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/LIFE/" style="font-size: 10px;">LIFE</a> <a href="/tags/Linux-command/" style="font-size: 10px;">Linux command</a> <a href="/tags/Linux-kernel/" style="font-size: 10px;">Linux kernel</a> <a href="/tags/Phidget/" style="font-size: 10px;">Phidget</a> <a href="/tags/Python/" style="font-size: 17.5px;">Python</a> <a href="/tags/TECH/" style="font-size: 20px;">TECH</a> <a href="/tags/Translator/" style="font-size: 10px;">Translator</a> <a href="/tags/Web/" style="font-size: 15px;">Web</a> <a href="/tags/函数式编程/" style="font-size: 10px;">函数式编程</a> <a href="/tags/拿来主义/" style="font-size: 10px;">拿来主义</a>
     </div>
   </div>
 
@@ -366,7 +375,7 @@ git am 0001-first-format-patch-patch-commit.patch
 		
 
 		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2017 
 		
 		<a href="/about" target="_blank" title="Jasper Xu">Jasper Xu</a>
 		

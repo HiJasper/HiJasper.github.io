@@ -89,6 +89,123 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2016/02/11/tech/python_optparser/" title="Python模块解析 - optparser模块" itemprop="url">Python模块解析 - optparser模块</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Jasper Xu" target="_blank" itemprop="author">Jasper Xu</a>
+		
+  <p class="article-time">
+    <time datetime="2016-02-11T11:03:00.000Z" itemprop="datePublished"> 发表于 2016-02-11</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <p>最近博主有用到<code>optparser</code>这个module,其对命令行的参数解析功能还是很强大的</p>
+<h2 id="举个栗子"><a href="#举个栗子" class="headerlink" title="举个栗子"></a>举个栗子</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> optparse <span class="keyword">import</span> OptionParser</span><br><span class="line"></span><br><span class="line">parser = OptionParser()</span><br><span class="line">parser.add_option(<span class="string">"-f"</span>, <span class="string">"--file"</span>, dest=<span class="string">"filename"</span>,</span><br><span class="line">                 help=<span class="string">"write report to FILE"</span>, metavar=<span class="string">"FILE"</span>)</span><br><span class="line">parser.add_option(<span class="string">"-q"</span>, <span class="string">"--quiet"</span>,</span><br><span class="line">                 action=<span class="string">"store_false"</span>, dest=<span class="string">"verbose"</span>, default=<span class="keyword">True</span>,</span><br><span class="line">                 help=<span class="string">"don't print status messages to stdout"</span>)</span><br><span class="line"></span><br><span class="line">(options, args) = parser.parse_args()</span><br></pre></td></tr></table></figure>
+        
+        
+        <p class="article-more-link">
+          
+            <a href="/2016/02/11/tech/python_optparser/#more">Read More</a>
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/TECH/">TECH</a><a href="/tags/Python/">Python</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2016/02/11/tech/python_optparser/#comments" class="ds-thread-count comments-count-link" data-thread-key="2016/02/11/tech/python_optparser/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/12/12/tech/python_new_and_old_class/" title="Python新式类和经典类的继承区别" itemprop="url">Python新式类和经典类的继承区别</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Jasper Xu" target="_blank" itemprop="author">Jasper Xu</a>
+		
+  <p class="article-time">
+    <time datetime="2015-12-12T11:03:00.000Z" itemprop="datePublished"> 发表于 2015-12-12</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h2 id="写法区别"><a href="#写法区别" class="headerlink" title="写法区别"></a>写法区别</h2><p>经典类写法:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">classA</span><span class="params">()</span>:</span></span><br><span class="line">	<span class="keyword">pass</span></span><br></pre></td></tr></table></figure></p>
+<p>新式类写法:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">classB</span><span class="params">(object)</span>:</span></span><br><span class="line">	<span class="keyword">pass</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="继承区别"><a href="#继承区别" class="headerlink" title="继承区别"></a>继承区别</h2><p>经典类就好比是在好几个单元楼里面找一户人家,所以你的查找方法是从第一栋单元楼开始从最高一层一直往最低一层找,没找到的话再去下一栋找.这里每一栋就表示一个父类,所以经典类是深度优先<br>新式类就好比好几个单元合在一起,每一个垂直方向的所有的房间构成一个父类,所以这时候当你要找一户人家的时候,你就会一层一层的找,没一层都有一个父类的一个房间,你只有先确定同一级的每个父类的每个房间都没有找到你,你才能去下一层找<br>
+        
+        
+        <p class="article-more-link">
+          
+            <a href="/2015/12/12/tech/python_new_and_old_class/#more">Read More</a>
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/TECH/">TECH</a><a href="/tags/Python/">Python</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/12/12/tech/python_new_and_old_class/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/12/12/tech/python_new_and_old_class/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2015/07/25/tech/translator_androids_init/" title="Android init.rc的readme.txt翻译" itemprop="url">Android init.rc的readme.txt翻译</a>
   </h1>
   <p class="article-author">By
@@ -162,6 +279,7 @@
         
         <p>最近一段时间因为工作的原因,开始接触android和linux内核的一些东西.<br>有时间的话会陆续写一些关于这方面的博客,今天这片blog讲的是frame buffer</p>
 <h2 id="操作FrameBuffer的一般步骤"><a href="#操作FrameBuffer的一般步骤" class="headerlink" title="操作FrameBuffer的一般步骤"></a>操作FrameBuffer的一般步骤</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">打开fb0设备文件(这个路径不一定,linux系统是放在/dev下面,嵌入式的系统可能放在/dev/graphics/下面);</span><br><span class="line">用ioctl函数获取显示屏的位深、分辨率等信息,两个重要的结构体类型是fb_fix_screeninfo和fb_var_screeninfo;</span><br><span class="line">mmap函数将FrameBuffer映射到用户空间;</span><br><span class="line">读写FrameBuffer,进行绘图和图片显示等;</span><br><span class="line">解除映射(munmap),关闭/dev/fb设备文件.</span><br></pre></td></tr></table></figure>
+<h2 id="看程序说话"><a href="#看程序说话" class="headerlink" title="看程序说话"></a>看程序说话</h2>
         
         
         <p class="article-more-link">
@@ -220,6 +338,9 @@
         
         <p>Git 生成patch的方法（patch就是补丁）<br>    注:因为博主用的是linux系统,所以运行的环境均在linux下.</p>
 <h3 id="建立一个文件夹作为git的本地仓库"><a href="#建立一个文件夹作为git的本地仓库" class="headerlink" title="建立一个文件夹作为git的本地仓库:"></a>建立一个文件夹作为git的本地仓库:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir /home/jasper/<span class="built_in">test</span>_<span class="keyword">for</span>_git</span><br><span class="line"><span class="built_in">cd</span> <span class="built_in">test</span>_<span class="keyword">for</span>_git</span><br><span class="line">git init(创建一个repository)</span><br></pre></td></tr></table></figure>
+<h3 id="给本地仓库创建一个资源-并写入”hello-world”"><a href="#给本地仓库创建一个资源-并写入”hello-world”" class="headerlink" title="给本地仓库创建一个资源,并写入”hello world”"></a>给本地仓库创建一个资源,并写入”hello world”</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">touch hello.txt</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"hello world"</span>&gt;&gt;hello.txt</span><br></pre></td></tr></table></figure>
+<h3 id="提交本地仓库"><a href="#提交本地仓库" class="headerlink" title="提交本地仓库:"></a>提交本地仓库:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit <span class="_">-a</span> -m <span class="string">"first commit"</span></span><br></pre></td></tr></table></figure>
+<h3 id="创建一个本地branch-并且签出到新建的branch"><a href="#创建一个本地branch-并且签出到新建的branch" class="headerlink" title="创建一个本地branch,并且签出到新建的branch"></a>创建一个本地branch,并且签出到新建的branch</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git branch jasper</span><br><span class="line">git checkout jasper</span><br></pre></td></tr></table></figure>
         
         
         <p class="article-more-link">
@@ -278,7 +399,10 @@
         
         <h2 id="连接ftp服务器"><a href="#连接ftp服务器" class="headerlink" title="连接ftp服务器"></a>连接ftp服务器</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ftp [ip_addr | hostname]</span><br></pre></td></tr></table></figure>
 <p>举个栗子：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ftp 172.168.0.1</span><br></pre></td></tr></table></figure></p>
-<p>链接后会让你输入用户名和密码进行身份认证.<br>
+<p>链接后会让你输入用户名和密码进行身份认证.</p>
+<h2 id="下载文件"><a href="#下载文件" class="headerlink" title="下载文件"></a>下载文件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">get [ftp服务器文件路径] [本地路径]</span><br><span class="line">mget [文件匹配规则]</span><br></pre></td></tr></table></figure>
+<p>get的命令是下载单个文件到指定本地路径.<br>mget则可以批量下载.</p>
+<p>再举个栗子：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ftp&gt; mget *.txt //将服务器当前文件夹下的txt文档下载到本地当前路径</span><br></pre></td></tr></table></figure></p>
         
         
         <p class="article-more-link">
@@ -336,7 +460,7 @@
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/TECH/" title="TECH">TECH<sup>12</sup></a></li>
+				<li><a href="/tags/TECH/" title="TECH">TECH<sup>14</sup></a></li>
 			
 		
 			
@@ -344,15 +468,15 @@
 			
 		
 			
-				<li><a href="/tags/Web/" title="Web">Web<sup>2</sup></a></li>
+				<li><a href="/tags/Web/" title="Web">Web<sup>4</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/Git/" title="Git">Git<sup>1</sup></a></li>
+				<li><a href="/tags/Django/" title="Django">Django<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/LIFE/" title="LIFE">LIFE<sup>1</sup></a></li>
+				<li><a href="/tags/Linux-command/" title="Linux command">Linux command<sup>1</sup></a></li>
 			
 		
 			
@@ -360,11 +484,11 @@
 			
 		
 			
-				<li><a href="/tags/Linux-kernel/" title="Linux kernel">Linux kernel<sup>1</sup></a></li>
+				<li><a href="/tags/Git/" title="Git">Git<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/Linux-command/" title="Linux command">Linux command<sup>1</sup></a></li>
+				<li><a href="/tags/Linux-kernel/" title="Linux kernel">Linux kernel<sup>1</sup></a></li>
 			
 		
 			
@@ -383,6 +507,12 @@
 				<li><a href="/tags/Translator/" title="Translator">Translator<sup>1</sup></a></li>
 			
 		
+			
+				<li><a href="/tags/LIFE/" title="LIFE">LIFE<sup>1</sup></a></li>
+			
+		
+			
+		
 		</ul>
 </div>
 
@@ -391,7 +521,7 @@
   <div class="tagcloudlist">
     <p class="asidetitle">标签云</p>
     <div class="tagcloudlist clearfix">
-       <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/LIFE/" style="font-size: 10px;">LIFE</a> <a href="/tags/Linux-command/" style="font-size: 10px;">Linux command</a> <a href="/tags/Linux-kernel/" style="font-size: 10px;">Linux kernel</a> <a href="/tags/Phidget/" style="font-size: 10px;">Phidget</a> <a href="/tags/Python/" style="font-size: 16.67px;">Python</a> <a href="/tags/TECH/" style="font-size: 20px;">TECH</a> <a href="/tags/Translator/" style="font-size: 10px;">Translator</a> <a href="/tags/Web/" style="font-size: 13.33px;">Web</a> <a href="/tags/函数式编程/" style="font-size: 10px;">函数式编程</a> <a href="/tags/拿来主义/" style="font-size: 10px;">拿来主义</a>
+       <a href="/tags/Django/" style="font-size: 12.5px;">Django</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/LIFE/" style="font-size: 10px;">LIFE</a> <a href="/tags/Linux-command/" style="font-size: 10px;">Linux command</a> <a href="/tags/Linux-kernel/" style="font-size: 10px;">Linux kernel</a> <a href="/tags/Phidget/" style="font-size: 10px;">Phidget</a> <a href="/tags/Python/" style="font-size: 17.5px;">Python</a> <a href="/tags/TECH/" style="font-size: 20px;">TECH</a> <a href="/tags/Translator/" style="font-size: 10px;">Translator</a> <a href="/tags/Web/" style="font-size: 15px;">Web</a> <a href="/tags/函数式编程/" style="font-size: 10px;">函数式编程</a> <a href="/tags/拿来主义/" style="font-size: 10px;">拿来主义</a>
     </div>
   </div>
 
@@ -463,7 +593,7 @@
 		
 
 		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2017 
 		
 		<a href="/about" target="_blank" title="Jasper Xu">Jasper Xu</a>
 		
