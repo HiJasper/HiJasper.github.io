@@ -1,0 +1,560 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>Django的Middleware中间件 | Coding 4 yourself</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Jasper Xu">
+    
+
+    
+    <meta name="description" content="中间件是什么我们在Django Book中看到一张图很好,在正常的请求和响应阶段,Middleware充当的角色见下图其实说白了,中间件就是古代皇宫传话,传旨的公公(这里我们假设是宦官专政的朝代,皇帝听什么说什么都通过公公传达).">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Django的Middleware中间件">
+<meta property="og:url" content="http://4coding.cn/2016/09/20/tech/Django_middleware/index.html">
+<meta property="og:site_name" content="Coding 4 yourself">
+<meta property="og:description" content="中间件是什么我们在Django Book中看到一张图很好,在正常的请求和响应阶段,Middleware充当的角色见下图其实说白了,中间件就是古代皇宫传话,传旨的公公(这里我们假设是宦官专政的朝代,皇帝听什么说什么都通过公公传达).">
+<meta property="og:image" content="http://od0tfzqcv.bkt.clouddn.com/middleware.svg">
+<meta property="og:updated_time" content="2017-02-14T15:54:39.919Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Django的Middleware中间件">
+<meta name="twitter:description" content="中间件是什么我们在Django Book中看到一张图很好,在正常的请求和响应阶段,Middleware充当的角色见下图其实说白了,中间件就是古代皇宫传话,传旨的公公(这里我们假设是宦官专政的朝代,皇帝听什么说什么都通过公公传达).">
+<meta name="twitter:image" content="http://od0tfzqcv.bkt.clouddn.com/middleware.svg">
+
+    
+    <link rel="alternative" href="/atom.xml" title="Coding 4 yourself" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="Coding 4 yourself" title="Coding 4 yourself"/></a>
+			</div>
+			
+			<div id="high">
+				<a href='javascript:(function(){function c(){var e=document.createElement("link");e.setAttribute("type","text/css");e.setAttribute("rel","stylesheet");e.setAttribute("href",f);e.setAttribute("class",l);document.body.appendChild(e)}function h(){var e=document.getElementsByClassName(l);for(var t=0;t<e.length;t++){document.body.removeChild(e[t])}}function p(){var e=document.createElement("div");e.setAttribute("class",a);document.body.appendChild(e);setTimeout(function(){document.body.removeChild(e)},100)}function d(e){return{height:e.offsetHeight,width:e.offsetWidth}}function v(i){var s=d(i);return s.height>e&&s.height<n&&s.width>t&&s.width<r}function m(e){var t=e;var n=0;while(!!t){n+=t.offsetTop;t=t.offsetParent}return n}function g(){var e=document.documentElement;if(!!window.innerWidth){return window.innerHeight}else if(e&&!isNaN(e.clientHeight)){return e.clientHeight}return 0}function y(){if(window.pageYOffset){return window.pageYOffset}return Math.max(document.documentElement.scrollTop,document.body.scrollTop)}function E(e){var t=m(e);return t>=w&&t<=b+w}function S(){var e=document.createElement("audio");e.setAttribute("class",l);e.src=i;e.loop=false;e.addEventListener("canplay",function(){setTimeout(function(){x(k)},500);setTimeout(function(){N();p();for(var e=0;e<O.length;e++){T(O[e])}},15500)},true);e.addEventListener("ended",function(){N();h()},true);e.innerHTML=" <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";document.body.appendChild(e);e.play()}function x(e){e.className+=" "+s+" "+o}function T(e){e.className+=" "+s+" "+u[Math.floor(Math.random()*u.length)]}function N(){var e=document.getElementsByClassName(s);var t=new RegExp("\\b"+s+"\\b");for(var n=0;n<e.length;){e[n].className=e[n].className.replace(t,"")}}var e=30;var t=30;var n=350;var r=350;var i="//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake.mp3";var s="mw-harlem_shake_me";var o="im_first";var u=["im_drunk","im_baked","im_trippin","im_blown"];var a="mw-strobe_light";var f="//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";var l="mw_added_css";var b=g();var w=y();var C=document.getElementsByTagName("*");var k=null;for(var L=0;L<C.length;L++){var A=C[L];if(v(A)){if(E(A)){k=A;break}}}if(A===null){console.warn("Could not find a node of the right size. Please try a different page.");return}c();S();var O=[];for(var L=0;L<C.length;L++){var A=C[L];if(v(A)){O.push(A)}}})()'><img src="/img/boom.png" title="BOOM"/></a>
+			</div>
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Coding 4 yourself">Coding 4 yourself</a></h1>
+				<h2 class="blog-motto">Life is short, you need Python</h2>
+				<h2 class="blog-motto">And let me tell you: You are the <span id="busuanzi_value_site_uv"></span>th visitor here </h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/tags/TECH">Tech</a></li>
+					
+						<li><a href="/tags/LIFE">Life</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:4coding.cn">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/09/20/tech/Django_middleware/" title="Django的Middleware中间件" itemprop="url">Django的Middleware中间件</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Jasper Xu" target="_blank" itemprop="author">Jasper Xu</a>
+		
+  <p class="article-time">
+    <time datetime="2016-09-20T09:24:00.000Z" itemprop="datePublished"> 发表于 2016-09-20</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#中间件是什么"><span class="toc-number">1.</span> <span class="toc-text">中间件是什么</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#传话-request"><span class="toc-number">1.1.</span> <span class="toc-text">传话(request)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#传旨-response"><span class="toc-number">1.2.</span> <span class="toc-text">传旨(response)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#总结"><span class="toc-number">2.</span> <span class="toc-text">总结</span></a></li></ol>
+		
+		</div>
+		
+		<h1 id="中间件是什么"><a href="#中间件是什么" class="headerlink" title="中间件是什么"></a>中间件是什么</h1><p>我们在Django Book中看到一张图很好,在正常的请求和响应阶段,Middleware充当的角色见下图<br><img src="http://od0tfzqcv.bkt.clouddn.com/middleware.svg" alt=""><br>其实说白了,中间件就是古代皇宫传话,传旨的公公(这里我们假设是宦官专政的朝代,皇帝听什么说什么都通过公公传达).<br><a id="more"></a><br><code>传话(request)</code>:外界的声音(客户端)想要建言给皇帝(服务器),但是传话的途中先经过公公们,公公们可以为了利益改变内容,好听的传给皇帝,不好听的要么不传或者篡改内容传给皇帝.<br>&nbsp;&nbsp;&nbsp;&nbsp;这个功能由<code>process_request</code>和<code>process_view</code>负责.<br><code>传旨(response)</code>:皇帝下旨被公公篡改.<br>&nbsp;&nbsp;&nbsp;&nbsp;这个功能由<code>process_response</code>，<code>process_exception</code>，<code>process_template_response</code>负责.</p>
+<h2 id="传话-request"><a href="#传话-request" class="headerlink" title="传话(request)"></a>传话(request)</h2><p>举个例子:<br>我在我的项目中添加一个传话的公公<code>ManWithoutPenisMiddleware</code>:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">MIDDLEWARE_CLASSES = (</span><br><span class="line">    <span class="string">'django.contrib.sessions.middleware.SessionMiddleware'</span>,</span><br><span class="line">    <span class="string">'django.middleware.common.CommonMiddleware'</span>,</span><br><span class="line">    <span class="comment">#'django.middleware.csrf.CsrfViewMiddleware',</span></span><br><span class="line">    <span class="string">'django.contrib.auth.middleware.AuthenticationMiddleware'</span>,</span><br><span class="line">    <span class="string">'django.contrib.auth.middleware.SessionAuthenticationMiddleware'</span>,</span><br><span class="line">    <span class="string">'django.contrib.messages.middleware.MessageMiddleware'</span>,</span><br><span class="line">    <span class="string">'ManWithoutPenis.middleware.ManWithoutPenisMiddleware'</span>,</span><br><span class="line">)</span><br></pre></td></tr></table></figure></p>
+<p>那这位公公要做什么呢？看下面的这位公公的职责:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ManWithoutPenisMiddleware</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">process_request</span><span class="params">(self, request)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> request.META[<span class="string">'REMOTE_ADDR'</span>] <span class="keyword">in</span> getattr(settings, <span class="string">"Loyalist"</span>, []):</span><br><span class="line">            <span class="keyword">return</span> http.HttpResponseForbidden(<span class="string">'&lt;h1&gt;皇帝让你去死！！谢恩吧&lt;/h1&gt;'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>很明显，这位忠臣因为自己的身份(REMOTE_ADDR)被公公发现在他的黑名单中，于是得到以为是来自皇上的回复<code>&lt;h1&gt;皇帝让进宫做公公！！谢恩吧&lt;/h1&gt;</code>,最后长叹三声:纳尼！纳尼！纳尼！然后挥刀自宫.<br>这里有一个规则，当<code>process_request</code>或者<code>process_view</code>回馈的类型是<code>HttpResponse</code>，那么<code>request</code>也就不会在往下面继续传递了，直接返回给客户端内容。</p>
+<h2 id="传旨-response"><a href="#传旨-response" class="headerlink" title="传旨(response)"></a>传旨(response)</h2><p>还是这为公公,这次他负责传旨(嘿嘿嘿):<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ManWithoutPenisMiddleware</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">process_request</span><span class="params">(self, request)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> request.META[<span class="string">'REMOTE_ADDR'</span>] <span class="keyword">in</span> getattr(settings, <span class="string">"Loyalist"</span>, []):</span><br><span class="line">            <span class="keyword">return</span> http.HttpResponseForbidden(<span class="string">'&lt;h1&gt;皇帝让你去死！！谢恩吧&lt;/h1&gt;'</span>)</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">process_response</span><span class="params">(self, request, response)</span>:</span></span><br><span class="line">        response.write(<span class="string">"&lt;p&gt;皇帝让你进宫当公公！谢恩吧&lt;/p&gt;"</span>)</span><br><span class="line">        <span class="keyword">return</span> response</span><br></pre></td></tr></table></figure></p>
+<p>这里公公又篡改圣旨,又无缘无故让人家切了小鸡鸡！</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>虽然举的例子是坏公公,但是在真正的Django架构中,<code>Middleware</code>可是大忠臣的存在.他可以防止坏人的恶意攻击,提升安全性,用会话将用户和请求关联….<br>总之,这是一个很强大的公公!!</p>
+  
+	</div>
+		
+			<div class="article-footer-copyright">
+  <center>本文由<b><a href="/about/" target="_blank" title="Jasper Xu">Jasper Xu</a></b>创作和发表,采用<b>BY</b>-<b>NC</b>-<b>SA</b>国际许可协议进行许可</center>
+
+  <center>转载请注明作者及出处,本文作者为<b><a href="/about/" target="_blank" title="Jasper Xu">Jasper Xu</a></b></center>
+
+  <center>本文链接为<b><a href="/2016/09/20/tech/Django_middleware/" target="_blank" title="Django的Middleware中间件">http://4coding.cn/2016/09/20/tech/Django_middleware/</a></b>.</center>
+</div>
+
+		
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/TECH/">TECH</a><a href="/tags/Web/">Web</a><a href="/tags/Django/">Django</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://4coding.cn/2016/09/20/tech/Django_middleware/" data-title="Django的Middleware中间件 | Coding 4 yourself" data-tsina="2290478334" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2016/10/20/tech/Django_Manager/" title="Django的模型管理器  Manager">
+  <strong>上一篇：</strong><br/>
+  <span>
+  Django的模型管理器  Manager</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2016/07/13/tech/Python_zip_map_filter_reduce/"  title="Python函数式编程 - zip| map| filter| reduce">
+ <strong>下一篇：</strong><br/> 
+ <span>Python函数式编程 - zip| map| filter| reduce
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section id="comments" class="comment">
+	<div class="ds-thread" data-thread-key="2016/09/20/tech/Django_middleware/" data-title="Django的Middleware中间件" data-url="http://4coding.cn/2016/09/20/tech/Django_middleware/"></div>
+</section>
+
+
+</div>  
+
+
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#中间件是什么"><span class="toc-number">1.</span> <span class="toc-text">中间件是什么</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#传话-request"><span class="toc-number">1.1.</span> <span class="toc-text">传话(request)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#传旨-response"><span class="toc-number">1.2.</span> <span class="toc-text">传旨(response)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#总结"><span class="toc-number">2.</span> <span class="toc-text">总结</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/TECH/" title="TECH">TECH<sup>14</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Python/" title="Python">Python<sup>7</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Web/" title="Web">Web<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Django/" title="Django">Django<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Linux-command/" title="Linux command">Linux command<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/函数式编程/" title="函数式编程">函数式编程<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Git/" title="Git">Git<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Linux-kernel/" title="Linux kernel">Linux kernel<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Phidget/" title="Phidget">Phidget<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Hexo/" title="Hexo">Hexo<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/拿来主义/" title="拿来主义">拿来主义<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Translator/" title="Translator">Translator<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/LIFE/" title="LIFE">LIFE<sup>1</sup></a></li>
+			
+		
+			
+		
+		</ul>
+</div>
+
+
+  
+  <div class="tagcloudlist">
+    <p class="asidetitle">标签云</p>
+    <div class="tagcloudlist clearfix">
+       <a href="/tags/Django/" style="font-size: 12.5px;">Django</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/LIFE/" style="font-size: 10px;">LIFE</a> <a href="/tags/Linux-command/" style="font-size: 10px;">Linux command</a> <a href="/tags/Linux-kernel/" style="font-size: 10px;">Linux kernel</a> <a href="/tags/Phidget/" style="font-size: 10px;">Phidget</a> <a href="/tags/Python/" style="font-size: 17.5px;">Python</a> <a href="/tags/TECH/" style="font-size: 20px;">TECH</a> <a href="/tags/Translator/" style="font-size: 10px;">Translator</a> <a href="/tags/Web/" style="font-size: 15px;">Web</a> <a href="/tags/函数式编程/" style="font-size: 10px;">函数式编程</a> <a href="/tags/拿来主义/" style="font-size: 10px;">拿来主义</a>
+    </div>
+  </div>
+
+
+  <div class="weiboshow">
+  <p class="asidetitle">新浪微博</p>
+    <iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=2&isTitle=0&noborder=0&isWeibo=1&isFans=0&uid=2290478334&verifier=d4c3622e&colors=d6f3f7,ffffff,666666,0082cb,ecfbfd&dpc=1"></iframe>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="http://duanyajuzi.com/" target="_blank" title="一个神奇的网站">Jarvis&#39;s Blog</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://remyhan.com/" target="_blank" title="一个神奇的网站">remyhan&#39;s Blog</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> jasper@ShangHai:~$ python <br/>
+			&gt;&gt;&gt; import this</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/u/2290478334" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		<a href="https://github.com/HiJasper" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<a href="mailto:jasper@4coding.cn" target="_blank" class="icon-email" title="Email Me"></a>
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2017 
+		
+		<a href="/about" target="_blank" title="Jasper Xu">Jasper Xu</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"4coding"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?266097f3072f901978d8dadcfd07e2a6";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
